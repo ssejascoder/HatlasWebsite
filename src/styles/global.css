@@ -1,0 +1,460 @@
+/* ============================================================ */
+/* Reset + base                                                    */
+/* ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Offset anchor jumps by the fixed nav height (~81px) so section titles
+     don't land hidden underneath the sticky bar. */
+  scroll-padding-top: 92px;
+}
+
+body {
+  background: var(--bg-base);
+  /* Warm paper ground with a soft green atmosphere from the top-left,
+     so glass surfaces have something luminous to refract. */
+  background-image:
+    radial-gradient(120% 80% at 8% -10%, rgba(143, 188, 164, 0.35), transparent 60%),
+    radial-gradient(90% 70% at 100% 0%, rgba(224, 178, 120, 0.18), transparent 55%);
+  background-attachment: fixed;
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--gold-text);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+/* ============================================================ */
+/* Liquid Glass — the core material                                */
+/* Refraction comes from the SVG #lg-refract filter (mounted once  */
+/* by <GlassDefs/>). Progressive: browsers without url() filter    */
+/* support still get blur + saturate.                              */
+/* ============================================================ */
+
+.glass {
+  position: relative;
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.8) brightness(1.06);
+  backdrop-filter: url(#lg-refract) blur(var(--glass-blur)) saturate(1.8) brightness(1.06);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-card);
+  box-shadow: var(--glass-elev);
+}
+/* Specular top-edge sheen every glass panel shares. */
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0) 40%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.glass--tint { background: var(--glass-bg-tint); }
+.glass--strong { background: var(--glass-bg-strong); }
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass { background: var(--glass-bg-strong); }
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ============================================================ */
+/* Reduced motion                                                  */
+/* ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* ============================================================ */
+/* Layout primitives                                               */
+/* ============================================================ */
+
+.container-lg {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-pad);
+}
+
+.section-pad {
+  padding: 120px 0;
+}
+
+@media (max-width: 980px) {
+  .section-pad { padding: 80px 0; }
+}
+
+@media (max-width: 600px) {
+  .section-pad { padding: 64px 0; }
+}
+
+/* ============================================================ */
+/* Type primitives (h-mega, h-section, eyebrow, lede)             */
+/* ============================================================ */
+
+.eyebrow {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Module / product-section eyebrow: icon chip + caps label. line-height:1
+   collapses the text box to the glyphs so the caps sit optically centred
+   against the icon chip (default line-height leaves the caps riding high). */
+.meyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.meyebrow__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--gold-tint-12);
+  border: 1px solid var(--gold-glow);
+  border-radius: 8px;
+  color: var(--gold);
+}
+.meyebrow__icon svg { display: block; }
+
+/* Atlas display — Sora, geometric, tight. Weight carries hierarchy. */
+.h-mega {
+  font-family: var(--font-display);
+  letter-spacing: -0.035em;
+  margin: 0;
+  font-size: clamp(38px, 5vw, 66px);
+  font-weight: 600;
+  line-height: 1.0;
+}
+
+.h-section {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+  margin: 0;
+  font-size: clamp(32px, 4.2vw, 52px);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.h-mega em,
+.h-section em {
+  font-family: var(--font-display);
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.lede {
+  color: var(--cream-dim);
+  text-wrap: pretty;
+  max-width: 560px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ============================================================ */
+/* Buttons                                                         */
+/* Sprint 3.4 — :active scale(0.97) on all interactive surfaces    */
+/* ============================================================ */
+
+/* Primary — green pill with a glassy inner rim. */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  color: var(--gold-text);
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--grad-gold);
+  border: none;
+  border-radius: var(--r-control);
+  box-shadow:
+    0 10px 30px color-mix(in srgb, var(--gold) 42%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition:
+    transform 200ms var(--ease-out-strong),
+    box-shadow 200ms var(--ease-out-strong);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 40px color-mix(in srgb, var(--gold) 52%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.40);
+}
+
+.btn-gold:active {
+  transform: scale(0.97);
+}
+
+/* Secondary — clear glass with an ink label. */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  color: var(--cream);
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(14px) saturate(1.6);
+  backdrop-filter: blur(14px) saturate(1.6);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--r-control);
+  box-shadow: var(--glass-elev-sm);
+  transition:
+    background 200ms var(--ease-out-strong),
+    transform 160ms var(--ease-out-strong),
+    box-shadow 200ms var(--ease-out-strong);
+}
+
+.btn-ghost:hover {
+  background: var(--glass-bg-strong);
+  transform: translateY(-1px);
+}
+
+.btn-ghost:active {
+  transform: scale(0.97);
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  /* Mobile-friendly tap target without visible button chrome */
+  min-height: 44px;
+  padding: 6px 4px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--cream-dim);
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: color 200ms var(--ease-out-strong);
+}
+
+.btn-link::after {
+  content: '→';
+  font-family: var(--font-mono);
+  transition: transform 200ms var(--ease-out-strong);
+}
+
+.btn-link:hover {
+  color: var(--cream);
+}
+
+.btn-link:hover::after {
+  transform: translateX(4px);
+}
+
+/* ============================================================ */
+/* Word reveal helper (used by GSAP SplitText-ish entrance)       */
+/* ============================================================ */
+
+.word-reveal {
+  display: inline-block;
+  overflow: hidden;
+}
+.word-reveal > span {
+  display: inline-block;
+}
+
+/* SideRays (React Bits / ogl) container */
+.side-rays-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ============================================================ */
+/* Module mockup crossfade (rubro switch in Sistema)              */
+/* Re-mounted via key={vertical}; replays on every toggle.        */
+/* emil: opacity + blur masks the swap; transform/opacity only.   */
+/* ============================================================ */
+
+.mk-fade {
+  height: 100%;
+  animation: mkFade 380ms var(--ease-out-strong) both;
+}
+@keyframes mkFade {
+  from {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mk-fade {
+    animation: mkFadeReduced 200ms ease both;
+  }
+  @keyframes mkFadeReduced {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/* ============================================================ */
+/* transitions-dev · Number pop-in (02)                          */
+/* Hero "Cobros" value re-enters digit-by-digit on rubro switch. */
+/* ============================================================ */
+
+@keyframes t-digit-pop-in {
+  0% {
+    transform: translate(
+      calc(var(--digit-distance) * var(--digit-dir-x)),
+      calc(var(--digit-distance) * var(--digit-dir-y))
+    );
+    opacity: 0;
+    filter: blur(var(--digit-blur));
+  }
+  100% {
+    transform: translate(0, 0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.t-digit-group {
+  display: inline-flex;
+  align-items: baseline;
+}
+.t-digit {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+.t-digit-group.is-animating .t-digit {
+  animation: t-digit-pop-in var(--digit-dur) var(--digit-ease) both;
+}
+.t-digit-group.is-animating .t-digit[data-stagger='1'] {
+  animation-delay: var(--digit-stagger);
+}
+.t-digit-group.is-animating .t-digit[data-stagger='2'] {
+  animation-delay: calc(var(--digit-stagger) * 2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t-digit-group .t-digit {
+    animation: none !important;
+  }
+}
+
+/* ============================================================ */
+/* transitions-dev · Texts reveal (18)                           */
+/* Staggered blurred rise. Hero reveals on mount (in view);      */
+/* lower sections reveal on scroll via IntersectionObserver      */
+/* (.is-revealed added in JS). Stagger via inline --t-i.         */
+/* ============================================================ */
+
+/* Uses animation (not transition) so it never collides with an element's own
+   `transition` (e.g. card hover) and `backwards` fill avoids a pre-reveal flash
+   during the stagger delay without forward-filling over hover transforms. */
+.t-reveal {
+  opacity: 0;
+}
+.t-reveal.is-revealed {
+  opacity: 1;
+  animation: t-reveal-in var(--stagger-dur) var(--stagger-ease) backwards;
+  animation-delay: calc(var(--t-i, 0) * var(--stagger-stagger));
+}
+@keyframes t-reveal-in {
+  from {
+    opacity: 0;
+    transform: translateY(var(--stagger-distance));
+    filter: blur(var(--stagger-blur));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .t-reveal {
+    opacity: 1;
+  }
+  .t-reveal.is-revealed {
+    animation: none;
+  }
+}

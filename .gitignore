@@ -1,0 +1,11 @@
+# deps / build
+node_modules
+dist
+# local / editor
+.DS_Store
+.vscode
+*.local
+.env
+.env.*
+# tooling
+.netlify
