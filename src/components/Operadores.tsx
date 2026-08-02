@@ -90,8 +90,8 @@ export function Operadores() {
         <header className="operadores__header">
           <span className="eyebrow">Dueños de negocio que lo usan</span>
           <h2 id="operadores-title" className="h-section">
-            Hecho con dueños de negocio.{' '}
-            <em>Probado en hora pico.</em>
+            Negocios de Santa Cruz{' '}
+            <em>que ya no vuelven al Excel.</em>
           </h2>
         </header>
 

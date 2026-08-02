@@ -138,10 +138,10 @@ export function Sistema() {
     >
       <div className="container-lg">
         <header className="sistema__header">
-          <span className="eyebrow">Todo tu negocio, un solo lugar</span>
+          <span className="eyebrow">Adiós al Excel y los cuadernos</span>
           <h2 id="sistema-title" className="h-section">
-            Todo lo que tu negocio necesita.{' '}
-            <em>En un solo lugar.</em>
+            Todo tu negocio en un solo sistema,{' '}
+            <em>de la caja a la planilla.</em>
           </h2>
           <p className="lede" style={{ marginInline: 'auto' }}>
             Punto de venta, stock, finanzas, clientes y personal: lo que antes estaba en Excel,

@@ -72,10 +72,9 @@ export function Analista() {
     >
       <div className="container-lg">
         <header className="analista__header">
-          <span className="eyebrow">Hatlas Agent · trabaja por vos · 24/7</span>
+          <span className="eyebrow">Hatlas Agent · trabaja por vos</span>
           <h2 id="analista-title" className="h-section">
-            Conocé a <em>Hatlas Agent.</em>{' '}
-            Tu analista que nunca descansa.
+            Conocé a <em>Hatlas Agent.</em>
           </h2>
           <p className="lede" style={{ marginInline: 'auto' }}>
             Vigila tus ventas, stock, costos y clientes las 24 horas, y te avisa qué hacer sin que
@@ -90,7 +89,7 @@ export function Analista() {
           </div>
 
           <div className="chat__bubble chat__bubble--ai">
-            <div className="chat__who">TWENTY AGENT · ANALISTA DE TWENTY</div>
+            <div className="chat__who">HATLAS AGENT · ANALISTA DE HATLAS</div>
             <p className="chat__lead">{chat.lead}</p>
             <ol className="chat__steps">
               {chat.steps.map((step, i) => (
@@ -137,7 +136,7 @@ export function Analista() {
         </div>
 
         <p className="analista__cierre" data-anim="cierre">
-          No te da reportes. <em>Te da decisiones.</em>
+          Te dice qué hacer, <em>no solo qué pasó.</em>
         </p>
         <div className="analista__cta">
           <a href="#cta-final" className="btn-link">Agendar una demo</a>

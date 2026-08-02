@@ -8,7 +8,7 @@ const ITEMS = [
   { icon: ShieldCheck, label: 'Impuestos Nacionales' },
   { icon: MessageCircle, label: 'WhatsApp' },
   { icon: QrCode, label: 'Pagos con QR' },
-  { icon: FileSpreadsheet, label: 'Importa tu Excel' },
+  { icon: FileSpreadsheet, label: 'Importá tu Excel' },
 ]
 
 export function ConnectsWith() {

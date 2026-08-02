@@ -34,7 +34,7 @@ export function Onboarding() {
             De Excel a Hatlas <em>en una semana.</em>
           </h2>
           <p className="lede" style={{ marginInline: 'auto' }}>
-            Cambiar de sistema asusta. Por eso lo hacemos nosotros, contigo, sin que pares tu negocio.
+            Cambiar de sistema asusta. Por eso lo hacemos nosotros, con vos, sin que pares tu negocio.
           </p>
         </header>
 

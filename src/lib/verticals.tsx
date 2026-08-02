@@ -72,7 +72,7 @@ export const VERTICALS: Record<VerticalKey, VerticalData> = {
     key: 'salteneria',
     label: 'Salteñería',
     heroSubhead: {
-      pre: 'Registra tus ventas, emite facturas legales al instante, controla tu stock e inventario, y te avisa cuando ',
+      pre: 'Registrá tus ventas, emití facturas legales al instante, controlá tu stock e inventario, y te avisa cuando ',
       em: 'tus ventas o tus costos cambian.',
       post: ' Todo en un solo lugar, listo en una semana.',
     },
@@ -198,7 +198,7 @@ export const VERTICALS: Record<VerticalKey, VerticalData> = {
     key: 'gimnasio',
     label: 'Gimnasio',
     heroSubhead: {
-      pre: 'Registra tus cobros, emite facturas legales al instante, controla tus socios y sus cuotas, y te avisa cuando ',
+      pre: 'Registrá tus cobros, emití facturas legales al instante, controlá tus socios y sus cuotas, y te avisa cuando ',
       em: 'alguien está por darse de baja.',
       post: ' Todo en un solo lugar, listo en una semana.',
     },
@@ -323,7 +323,7 @@ export const VERTICALS: Record<VerticalKey, VerticalData> = {
     key: 'ferreteria',
     label: 'Ferretería',
     heroSubhead: {
-      pre: 'Registra tus ventas, emite facturas legales al instante, controla tu stock e inventario, y te avisa cuando ',
+      pre: 'Registrá tus ventas, emití facturas legales al instante, controlá tu stock e inventario, y te avisa cuando ',
       em: 'un producto está por agotarse o un cliente te debe.',
       post: ' Todo en un solo lugar, listo en una semana.',
     },
