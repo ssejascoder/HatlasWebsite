@@ -9,3 +9,5 @@ dist
 .env.*
 # tooling
 .netlify
+# deploy artifacts
+hatlas-cpanel.zip
