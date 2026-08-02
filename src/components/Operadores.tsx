@@ -35,14 +35,14 @@ const OPERATORS: Operator[] = [
   {
     seed: 'camila-vega-panaderia',
     name: 'Camila Vega',
-    business: 'Panadería La Esquina · Las Palmas, Santa Cruz',
+    business: 'Panadería La Esquina · Sopocachi, La Paz',
     quote: 'El cierre de caja se hace solo. Antes me robaba dos horas cada noche.',
     initials: 'CV',
   },
   {
     seed: 'andres-roldan-cafe',
     name: 'Andrés Roldán',
-    business: 'Café del Cambódromo · Equipetrol, Santa Cruz',
+    business: 'Café Tunari · Cala Cala, Cochabamba',
     quote: 'Hatlas Agent me avisó qué cliente dejé de ver. Le escribí y volvió.',
     initials: 'AR',
   },
@@ -90,7 +90,7 @@ export function Operadores() {
         <header className="operadores__header">
           <span className="eyebrow">Dueños de negocio que lo usan</span>
           <h2 id="operadores-title" className="h-section">
-            Negocios de Santa Cruz{' '}
+            Negocios de Bolivia{' '}
             <em>que ya no vuelven al Excel.</em>
           </h2>
         </header>
