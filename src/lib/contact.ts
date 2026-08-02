@@ -1,10 +1,9 @@
 /**
  * Central contact config. Swap the WhatsApp number in ONE place.
  *
- * TODO: replace WHATSAPP_NUMBER with Hatlas's real Bolivia (+591) number.
  * Format: country code + number, digits only, no "+" (wa.me requirement).
  */
-export const WHATSAPP_NUMBER = '59170000000' // placeholder — replace with real number
+export const WHATSAPP_NUMBER = '59170699639' // Bolivia (+591) 70699639
 export const CONTACT_EMAIL = 'hola@hatlas.bo'
 
 const WHATSAPP_MSG = 'Hola, quiero ver una demo de Hatlas para mi negocio.'
