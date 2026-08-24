@@ -5,6 +5,9 @@ import { App } from './App'
 import { VerticalProvider } from './lib/VerticalContext'
 import { WhatsAppFab } from './components/WhatsAppFab'
 import { GlassDefs } from './components/GlassDefs'
+// Orden obligatorio: atlas.css (fuente de verdad del design system) → tokens.css
+// (shim legacy→atlas, se retira en la Fase 5) → global.css (recetas del sitio).
+import './styles/atlas.css'
 import './styles/tokens.css'
 import './styles/global.css'
 

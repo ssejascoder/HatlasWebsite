@@ -1,108 +1,90 @@
+/* ============================================================================
+   SHIM DE COMPATIBILIDAD — nombres legacy → tokens de Atlas
+   ============================================================================
+   La fuente de verdad es `atlas.css` (vendored, NO se edita). Este archivo
+   solo traduce el vocabulario viejo del sitio (--gold / --cream / --glass-bg…)
+   a los tokens reales del design system, para que los ~30 componentes con
+   <style> inline corran sobre Atlas sin reescribirlos todos de golpe.
+
+   REGLA DE ORO: acá NO puede declararse ningún nombre que atlas.css §1 ya
+   posea (--ac, --ac-light, --ac-deep, --glass, --glass-strong, --glass-border,
+   --glass-hi, --glass-edge, --glass-shadow, --hairline, --ink*, --surface,
+   --bg, --ok, --warn, --info, --danger, --ph, --focus, --font-display,
+   --r-*, --e*, --d-*, --ease-out, --ease-spring, --t-*).
+   Los dos archivos apuntan a :root, así que una redefinición ganaría por orden
+   y corrompería el material del DS en silencio.
+   Chequeo: comm -12 de los nombres de ambos archivos debe dar vacío.
+
+   Este archivo se RETIRA en la Fase 5, cuando cada componente cite tokens
+   Atlas directamente.
+   ============================================================================ */
+
 :root {
-  /* ============================================================ */
-  /* ATLAS · Liquid Glass — warm paper ground, green accent,      */
-  /* refractive frosted-glass surfaces. Variable NAMES are kept   */
-  /* from the previous dark/gold system so every component        */
-  /* migrates coherently; VALUES are the Atlas system.            */
-  /* ============================================================ */
+  /* ---- Superficies ---- */
+  --bg-base: var(--bg);
+  --bg-subtle: #F7F3EC;              /* banda alterna; Atlas no tiene token propio */
+  --bg-card: var(--surface);
+  --bg-elevated: var(--surface);
 
-  /* Surfaces — warm paper */
-  --bg-base: #F2EFE8;         /* page ground (warm paper) */
-  --bg-subtle: #F7F3EC;       /* alternating band, a touch warmer */
-  --bg-card: #FFFFFF;         /* solid card */
-  --bg-elevated: #FFFFFF;
+  /* ---- Bordes ---- */
+  --border: var(--hairline);
+  --border-soft: color-mix(in srgb, var(--ink) 6%, transparent);
+  --border-strong: color-mix(in srgb, var(--ink) 16%, transparent);
 
-  --grad-paper: linear-gradient(160deg, #FFFFFF, #F2EFE8);
-  --grad-paper-warm: linear-gradient(160deg, #F7F3EC, #EBE4D6);
-  --grad-ink: linear-gradient(150deg, #2A2A31, #141317);
+  /* ---- Tinta (el viejo "cream" era texto oscuro) ---- */
+  --cream: var(--ink);
+  --cream-dim: var(--ink2);
+  --cream-meta: var(--ink3);
+  --cream-faint: var(--ph);
 
-  /* Borders — ink at low alpha */
-  --border: rgba(23, 22, 27, 0.10);
-  --border-soft: rgba(23, 22, 27, 0.06);
-  --border-strong: rgba(23, 22, 27, 0.16);
+  /* ---- Acento (el viejo "gold" ya era el verde Salvia) ---- */
+  --gold: var(--ac);
+  --gold-bright: var(--ac-hover);
+  --gold-deep: var(--ac-deep);
+  /* TRAMPA: --gold-text es texto SOBRE relleno de acento. NO es --ac-on
+     (que es el acento COMO texto sobre el fondo de página). Mapearlo a
+     --ac-on daría botones verde-sobre-verde. */
+  --gold-text: #FFFFFF;
+  --gold-glow: color-mix(in srgb, var(--ac) 28%, transparent);
+  --gold-tint-12: color-mix(in srgb, var(--ac) 10%, transparent);
+  --gold-tint-22: color-mix(in srgb, var(--ac) 18%, transparent);
 
-  /* Ink + warm neutrals (was "cream"; now dark-on-light) */
-  --cream: #17161B;           /* primary text / ink */
-  --cream-dim: #55534E;       /* secondary text, ~7.5:1 on paper — AA */
-  --cream-meta: #6B675F;      /* mono caps meta labels — AA on paper + white */
-  --cream-faint: #9A968D;     /* decorative whisper; not load-bearing */
-  --paper: #F2EFE8;           /* explicit paper (text on dark surfaces) */
+  /* ---- Gradiente de acento (solo lo usa la tarjeta destacada) ---- */
+  --grad-gold: linear-gradient(135deg, var(--ac-deep) 0%, var(--ac) 55%,
+               color-mix(in srgb, var(--ac-light) 45%, var(--ac)) 100%);
 
-  /* Accent — Atlas green (was "gold"). Names kept for continuity. */
-  --gold: #3E7C5B;
-  --gold-bright: #4E9370;
-  --gold-deep: #2F5E45;
-  --gold-text: #FFFFFF;       /* text on a green fill */
-  --gold-glow: rgba(62, 124, 91, 0.28);
-  --gold-tint-12: rgba(62, 124, 91, 0.10);
-  --gold-tint-22: rgba(62, 124, 91, 0.18);
+  /* ---- Material de vidrio ---- */
+  --glass-bg: var(--glass);
+  --glass-bg-strong: var(--glass-strong);
+  --glass-bg-tint: color-mix(in srgb, var(--bg) 55%, transparent);
+  --glass-blur: var(--blur);
+  /* Elevación: pasa a la escala declarada del DS (--e1/--e2 + luz interior) */
+  --glass-elev: var(--e2), var(--e-inner);
+  --glass-elev-sm: var(--e1), inset 0 1px 0 var(--glass-hi);
 
-  /* Green ramp aliases (Atlas naming) */
-  --ac: #3E7C5B;
-  --ac-light: #8FBCA4;
-  --ac-deep: #2F5E45;
+  /* ---- Estados: ahora semánticos FIJOS, nunca el acento ---- */
+  --success: var(--ok);
+  --warning: var(--warn);
+  /* --danger lo declara atlas.css con el mismo valor (#9B453C) */
 
-  /* Secondary accent families (Atlas multi-accent) */
-  --ac-terracotta: #9B453C;
-  --ac-terracotta-light: #C97A6E;
-  --ac-amber: #B9772A;
-  --ac-amber-light: #E0B278;
-  --ac-purple: #6C5BE0;
-  --ac-purple-light: #A79AF5;
+  /* ---- Tipografía ---- */
+  /* --font-display lo declara atlas.css (Sora). Acá solo los alias del sitio. */
+  --font-sans: var(--font-ui);
+  --font-mono: 'Roboto Mono', ui-monospace, 'SF Mono', Menlo, monospace; /* se retira en Fase 2 */
 
-  /* Button + tier gradients */
-  --grad-gold: linear-gradient(135deg, #2F5E45 0%, #3E7C5B 55%, #5AA07C 100%);
-  --grad-silver: linear-gradient(175deg, #F7F3EC 0%, #EBE4D6 100%);
-  /* "carbon" name kept: was the default content-card surface; now a paper card. */
-  --grad-carbon: linear-gradient(160deg, #FFFFFF, #F2EFE8);
-  --carbon-line: inset 0 1px 0 rgba(255, 255, 255, 0.9);
-
-  /* ---- Liquid Glass material ---- */
-  --glass-bg: rgba(255, 255, 255, 0.55);
-  --glass-bg-strong: rgba(255, 255, 255, 0.72);
-  --glass-bg-tint: rgba(247, 243, 236, 0.55);
-  --glass-border: rgba(255, 255, 255, 0.70);
-  --glass-hi: rgba(255, 255, 255, 0.90);
-  --glass-shadow: rgba(23, 22, 27, 0.14);
-  --glass-shadow-lg: rgba(23, 22, 27, 0.24);
-  --glass-blur: 20px;
-  /* Signature layered elevation for a glass panel */
-  --glass-elev:
-    0 1px 2px rgba(23, 22, 27, 0.05),
-    0 16px 48px var(--glass-shadow),
-    inset 0 1.5px 1.5px var(--glass-hi);
-  --glass-elev-sm:
-    0 1px 2px rgba(23, 22, 27, 0.05),
-    0 10px 30px var(--glass-shadow),
-    inset 0 1px 0 var(--glass-hi);
-
-  /* Status */
-  --success: #3E7C5B;
-  --danger: #9B453C;
-  --warning: #B9772A;
-
-  /* Type stack — Atlas */
-  --font-display: 'Sora', ui-sans-serif, system-ui, sans-serif;
-  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'Roboto Mono', ui-monospace, 'SF Mono', Menlo, monospace;
-
-  /* Motion */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  /* ---- Motion ---- */
+  --ease-out-strong: var(--ease-out);
   --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 
-  /* Layout */
-  --container-max: 1240px;
+  /* ---- Layout ---- */
+  --container-max: 1240px;           /* pasa a 1180 (.atlas-container) en Fase 2 */
   --container-pad: 32px;
 
-  /* Radii (Atlas: 22 cards · 14/12 controls · 999 pills) */
-  --r-card: 22px;
-  --r-control: 13px;
-  --r-chip: 11px;
-  --r-pill: 999px;
+  /* ---- Radios legacy → escala del DS ---- */
+  --r-card: var(--r-xl);
+  --r-control: var(--r-md);
 
-  /* transitions-dev — semantic tunables (unchanged) */
+  /* ---- transitions-dev · tunables propios del sitio (no son deuda) ---- */
   --digit-dur: 500ms;
   --digit-distance: 8px;
   --digit-stagger: 70ms;
@@ -110,10 +92,8 @@
   --digit-ease: cubic-bezier(0.34, 1.45, 0.64, 1);
   --digit-dir-x: 0;
   --digit-dir-y: 1;
-  --text-swap-dur: 160ms;
   --text-swap-translate-y: 6px;
   --text-swap-blur: 3px;
-  --text-swap-ease: ease-in-out;
   --tabs-dur: 240ms;
   --tabs-ease: cubic-bezier(0.22, 1, 0.36, 1);
   --stagger-dur: 620ms;
