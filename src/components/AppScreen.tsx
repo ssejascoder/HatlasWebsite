@@ -89,8 +89,8 @@ export function AppScreen() {
                   </linearGradient>
                 </defs>
                 <path d="M0,120 L80,110 L160,116 L240,84 L320,92 L400,60 L480,50 L560,26 L560,150 L0,150 Z" fill="url(#as-fill)" />
-                <path d="M0,120 L80,110 L160,116 L240,84 L320,92 L400,60 L480,50 L560,26" fill="none" stroke="#3E7C5B" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M0,134 L80,130 L160,132 L240,122 L320,126 L400,116 L480,118 L560,108" fill="none" stroke="#B4B2A9" strokeWidth="1.6" strokeDasharray="4 5" strokeLinecap="round" />
+                <path d="M0,120 L80,110 L160,116 L240,84 L320,92 L400,60 L480,50 L560,26" fill="none" stroke="var(--ac)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M0,134 L80,130 L160,132 L240,122 L320,126 L400,116 L480,118 L560,108" fill="none" stroke="var(--ink3)" strokeWidth="1.6" strokeDasharray="4 5" strokeLinecap="round" />
               </svg>
             </div>
 
@@ -118,7 +118,7 @@ export function AppScreen() {
           font-family: var(--font-sans);
           background:
             radial-gradient(60% 50% at 82% 0%, color-mix(in srgb, var(--ac-light) 14%, transparent), transparent 70%),
-            #FCFBF8;
+            color-mix(in srgb, var(--surface) 92%, var(--bg));
           color: var(--cream);
         }
         .ascreen__top {
@@ -165,24 +165,24 @@ export function AppScreen() {
         .ascreen__kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
         .ascreen__kpi {
           display: flex; flex-direction: column; gap: 7px;
-          padding: 14px; background: #FFFFFF; border: 1px solid var(--border);
+          padding: 14px; background: var(--surface); border: 1px solid var(--border);
           border-radius: 16px; box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent);
         }
         .ascreen__kpi-l { font-size: 12px; color: var(--cream-dim); }
         .ascreen__kpi-v { font-family: var(--font-display); font-weight: 700; font-size: 23px; letter-spacing: -0.03em; line-height: 1; color: var(--cream); }
         .ascreen__bs { font-size: 13px; font-weight: 600; color: var(--cream-dim); }
         .ascreen__delta { align-self: flex-start; font-family: var(--font-mono); font-size: 10px; padding: 3px 7px; border-radius: 999px; }
-        .ascreen__delta.up { color: var(--gold-deep); background: var(--gold-tint-12); }
+        .ascreen__delta.up { color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, transparent); }
         .ascreen__delta.down { color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, transparent); }
 
         .ascreen__row { flex: 1; display: grid; grid-template-columns: 1.5fr 1fr; gap: 12px; min-height: 0; }
-        .ascreen__panel { background: #FFFFFF; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent); padding: 16px; display: flex; flex-direction: column; min-height: 0; }
+        .ascreen__panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent); padding: 16px; display: flex; flex-direction: column; min-height: 0; }
         .ascreen__panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
         .ascreen__panel-head > span:first-child { font-size: 13px; font-weight: 600; color: var(--cream); }
         .ascreen__legend { display: inline-flex; gap: 12px; font-family: var(--font-mono); font-size: 10px; color: var(--cream-meta); }
         .ascreen__legend i { display: inline-block; width: 9px; height: 3px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
-        .ascreen__legend i.in { background: #3E7C5B; }
-        .ascreen__legend i.out { background: #B4B2A9; }
+        .ascreen__legend i.in { background: var(--ac); }
+        .ascreen__legend i.out { background: var(--ink3); }
         .ascreen__svg { width: 100%; flex: 1; min-height: 90px; }
 
         .ascreen__list ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }

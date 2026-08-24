@@ -84,7 +84,7 @@ export function Hero() {
           background:
             radial-gradient(42% 42% at 26% 16%, color-mix(in srgb, var(--ac-light) 34%, transparent), transparent 70%),
             radial-gradient(46% 44% at 78% 10%, color-mix(in srgb, var(--ac) 26%, transparent), transparent 70%),
-            radial-gradient(50% 46% at 92% 44%, rgba(224, 178, 120, 0.18), transparent 72%);
+            radial-gradient(50% 46% at 92% 44%, color-mix(in srgb, var(--ac-light) 18%, transparent), transparent 72%);
           filter: blur(8px);
         }
         .hero > * { position: relative; z-index: 10; }

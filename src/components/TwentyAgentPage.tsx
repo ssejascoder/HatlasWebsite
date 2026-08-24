@@ -165,7 +165,7 @@ export function TwentyAgentPage() {
           background:
             radial-gradient(48% 60% at 82% 12%, color-mix(in srgb, var(--ac) 32%, transparent), transparent 68%),
             radial-gradient(46% 52% at 16% 6%, color-mix(in srgb, var(--ac-light) 22%, transparent), transparent 70%),
-            radial-gradient(50% 50% at 96% 82%, rgba(224, 178, 120, 0.16), transparent 72%);
+            radial-gradient(50% 50% at 96% 82%, color-mix(in srgb, var(--ac-light) 16%, transparent), transparent 72%);
         }
         .ta-hero__inner {
           position: relative; z-index: 1;
@@ -211,7 +211,7 @@ export function TwentyAgentPage() {
         }
         .ta-alerts__live span {
           width: 6px; height: 6px; border-radius: 999px; background: var(--success);
-          box-shadow: 0 0 0 3px rgba(109,211,154,0.14);
+          box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 14%, transparent);
         }
         .ta-alert {
           display: flex; gap: 12px;

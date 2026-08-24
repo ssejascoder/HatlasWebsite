@@ -108,7 +108,7 @@ export function PhoneMockup() {
           overflow: hidden;
           background:
             radial-gradient(70% 40% at 80% 0%, rgba(143,188,164,0.16), transparent 70%),
-            #FCFBF8;
+            color-mix(in srgb, var(--surface) 92%, var(--bg));
           padding: 44px 14px 12px;
           display: flex;
           flex-direction: column;
@@ -143,7 +143,7 @@ export function PhoneMockup() {
 
         .phone__hero-kpi {
           display: flex; flex-direction: column; gap: 6px;
-          padding: 14px; background: #FFFFFF; border: 1px solid var(--border);
+          padding: 14px; background: var(--surface); border: 1px solid var(--border);
           border-radius: 16px; box-shadow: 0 1px 2px rgba(23,22,27,0.05);
         }
         .phone__k-l { font-size: 12px; color: var(--cream-dim); }
@@ -151,13 +151,13 @@ export function PhoneMockup() {
         .phone__k-v .bs, .phone__k-v2 .bs { font-family: var(--font-sans); font-size: 14px; font-weight: 600; color: var(--cream-dim); margin-right: 3px; }
         .phone__k-v2 { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -0.03em; line-height: 1; color: var(--cream); }
         .phone__delta { align-self: flex-start; font-family: var(--font-mono); font-size: 9.5px; padding: 2px 7px; border-radius: 999px; }
-        .phone__delta.up { color: var(--gold-deep); background: var(--gold-tint-12); }
-        .phone__delta.down { color: var(--danger); background: rgba(155,69,60,0.10); }
+        .phone__delta.up { color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, transparent); }
+        .phone__delta.down { color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, transparent); }
 
         .phone__kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .phone__kpi {
           display: flex; flex-direction: column; gap: 6px;
-          padding: 12px; background: #FFFFFF; border: 1px solid var(--border);
+          padding: 12px; background: var(--surface); border: 1px solid var(--border);
           border-radius: 14px; box-shadow: 0 1px 2px rgba(23,22,27,0.05);
         }
 

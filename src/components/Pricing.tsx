@@ -36,7 +36,7 @@ const TIERS: Tier[] = [
     cls: 'tier-carbon',
     label: 'Carbon',
     name: 'Starter',
-    price: 'Bs. 690',
+    price: 'Bs 690',
     priceUnit: '/ mes / sucursal',
     blurb: 'Para arrancar bien y sin trabas. Una sucursal, todas las áreas.',
     features: [
@@ -56,7 +56,7 @@ const TIERS: Tier[] = [
     cls: 'tier-gold',
     label: 'Gold',
     name: 'Crecimiento',
-    price: 'Bs. 1,290',
+    price: 'Bs 1.290',
     priceUnit: '/ mes / sucursal',
     blurb: 'Cuando ya no alcanza Excel. Varias sucursales y Hatlas Agent aprendiendo lo tuyo.',
     features: [
@@ -76,12 +76,12 @@ const TIERS: Tier[] = [
 ]
 
 function annualize(price: string) {
-  if (!price.startsWith('Bs.')) return price
+  if (!price.startsWith('Bs')) return price
   // Strip every non-digit (the "." in "Bs." and the thousands separator both
   // broke the old parse). Prices are whole-Bs integers.
   const n = parseInt(price.replace(/\D/g, ''), 10) || 0
   if (!n) return price
-  return `Bs. ${Math.round(n * 0.85).toLocaleString('es-BO')}`
+  return `Bs ${Math.round(n * 0.85).toLocaleString('es-BO')}`
 }
 
 export function Pricing() {
@@ -433,7 +433,7 @@ export function Pricing() {
           border: 1px solid rgba(255, 255, 255, 0.6);
           box-shadow: 0 8px 20px color-mix(in srgb, var(--ink) 18%, transparent);
         }
-        .tier-cta--dark:hover { background: #F2EFE8; }
+        .tier-cta--dark:hover { background: color-mix(in srgb, #fff 88%, var(--ac)); }
 
         .enterprise {
           margin: 48px auto 0;

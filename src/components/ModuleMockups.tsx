@@ -139,7 +139,7 @@ export function MkFinanzas() {
           <path
             d="M0,60 L40,55 L80,45 L120,48 L160,30 L200,28 L240,20 L280,12"
             fill="none"
-            stroke="#3E7C5B"
+            stroke="var(--ac)"
             strokeWidth="1.6"
           />
           <path

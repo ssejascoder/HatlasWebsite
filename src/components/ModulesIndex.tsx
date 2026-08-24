@@ -94,7 +94,7 @@ export function ModulesIndex() {
           background:
             radial-gradient(50% 60% at 50% -6%, color-mix(in srgb, var(--ac) 30%, transparent), transparent 66%),
             radial-gradient(44% 48% at 12% 0%, color-mix(in srgb, var(--ac-light) 20%, transparent), transparent 70%),
-            radial-gradient(44% 48% at 92% 4%, rgba(224, 178, 120, 0.16), transparent 70%);
+            radial-gradient(44% 48% at 92% 4%, color-mix(in srgb, var(--ac-light) 16%, transparent), transparent 70%);
         }
         .mindex__hero .container-lg { position: relative; z-index: 1; }
         .mindex__hero .eyebrow { display: inline-block; margin-bottom: 20px; }

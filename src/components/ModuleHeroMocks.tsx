@@ -192,14 +192,14 @@ function HmFinanzas() {
       <svg className="hm__chart" viewBox="0 0 320 90" preserveAspectRatio="none">
         <defs>
           <linearGradient id="hm-fin" x1="0" x2="0" y1="0" y2="1">
-            <stop offset="0%" stopColor="rgba(201,169,97,0.28)" />
-            <stop offset="100%" stopColor="rgba(201,169,97,0)" />
+            <stop offset="0%" stopColor="color-mix(in srgb, var(--ac) 28%, transparent)" />
+            <stop offset="100%" stopColor="transparent" />
           </linearGradient>
         </defs>
         <path
           d="M0,74 L46,68 L92,58 L138,62 L184,42 L230,36 L276,22 L320,12"
           fill="none"
-          stroke="#c9a961"
+          stroke="var(--ac)"
           strokeWidth="1.6"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -350,7 +350,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
         .hm__live span {
           width: 6px; height: 6px; border-radius: 999px;
           background: var(--success);
-          box-shadow: 0 0 0 3px rgba(109, 211, 154, 0.14);
+          box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 14%, transparent);
         }
         .hm__dot {
           display: inline-block;
@@ -419,7 +419,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
         .hm__check {
           display: inline-flex; align-items: center; justify-content: center;
           width: 16px; height: 16px; border-radius: 999px;
-          background: rgba(109, 211, 154, 0.16);
+          background: color-mix(in srgb, var(--ok) 16%, transparent);
           font-size: 10px;
         }
         /* transitions-dev · success-check (10) — POS "factura emitida" moment.
@@ -431,7 +431,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           justify-content: center;
           width: 18px; height: 18px;
           border-radius: 999px;
-          background: rgba(109, 211, 154, 0.16);
+          background: color-mix(in srgb, var(--ok) 16%, transparent);
           color: var(--success);
           animation: hm-sc-pop 460ms cubic-bezier(0.34, 1.35, 0.64, 1) 240ms both;
         }
@@ -461,14 +461,14 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           border-radius: 999px;
           color: var(--cream-dim);
         }
-        .hm__chip--ok { color: var(--success); border-color: rgba(109, 211, 154, 0.3); }
+        .hm__chip--ok { color: var(--success); border-color: color-mix(in srgb, var(--ok) 30%, transparent); }
         .hm__chip--gold { color: var(--gold); border-color: color-mix(in srgb, var(--ac) 40%, transparent); }
         /* transitions-dev · shimmer-text (15) — "en camino" = in transit */
         .hm__chip--shimmer {
           background-image: linear-gradient(
             100deg,
             var(--success) 0%, var(--success) 42%,
-            #d6f0e2 50%,
+            color-mix(in srgb, var(--ac-light) 45%, #fff) 50%,
             var(--success) 58%, var(--success) 100%
           );
           background-size: 300% 100%;
@@ -523,7 +523,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           font-size: 9px; padding: 2px 8px; border-radius: 999px;
           border: 1px solid var(--border-soft); color: var(--cream-dim);
         }
-        .hm__pill--ok { color: var(--success); border-color: rgba(109, 211, 154, 0.3); }
+        .hm__pill--ok { color: var(--success); border-color: color-mix(in srgb, var(--ok) 30%, transparent); }
         .hm__pill--low { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 35%, transparent); }
         .hm__pill--done { color: var(--cream-meta); }
 
