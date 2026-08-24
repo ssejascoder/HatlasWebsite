@@ -113,10 +113,10 @@ export function VerticalToggle() {
           gap: 6px;
           padding: 4px;
           background: var(--glass-bg-tint);
-          -webkit-backdrop-filter: blur(14px) saturate(1.6);
-          backdrop-filter: blur(14px) saturate(1.6);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
-          border-radius: 999px;
+          border-radius: var(--r-pill);
           box-shadow: var(--glass-elev-sm);
         }
         /* The sliding highlight. transform + width are written inline by JS so
@@ -127,9 +127,9 @@ export function VerticalToggle() {
           left: 0;
           height: 36px;
           width: 0;
-          border-radius: 999px;
+          border-radius: var(--r-pill);
           background: var(--glass-bg-strong);
-          border: 1px solid rgba(62, 124, 91, 0.45);
+          border: 1px solid color-mix(in srgb, var(--ac) 45%, transparent);
           box-shadow: 0 6px 16px color-mix(in srgb, var(--gold) 22%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.6);
           transform: translateX(0);
           transition:
@@ -152,7 +152,7 @@ export function VerticalToggle() {
           letter-spacing: -0.005em;
           padding: 8px 16px;
           min-height: 36px;
-          border-radius: 999px;
+          border-radius: var(--r-pill);
           cursor: pointer;
           white-space: nowrap;
           transition: color 200ms var(--ease-out-strong);

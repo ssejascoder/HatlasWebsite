@@ -92,8 +92,8 @@ export function ModulesIndex() {
           inset: 0;
           z-index: 0;
           background:
-            radial-gradient(50% 60% at 50% -6%, rgba(90, 160, 124, 0.30), transparent 66%),
-            radial-gradient(44% 48% at 12% 0%, rgba(143, 188, 164, 0.20), transparent 70%),
+            radial-gradient(50% 60% at 50% -6%, color-mix(in srgb, var(--ac) 30%, transparent), transparent 66%),
+            radial-gradient(44% 48% at 12% 0%, color-mix(in srgb, var(--ac-light) 20%, transparent), transparent 70%),
             radial-gradient(44% 48% at 92% 4%, rgba(224, 178, 120, 0.16), transparent 70%);
         }
         .mindex__hero .container-lg { position: relative; z-index: 1; }
@@ -113,8 +113,8 @@ export function ModulesIndex() {
           padding: 28px;
           min-height: 200px;
           background: var(--glass-bg);
-          -webkit-backdrop-filter: blur(18px) saturate(1.7) brightness(1.05);
-          backdrop-filter: url(#lg-refract) blur(18px) saturate(1.7) brightness(1.05);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
           border-radius: var(--r-card);
           box-shadow: var(--glass-elev-sm);
@@ -125,9 +125,9 @@ export function ModulesIndex() {
             box-shadow 300ms var(--ease-out-strong);
         }
         .micard:hover {
-          border-color: rgba(62, 124, 91, 0.45);
+          border-color: color-mix(in srgb, var(--ac) 45%, transparent);
           transform: translateY(-3px);
-          box-shadow: 0 1px 2px rgba(23,22,27,.05), 0 22px 50px var(--glass-shadow), inset 0 1px 0 var(--glass-hi);
+          box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent), 0 22px 50px var(--glass-shadow), inset 0 1px 0 var(--glass-hi);
         }
         .micard__icon {
           display: inline-flex;
@@ -141,7 +141,7 @@ export function ModulesIndex() {
           color: var(--gold);
           transition: border-color 300ms var(--ease-out-strong), background 300ms var(--ease-out-strong);
         }
-        .micard:hover .micard__icon { border-color: rgba(62, 124, 91, 0.5); background: var(--gold-tint-22); }
+        .micard:hover .micard__icon { border-color: color-mix(in srgb, var(--ac) 50%, transparent); background: var(--gold-tint-22); }
         .micard__name {
           margin: 6px 0 0;
           font-family: var(--font-display);

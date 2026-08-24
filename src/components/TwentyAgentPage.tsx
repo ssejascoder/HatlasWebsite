@@ -163,8 +163,8 @@ export function TwentyAgentPage() {
         .ta-hero__bg {
           position: absolute; inset: 0; z-index: 0;
           background:
-            radial-gradient(48% 60% at 82% 12%, rgba(90, 160, 124, 0.32), transparent 68%),
-            radial-gradient(46% 52% at 16% 6%, rgba(143, 188, 164, 0.22), transparent 70%),
+            radial-gradient(48% 60% at 82% 12%, color-mix(in srgb, var(--ac) 32%, transparent), transparent 68%),
+            radial-gradient(46% 52% at 16% 6%, color-mix(in srgb, var(--ac-light) 22%, transparent), transparent 70%),
             radial-gradient(50% 50% at 96% 82%, rgba(224, 178, 120, 0.16), transparent 72%);
         }
         .ta-hero__inner {
@@ -199,9 +199,9 @@ export function TwentyAgentPage() {
           border: 1px solid var(--glass-border);
           border-radius: var(--r-card);
           background: var(--glass-bg-strong);
-          -webkit-backdrop-filter: blur(20px) saturate(1.8) brightness(1.06);
-          backdrop-filter: url(#lg-refract) blur(20px) saturate(1.8) brightness(1.06);
-          box-shadow: var(--glass-elev), 0 0 60px rgba(90, 160, 124, 0.14);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
+          box-shadow: var(--glass-elev), 0 0 60px color-mix(in srgb, var(--ac) 14%, transparent);
         }
         .ta-alerts__head { padding: 4px 4px 2px; }
         .ta-alerts__live {
@@ -220,7 +220,7 @@ export function TwentyAgentPage() {
           border-radius: 12px;
           background: var(--bg-card);
         }
-        .ta-alert--lead { background: var(--gold-tint-12); border-color: rgba(62, 124, 91, 0.4); }
+        .ta-alert--lead { background: var(--gold-tint-12); border-color: color-mix(in srgb, var(--ac) 40%, transparent); }
         .ta-alert__icon {
           display: inline-flex; align-items: center; justify-content: center;
           width: 34px; height: 34px; flex-shrink: 0;
@@ -250,15 +250,15 @@ export function TwentyAgentPage() {
           display: flex; flex-direction: column; gap: 10px;
           padding: 24px;
           background: var(--glass-bg);
-          -webkit-backdrop-filter: blur(18px) saturate(1.7) brightness(1.05);
-          backdrop-filter: url(#lg-refract) blur(18px) saturate(1.7) brightness(1.05);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
           border-radius: var(--r-card);
           box-shadow: var(--glass-elev-sm);
           text-decoration: none;
           transition: border-color 300ms var(--ease-out-strong), box-shadow 300ms var(--ease-out-strong), transform 300ms var(--ease-out-strong);
         }
-        .ta-mod:hover { border-color: rgba(62,124,91,0.45); transform: translateY(-3px); box-shadow: 0 1px 2px rgba(23,22,27,.05), 0 22px 50px var(--glass-shadow), inset 0 1px 0 var(--glass-hi); }
+        .ta-mod:hover { border-color: color-mix(in srgb, var(--ac) 45%, transparent); transform: translateY(-3px); box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent), 0 22px 50px var(--glass-shadow), inset 0 1px 0 var(--glass-hi); }
         .ta-mod__icon {
           display: inline-flex; align-items: center; justify-content: center;
           width: 38px; height: 38px;

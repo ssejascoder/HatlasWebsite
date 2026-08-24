@@ -31,8 +31,8 @@ export function TrustStrip() {
           position: relative;
           z-index: 10;
           background: var(--glass-bg-tint);
-          backdrop-filter: blur(16px) saturate(1.7);
-          -webkit-backdrop-filter: blur(16px) saturate(1.7);
+          backdrop-filter: var(--glass-filter);
+          -webkit-backdrop-filter: var(--glass-filter);
           border-top: 1px solid var(--border);
           border-bottom: 1px solid var(--border);
           padding: 34px 0;

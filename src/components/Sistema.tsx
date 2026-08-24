@@ -208,8 +208,8 @@ export function Sistema() {
           gap: 14px;
           padding: 20px;
           background: var(--glass-bg);
-          -webkit-backdrop-filter: blur(18px) saturate(1.7) brightness(1.05);
-          backdrop-filter: url(#lg-refract) blur(18px) saturate(1.7) brightness(1.05);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
           border-radius: var(--r-card);
           box-shadow: var(--glass-elev-sm);
@@ -222,16 +222,16 @@ export function Sistema() {
             transform 300ms var(--ease-out-strong);
         }
         .module-card:hover {
-          border-color: rgba(62, 124, 91, 0.45);
+          border-color: color-mix(in srgb, var(--ac) 45%, transparent);
           transform: translateY(-3px);
-          box-shadow: 0 1px 2px rgba(23,22,27,.05), 0 22px 50px var(--glass-shadow), inset 0 1px 0 var(--glass-hi);
+          box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent), 0 22px 50px var(--glass-shadow), inset 0 1px 0 var(--glass-hi);
         }
         .module-card::before {
           content: '';
           position: absolute;
           inset: 0;
           border-radius: inherit;
-          background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), rgba(62,124,91,0.10), transparent 40%);
+          background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--ac) 10%, transparent), transparent 40%);
           opacity: 0;
           pointer-events: none;
           transition: opacity 300ms var(--ease-out-strong);
@@ -246,10 +246,10 @@ export function Sistema() {
         .module-card__thumb {
           flex: 1;
           min-height: 130px;
-          border-radius: 16px;
+          border-radius: var(--r-lg);
           border: 1px solid var(--border);
           background: #FFFFFF;
-          box-shadow: 0 1px 2px rgba(23, 22, 27, 0.05);
+          box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent);
           overflow: hidden;
         }
         .module-card__text { display: flex; flex-direction: column; gap: 6px; }
@@ -264,7 +264,7 @@ export function Sistema() {
           margin-bottom: 4px;
           background: var(--gold-tint-12);
           border: 1px solid var(--gold-glow);
-          border-radius: 10px;
+          border-radius: var(--r-sm);
           color: var(--gold);
         }
         .module-card { text-decoration: none; color: inherit; }

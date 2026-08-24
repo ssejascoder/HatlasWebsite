@@ -125,7 +125,7 @@ export function Footer() {
           background: var(--bg-card);
           color: var(--cream);
           border: 1px solid var(--border-strong);
-          border-radius: 10px;
+          border-radius: var(--r-sm);
           font-family: var(--font-sans);
           font-size: 14px;
           outline: none;

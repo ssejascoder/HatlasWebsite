@@ -209,7 +209,7 @@ export function Pricing() {
           max-width: 90vw;
           background: var(--bg-card);
           border: 1px solid var(--border-soft);
-          border-radius: 999px;
+          border-radius: var(--r-pill);
           margin: 0 auto 40px;
         }
         /* sliding gold pill (matches the rubro toggle aesthetic) */
@@ -220,7 +220,7 @@ export function Pricing() {
           width: calc(50% - 4px);
           height: calc(100% - 8px);
           background: var(--gold);
-          border-radius: 999px;
+          border-radius: var(--r-pill);
           transform: translateX(0);
           transition: transform 280ms var(--ease-out-strong);
           z-index: 0;
@@ -242,7 +242,7 @@ export function Pricing() {
           color: var(--cream-dim);
           background: transparent;
           border: none;
-          border-radius: 999px;
+          border-radius: var(--r-pill);
           cursor: pointer;
           transition: color 200ms var(--ease-out-strong);
         }
@@ -256,7 +256,7 @@ export function Pricing() {
           font-size: 10px;
           letter-spacing: 0.06em;
           padding: 2px 8px;
-          border-radius: 999px;
+          border-radius: var(--r-pill);
           background: var(--gold-tint-12);
           color: var(--gold-deep);
         }
@@ -279,25 +279,33 @@ export function Pricing() {
           display: flex;
           flex-direction: column;
           padding: 32px 28px;
-          border-radius: 16px;
+          border-radius: var(--r-lg);
         }
+        /* Superficie de comparación: se LEE (lista de features) → plano sólido. */
         .tier-carbon {
-          background: var(--glass-bg-strong);
-          -webkit-backdrop-filter: blur(18px) saturate(1.7) brightness(1.05);
-          backdrop-filter: url(#lg-refract) blur(18px) saturate(1.7) brightness(1.05);
-          border: 1px solid var(--glass-border);
-          color: var(--cream);
-          box-shadow: var(--glass-elev);
+          background: var(--surface);
+          border: 1px solid var(--hairline);
+          color: var(--ink);
+          box-shadow: var(--e2);
         }
+        /* Receta .atlas-card-feature del DS: relleno de acento 135deg + luz
+           radial superior, texto SIEMPRE blanco. Es el único lugar del sitio
+           donde vive el gradiente de acento. */
         .tier-gold {
-          background: linear-gradient(160deg, #3E7C5B 0%, #2F5E45 100%);
+          position: relative;
+          overflow: hidden;
+          background: linear-gradient(135deg, var(--ac), var(--ac-deep));
           border: 1px solid rgba(255, 255, 255, 0.18);
-          color: #FFFFFF;
-          box-shadow:
-            0 0 0 1px rgba(47, 94, 69, 0.30),
-            0 30px 60px -18px rgba(47, 94, 69, 0.55),
-            inset 0 1px 0 rgba(255, 255, 255, 0.20);
+          color: #fff;
+          box-shadow: 0 14px 40px color-mix(in srgb, var(--ac) 40%, transparent);
         }
+        .tier-gold::before {
+          content: '';
+          position: absolute; inset: 0;
+          background: radial-gradient(circle at 75% 15%, rgba(255,255,255,.35), transparent 55%);
+          pointer-events: none;
+        }
+        .tier-gold > * { position: relative; }
         .tier-gold .tier-card__name,
         .tier-gold .tier-card__price {
           color: #FFFFFF;
@@ -342,7 +350,7 @@ export function Pricing() {
           text-transform: uppercase;
           background: var(--gold);
           color: var(--gold-text);
-          border-radius: 999px;
+          border-radius: var(--r-pill);
           box-shadow: 0 8px 20px color-mix(in srgb, var(--gold) 40%, transparent), inset 0 1px 0 rgba(255,255,255,0.3);
         }
         .tier-card__label {
@@ -408,7 +416,7 @@ export function Pricing() {
           font-weight: 500;
           text-align: center;
           text-decoration: none;
-          border-radius: 10px;
+          border-radius: var(--r-sm);
           cursor: pointer;
           transition: background 200ms var(--ease-out-strong), transform 160ms var(--ease-out-strong);
         }
@@ -416,14 +424,14 @@ export function Pricing() {
         .tier-cta--light {
           background: transparent;
           color: var(--gold-deep);
-          border: 1px solid rgba(62, 124, 91, 0.42);
+          border: 1px solid color-mix(in srgb, var(--ac) 42%, transparent);
         }
         .tier-cta--light:hover { background: var(--gold-tint-12); border-color: var(--gold); }
         .tier-cta--dark {
           background: #FFFFFF;
           color: var(--gold-deep);
           border: 1px solid rgba(255, 255, 255, 0.6);
-          box-shadow: 0 8px 20px rgba(23, 22, 27, 0.18);
+          box-shadow: 0 8px 20px color-mix(in srgb, var(--ink) 18%, transparent);
         }
         .tier-cta--dark:hover { background: #F2EFE8; }
 

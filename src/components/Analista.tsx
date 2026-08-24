@@ -166,28 +166,28 @@ export function Analista() {
         }
         .chat__bubble {
           padding: 18px 22px;
-          border-radius: 16px;
+          border-radius: var(--r-lg);
           font-family: var(--font-sans);
         }
         .chat__bubble--user {
           align-self: flex-end;
           max-width: 480px;
-          background: var(--bg-elevated);
-          border: 1px solid var(--border-soft);
+          background: var(--surface);
+          border: 1px solid var(--hairline);
           color: var(--cream);
         }
         /* Carbon tier (§4.9) — was a warm amber wash, now matches every
            other content card. The "who is speaking" distinction from the
            user bubble is carried by alignment + the gold label, not by a
            yellow background. */
+        /* Plano SÓLIDO: es un transcript que se LEE (texto denso, 13-15px).
+           "Si dudás, sólido" — sobre vidrio el contraste depende del scroll. */
         .chat__bubble--ai {
           align-self: flex-start;
           max-width: 640px;
-          background: var(--glass-bg-strong);
-          -webkit-backdrop-filter: blur(20px) saturate(1.8) brightness(1.06);
-          backdrop-filter: url(#lg-refract) blur(20px) saturate(1.8) brightness(1.06);
-          border: 1px solid var(--glass-border);
-          box-shadow: var(--glass-elev);
+          background: var(--surface);
+          border: 1px solid var(--hairline);
+          box-shadow: var(--e2);
         }
         .chat__who {
           font-family: var(--font-mono);
@@ -239,7 +239,7 @@ export function Analista() {
           padding: 12px 14px;
           background: var(--gold-tint-12);
           border: 1px solid var(--gold-glow);
-          border-radius: 12px;
+          border-radius: var(--r-md);
           font-size: 13px;
           line-height: 1.5;
           color: var(--cream);
@@ -258,7 +258,7 @@ export function Analista() {
           font-weight: 500;
           min-height: 44px;
           padding: 11px 18px;
-          border-radius: 10px;
+          border-radius: var(--r-sm);
           cursor: pointer;
           display: inline-flex;
           align-items: center;
@@ -289,16 +289,15 @@ export function Analista() {
         }
         /* Carbon tier (§4.9 default) — same family as the hero orbital cards,
            since both represent "Hatlas Agent observations" */
+        /* Datos que se leen → plano sólido con elevación del DS. */
         .insight-card {
           display: flex;
           gap: 14px;
           padding: 18px 20px;
-          background: var(--glass-bg);
-          -webkit-backdrop-filter: blur(18px) saturate(1.7) brightness(1.05);
-          backdrop-filter: url(#lg-refract) blur(18px) saturate(1.7) brightness(1.05);
-          border: 1px solid var(--glass-border);
-          border-radius: var(--r-card);
-          box-shadow: var(--glass-elev-sm);
+          background: var(--surface);
+          border: 1px solid var(--hairline);
+          border-radius: var(--r-xl);
+          box-shadow: var(--e2);
         }
         /* Restrained icon treatment (matches .module-card__icon): the gold
            fill + gold border was oversaturating the accent. Gold lives only
@@ -313,7 +312,7 @@ export function Analista() {
           color: var(--gold);
           background: var(--gold-tint-12);
           border: 1px solid var(--gold-glow);
-          border-radius: 10px;
+          border-radius: var(--r-sm);
           flex-shrink: 0;
         }
         .insight-card__body { flex: 1; }

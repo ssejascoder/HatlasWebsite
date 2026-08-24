@@ -133,7 +133,7 @@ export function FAQ() {
           border: 1px solid var(--border);
           background: var(--bg-card);
           color: var(--cream-dim);
-          border-radius: 9px;
+          border-radius: var(--r-sm);
           flex-shrink: 0;
           transition:
             background 200ms var(--ease-out-strong),

@@ -367,9 +367,9 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           padding: 11px 12px;
           border: 1px solid var(--border-soft);
           border-radius: 11px;
-          background: rgba(62, 124, 91, 0.06);
+          background: color-mix(in srgb, var(--ac) 6%, transparent);
         }
-        .hm__kpi--gold { border-color: rgba(62, 124, 91, 0.4); background: var(--gold-tint-12); }
+        .hm__kpi--gold { border-color: color-mix(in srgb, var(--ac) 40%, transparent); background: var(--gold-tint-12); }
         .hm__kpi-l {
           font-family: var(--font-mono);
           font-size: 8px;
@@ -462,7 +462,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           color: var(--cream-dim);
         }
         .hm__chip--ok { color: var(--success); border-color: rgba(109, 211, 154, 0.3); }
-        .hm__chip--gold { color: var(--gold); border-color: rgba(62, 124, 91, 0.4); }
+        .hm__chip--gold { color: var(--gold); border-color: color-mix(in srgb, var(--ac) 40%, transparent); }
         /* transitions-dev · shimmer-text (15) — "en camino" = in transit */
         .hm__chip--shimmer {
           background-image: linear-gradient(
@@ -524,7 +524,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           border: 1px solid var(--border-soft); color: var(--cream-dim);
         }
         .hm__pill--ok { color: var(--success); border-color: rgba(109, 211, 154, 0.3); }
-        .hm__pill--low { color: var(--danger); border-color: rgba(155, 69, 60, 0.35); }
+        .hm__pill--low { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 35%, transparent); }
         .hm__pill--done { color: var(--cream-meta); }
 
         /* route (Logística) */
@@ -541,7 +541,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           padding: 11px 12px;
           border: 1px solid var(--border-soft);
           border-radius: 11px;
-          background: rgba(62, 124, 91, 0.06);
+          background: color-mix(in srgb, var(--ac) 6%, transparent);
           font-size: 12px; color: var(--cream-dim);
         }
         .hm__mov-l { display: inline-flex; align-items: center; }
@@ -568,8 +568,8 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           display: inline-flex; align-items: center; justify-content: center;
           width: 30px; height: 30px; flex-shrink: 0;
           border-radius: 999px;
-          background: rgba(62, 124, 91, 0.12);
-          border: 1px solid rgba(62, 124, 91, 0.3);
+          background: color-mix(in srgb, var(--ac) 12%, transparent);
+          border: 1px solid color-mix(in srgb, var(--ac) 30%, transparent);
           color: var(--gold);
           font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 13px;
         }
@@ -585,7 +585,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           padding: 16px 12px;
           border: 1px solid var(--border-soft);
           border-radius: 11px;
-          background: rgba(62, 124, 91, 0.06);
+          background: color-mix(in srgb, var(--ac) 6%, transparent);
           text-align: center;
         }
         .hm__stat-num { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 30px; line-height: 1; color: var(--cream); }
@@ -599,7 +599,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           padding: 12px;
           border: 1px solid var(--border-soft);
           border-radius: 11px;
-          background: rgba(62, 124, 91, 0.06);
+          background: color-mix(in srgb, var(--ac) 6%, transparent);
         }
         .hm__avatars { display: flex; }
         .hm__avatars .hm__avatar { margin-right: -8px; box-shadow: 0 0 0 2px #FFFFFF; }

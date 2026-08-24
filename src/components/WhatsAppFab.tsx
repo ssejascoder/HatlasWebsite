@@ -32,7 +32,7 @@ export function WhatsAppFab() {
           padding: 13px 18px;
           color: var(--gold-text);
           background: var(--grad-gold);
-          border-radius: 999px;
+          border-radius: var(--r-pill);
           text-decoration: none;
           font-family: var(--font-sans);
           font-size: 14px;

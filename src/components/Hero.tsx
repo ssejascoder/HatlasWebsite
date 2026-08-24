@@ -82,8 +82,8 @@ export function Hero() {
           z-index: 0;
           pointer-events: none;
           background:
-            radial-gradient(42% 42% at 26% 16%, rgba(143, 188, 164, 0.34), transparent 70%),
-            radial-gradient(46% 44% at 78% 10%, rgba(90, 160, 124, 0.26), transparent 70%),
+            radial-gradient(42% 42% at 26% 16%, color-mix(in srgb, var(--ac-light) 34%, transparent), transparent 70%),
+            radial-gradient(46% 44% at 78% 10%, color-mix(in srgb, var(--ac) 26%, transparent), transparent 70%),
             radial-gradient(50% 46% at 92% 44%, rgba(224, 178, 120, 0.18), transparent 72%);
           filter: blur(8px);
         }
@@ -134,10 +134,10 @@ export function Hero() {
           letter-spacing: 0.04em;
           color: var(--cream-dim);
           background: var(--glass-bg);
-          -webkit-backdrop-filter: blur(14px) saturate(1.6);
-          backdrop-filter: blur(14px) saturate(1.6);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
-          border-radius: 999px;
+          border-radius: var(--r-pill);
           box-shadow: var(--glass-elev-sm);
         }
         .hero__trust svg { color: var(--gold); flex-shrink: 0; }

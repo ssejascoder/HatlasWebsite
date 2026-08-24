@@ -243,7 +243,7 @@ export function Nav() {
           align-items: center;
           gap: 12px;
           padding: 10px 12px;
-          border-radius: 10px;
+          border-radius: var(--r-sm);
           text-decoration: none;
           transition: background 160ms var(--ease-out-strong);
         }
@@ -257,7 +257,7 @@ export function Nav() {
           flex-shrink: 0;
           background: var(--gold-tint-12);
           border: 1px solid var(--gold-glow);
-          border-radius: 9px;
+          border-radius: var(--r-sm);
           color: var(--gold);
         }
         .pmenu__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
@@ -277,7 +277,7 @@ export function Nav() {
           text-decoration: none;
           transition: color 160ms var(--ease-out-strong), background 160ms var(--ease-out-strong);
         }
-        .pmenu__all:hover { color: var(--gold); background: rgba(23, 22, 27, 0.04); }
+        .pmenu__all:hover { color: var(--gold); background: color-mix(in srgb, var(--ink) 4%, transparent); }
         .pmenu__name { font-size: 14px; font-weight: 600; color: var(--cream); }
         .pmenu__tag {
           font-size: 12px;
@@ -294,7 +294,7 @@ export function Nav() {
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
-          border-radius: 12px;
+          border-radius: var(--r-md);
           color: var(--cream);
           cursor: pointer;
           align-items: center; justify-content: center;
@@ -336,7 +336,7 @@ export function Nav() {
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border-left: 1px solid var(--glass-border);
-          box-shadow: -30px 0 80px rgba(23, 22, 27, 0.2);
+          box-shadow: -30px 0 80px color-mix(in srgb, var(--ink) 20%, transparent);
           display: flex;
           flex-direction: column;
           gap: 2px;
@@ -379,7 +379,7 @@ export function Nav() {
           justify-content: center;
           background: transparent;
           border: 1px solid var(--border-soft);
-          border-radius: 10px;
+          border-radius: var(--r-sm);
           color: var(--cream);
           cursor: pointer;
           z-index: 1;

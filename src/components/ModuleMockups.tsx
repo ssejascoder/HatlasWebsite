@@ -118,7 +118,7 @@ export function MkSupply() {
           .mk__flow span:nth-child(2) { color: var(--gold); font-family: var(--font-mono); }
           .mk__chips { display: flex; gap: 6px; flex-wrap: wrap; }
           .mk__chip { font-family: var(--font-mono); font-size: 10px; padding: 3px 8px; border: 1px solid var(--border); border-radius: 999px; color: var(--cream-dim); }
-          .mk__chip--ok { color: var(--gold-deep); border-color: rgba(62, 124, 91, 0.35); background: var(--gold-tint-12); }
+          .mk__chip--ok { color: var(--gold-deep); border-color: color-mix(in srgb, var(--ac) 35%, transparent); background: var(--gold-tint-12); }
         `}</style>
       </div>
     </MkFade>
@@ -148,8 +148,8 @@ export function MkFinanzas() {
           />
           <defs>
             <linearGradient id="g-fin" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stopColor="rgba(62,124,91,0.30)" />
-              <stop offset="100%" stopColor="rgba(62,124,91,0)" />
+              <stop offset="0%" stopColor="color-mix(in srgb, var(--ac) 30%, transparent)" />
+              <stop offset="100%" stopColor="color-mix(in srgb, var(--ac) 0%, transparent)" />
             </linearGradient>
           </defs>
         </svg>

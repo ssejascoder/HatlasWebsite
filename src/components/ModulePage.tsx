@@ -303,8 +303,8 @@ export function ModulePage() {
           inset: 0;
           z-index: 0;
           background:
-            radial-gradient(48% 60% at 82% 12%, rgba(90, 160, 124, 0.30), transparent 68%),
-            radial-gradient(46% 52% at 16% 4%, rgba(143, 188, 164, 0.22), transparent 70%),
+            radial-gradient(48% 60% at 82% 12%, color-mix(in srgb, var(--ac) 30%, transparent), transparent 68%),
+            radial-gradient(46% 52% at 16% 4%, color-mix(in srgb, var(--ac-light) 22%, transparent), transparent 70%),
             radial-gradient(50% 50% at 96% 80%, rgba(224, 178, 120, 0.16), transparent 72%);
         }
         .mhero__inner {
@@ -370,9 +370,9 @@ export function ModulePage() {
           border: 1px solid var(--glass-border);
           border-radius: var(--r-card);
           background: var(--glass-bg-strong);
-          -webkit-backdrop-filter: blur(20px) saturate(1.8) brightness(1.06);
-          backdrop-filter: url(#lg-refract) blur(20px) saturate(1.8) brightness(1.06);
-          box-shadow: var(--glass-elev), 0 0 60px rgba(90, 160, 124, 0.14);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
+          box-shadow: var(--glass-elev), 0 0 60px color-mix(in srgb, var(--ac) 14%, transparent);
           overflow: hidden;
         }
         .mscreen__bar {
@@ -440,8 +440,8 @@ export function ModulePage() {
         .fcard {
           padding: 24px;
           background: var(--glass-bg);
-          -webkit-backdrop-filter: blur(18px) saturate(1.7) brightness(1.05);
-          backdrop-filter: url(#lg-refract) blur(18px) saturate(1.7) brightness(1.05);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
           border-radius: var(--r-card);
           box-shadow: var(--glass-elev-sm);
@@ -454,7 +454,7 @@ export function ModulePage() {
             box-shadow 300ms var(--ease-out-strong),
             transform 300ms var(--ease-out-strong);
         }
-        .fcard:hover { border-color: rgba(62,124,91,0.45); transform: translateY(-3px); box-shadow: 0 1px 2px rgba(23,22,27,.05), 0 22px 50px var(--glass-shadow), inset 0 1px 0 var(--glass-hi); }
+        .fcard:hover { border-color: color-mix(in srgb, var(--ac) 45%, transparent); transform: translateY(-3px); box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent), 0 22px 50px var(--glass-shadow), inset 0 1px 0 var(--glass-hi); }
         .fcard__icon {
           display: inline-flex;
           align-items: center;
@@ -504,8 +504,8 @@ export function ModulePage() {
           color: var(--cream-dim);
           padding: 7px 13px;
           background: var(--glass-bg);
-          -webkit-backdrop-filter: blur(10px) saturate(1.4);
-          backdrop-filter: blur(10px) saturate(1.4);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
           border-radius: 999px;
         }
@@ -517,11 +517,11 @@ export function ModulePage() {
           align-items: flex-start;
           padding: 28px 32px;
           background:
-            radial-gradient(120% 140% at 0% 0%, rgba(62, 124, 91, 0.14), transparent 60%),
+            radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--ac) 14%, transparent), transparent 60%),
             var(--glass-bg-strong);
-          -webkit-backdrop-filter: blur(18px) saturate(1.7) brightness(1.05);
-          backdrop-filter: url(#lg-refract) blur(18px) saturate(1.7) brightness(1.05);
-          border: 1px solid rgba(62, 124, 91, 0.35);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
+          border: 1px solid color-mix(in srgb, var(--ac) 35%, transparent);
           border-radius: var(--r-card);
           box-shadow: var(--glass-elev);
         }
@@ -583,8 +583,8 @@ export function ModulePage() {
           gap: 14px;
           padding: 20px;
           background: var(--glass-bg);
-          -webkit-backdrop-filter: blur(16px) saturate(1.6);
-          backdrop-filter: blur(16px) saturate(1.6);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
           border-radius: var(--r-card);
           box-shadow: var(--glass-elev-sm);
@@ -592,7 +592,7 @@ export function ModulePage() {
           transition: border-color 300ms var(--ease-out-strong),
             transform 300ms var(--ease-out-strong);
         }
-        .rcard:hover { border-color: rgba(62,124,91,0.45); transform: translateY(-2px); }
+        .rcard:hover { border-color: color-mix(in srgb, var(--ac) 45%, transparent); transform: translateY(-2px); }
         .rcard__icon {
           display: inline-flex;
           align-items: center;

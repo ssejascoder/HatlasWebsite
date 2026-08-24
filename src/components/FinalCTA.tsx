@@ -93,10 +93,10 @@ export function FinalCTA() {
           letter-spacing: 0.04em;
           color: var(--cream-dim);
           background: var(--glass-bg);
-          -webkit-backdrop-filter: blur(12px) saturate(1.5);
-          backdrop-filter: blur(12px) saturate(1.5);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
-          border-radius: 999px;
+          border-radius: var(--r-pill);
           box-shadow: var(--glass-elev-sm);
         }
         .trust-badge svg { color: var(--gold); flex-shrink: 0; }

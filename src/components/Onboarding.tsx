@@ -67,12 +67,10 @@ export function Onboarding() {
         .onb__step {
           position: relative;
           padding: 28px;
-          background: var(--glass-bg);
-          -webkit-backdrop-filter: blur(18px) saturate(1.7) brightness(1.05);
-          backdrop-filter: url(#lg-refract) blur(18px) saturate(1.7) brightness(1.05);
-          border: 1px solid var(--glass-border);
-          border-radius: var(--r-card);
-          box-shadow: var(--glass-elev-sm);
+          background: var(--surface);
+          border: 1px solid var(--hairline);
+          border-radius: var(--r-xl);
+          box-shadow: var(--e2);
         }
         .onb__num {
           font-family: var(--font-mono);

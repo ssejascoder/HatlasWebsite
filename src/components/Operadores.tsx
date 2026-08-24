@@ -198,8 +198,8 @@ export function Operadores() {
           gap: 18px;
           padding: 28px 24px;
           background: var(--glass-bg);
-          -webkit-backdrop-filter: blur(18px) saturate(1.7) brightness(1.05);
-          backdrop-filter: url(#lg-refract) blur(18px) saturate(1.7) brightness(1.05);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
           border-radius: var(--r-card);
           box-shadow: var(--glass-elev-sm);
@@ -209,9 +209,9 @@ export function Operadores() {
             transform 300ms var(--ease-out-strong);
         }
         .op-card:hover {
-          border-color: rgba(62, 124, 91, 0.45);
+          border-color: color-mix(in srgb, var(--ac) 45%, transparent);
           transform: translateY(-3px);
-          box-shadow: 0 1px 2px rgba(23,22,27,.05), 0 22px 50px var(--glass-shadow), inset 0 1px 0 var(--glass-hi);
+          box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent), 0 22px 50px var(--glass-shadow), inset 0 1px 0 var(--glass-hi);
         }
         .op-card__portrait {
           display: flex;
@@ -220,8 +220,10 @@ export function Operadores() {
           width: 84px;
           height: 84px;
           border-radius: 50%;
-          background: var(--gold-tint-12);
-          border: 1px solid var(--gold-glow);
+          /* Receta .atlas-avatar: relleno SÓLIDO --ac-deep con iniciales
+             blancas (#fff sobre --ac daba 3.66:1 en ámbar). */
+          background: var(--ac-deep);
+          border: none;
           flex-shrink: 0;
         }
         .op-card__monogram {
@@ -230,7 +232,7 @@ export function Operadores() {
           font-weight: 700;
           font-size: 28px;
           letter-spacing: -0.02em;
-          color: var(--gold-deep);
+          color: #fff;
           user-select: none;
         }
         .op-card__quote {

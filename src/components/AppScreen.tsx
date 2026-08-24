@@ -84,8 +84,8 @@ export function AppScreen() {
               <svg viewBox="0 0 560 150" preserveAspectRatio="none" className="ascreen__svg">
                 <defs>
                   <linearGradient id="as-fill" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="0%" stopColor="rgba(62,124,91,0.16)" />
-                    <stop offset="100%" stopColor="rgba(62,124,91,0)" />
+                    <stop offset="0%" stopColor="color-mix(in srgb, var(--ac) 16%, transparent)" />
+                    <stop offset="100%" stopColor="color-mix(in srgb, var(--ac) 0%, transparent)" />
                   </linearGradient>
                 </defs>
                 <path d="M0,120 L80,110 L160,116 L240,84 L320,92 L400,60 L480,50 L560,26 L560,150 L0,150 Z" fill="url(#as-fill)" />
@@ -117,7 +117,7 @@ export function AppScreen() {
           height: 100%;
           font-family: var(--font-sans);
           background:
-            radial-gradient(60% 50% at 82% 0%, rgba(143,188,164,0.14), transparent 70%),
+            radial-gradient(60% 50% at 82% 0%, color-mix(in srgb, var(--ac-light) 14%, transparent), transparent 70%),
             #FCFBF8;
           color: var(--cream);
         }
@@ -126,7 +126,7 @@ export function AppScreen() {
           padding: 12px 16px;
           border-bottom: 1px solid var(--border);
           background: rgba(255,255,255,0.7);
-          -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter);
         }
         .ascreen__dots { display: inline-flex; gap: 6px; }
         .ascreen__dots i { width: 9px; height: 9px; border-radius: 999px; background: var(--border-strong); }
@@ -160,23 +160,23 @@ export function AppScreen() {
         .ascreen__greet > span:first-child { font-size: 15px; color: var(--cream-dim); }
         .ascreen__greet em { font-style: normal; font-weight: 600; color: var(--cream); }
         .ascreen__meta { display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cream-meta); }
-        .ascreen__meta i { width: 6px; height: 6px; border-radius: 999px; background: var(--gold); box-shadow: 0 0 0 3px rgba(62,124,91,0.16); }
+        .ascreen__meta i { width: 6px; height: 6px; border-radius: 999px; background: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ac) 16%, transparent); }
 
         .ascreen__kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
         .ascreen__kpi {
           display: flex; flex-direction: column; gap: 7px;
           padding: 14px; background: #FFFFFF; border: 1px solid var(--border);
-          border-radius: 16px; box-shadow: 0 1px 2px rgba(23,22,27,0.05);
+          border-radius: 16px; box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent);
         }
         .ascreen__kpi-l { font-size: 12px; color: var(--cream-dim); }
         .ascreen__kpi-v { font-family: var(--font-display); font-weight: 700; font-size: 23px; letter-spacing: -0.03em; line-height: 1; color: var(--cream); }
         .ascreen__bs { font-size: 13px; font-weight: 600; color: var(--cream-dim); }
         .ascreen__delta { align-self: flex-start; font-family: var(--font-mono); font-size: 10px; padding: 3px 7px; border-radius: 999px; }
         .ascreen__delta.up { color: var(--gold-deep); background: var(--gold-tint-12); }
-        .ascreen__delta.down { color: var(--danger); background: rgba(155,69,60,0.10); }
+        .ascreen__delta.down { color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, transparent); }
 
         .ascreen__row { flex: 1; display: grid; grid-template-columns: 1.5fr 1fr; gap: 12px; min-height: 0; }
-        .ascreen__panel { background: #FFFFFF; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 1px 2px rgba(23,22,27,0.05); padding: 16px; display: flex; flex-direction: column; min-height: 0; }
+        .ascreen__panel { background: #FFFFFF; border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent); padding: 16px; display: flex; flex-direction: column; min-height: 0; }
         .ascreen__panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
         .ascreen__panel-head > span:first-child { font-size: 13px; font-weight: 600; color: var(--cream); }
         .ascreen__legend { display: inline-flex; gap: 12px; font-family: var(--font-mono); font-size: 10px; color: var(--cream-meta); }
