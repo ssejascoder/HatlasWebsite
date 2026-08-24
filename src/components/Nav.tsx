@@ -258,7 +258,7 @@ export function Nav() {
           background: color-mix(in srgb, var(--ac) 10%, transparent);
           border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: var(--r-sm);
-          color: var(--ac);
+          color: var(--ac-on);
         }
         .pmenu__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
         .pmenu__all {
@@ -277,7 +277,7 @@ export function Nav() {
           text-decoration: none;
           transition: color 160ms var(--ease-out), background 160ms var(--ease-out);
         }
-        .pmenu__all:hover { color: var(--ac); background: color-mix(in srgb, var(--ink) 4%, transparent); }
+        .pmenu__all:hover { color: var(--ac-on); background: color-mix(in srgb, var(--ink) 4%, transparent); }
         .pmenu__name { font-size: 14px; font-weight: 600; color: var(--ink); }
         .pmenu__tag {
           font-size: 12px;
@@ -360,8 +360,8 @@ export function Nav() {
           border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           text-decoration: none;
         }
-        .drawer__sub:hover { color: var(--ac); }
-        .drawer__inner > a:not(.drawer__sub) {
+        .drawer__sub:hover { color: var(--ac-on); }
+        .drawer__inner > a:not(.drawer__sub):not(.btn-gold) {
           padding: 14px 0;
           font-size: 22px;
           color: var(--ink);
@@ -369,7 +369,7 @@ export function Nav() {
           text-decoration: none;
           letter-spacing: -0.01em;
         }
-        .drawer__inner > a:not(.drawer__sub):hover { color: var(--ac); }
+        .drawer__inner > a:not(.drawer__sub):not(.btn-gold):hover { color: var(--ac-on); }
         .drawer__close {
           position: absolute;
           top: 18px; right: 24px;

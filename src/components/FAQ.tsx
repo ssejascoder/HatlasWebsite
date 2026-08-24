@@ -122,7 +122,7 @@ export function FAQ() {
           letter-spacing: -0.005em;
           color: var(--ink);
         }
-        .faq__item:hover .faq__q { color: var(--ac); }
+        .faq__item:hover .faq__q { color: var(--ac-on); }
         .faq__toggle {
           position: relative;
           display: inline-flex;
@@ -142,8 +142,8 @@ export function FAQ() {
         }
         .faq__item.is-open .faq__toggle {
           background: color-mix(in srgb, var(--ac) 10%, transparent);
-          border-color: var(--ac-deep);
-          color: var(--ac);
+          border-color: var(--ac-on);
+          color: var(--ac-on);
         }
         /* transitions-dev · icon-swap (09) on the +/- toggle */
         .faq__ico {

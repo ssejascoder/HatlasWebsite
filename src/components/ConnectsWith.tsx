@@ -50,7 +50,7 @@ export function ConnectsWith() {
           font-size: 14px;
           color: var(--ink2);
         }
-        .cw__item svg { color: var(--ac); flex-shrink: 0; }
+        .cw__item svg { color: var(--ac-on); flex-shrink: 0; }
         @media (max-width: 600px) {
           .cw__inner { flex-direction: column; gap: 16px; }
         }

@@ -164,7 +164,7 @@ export function Operadores() {
         .op-quote__marks {
           font-family: var(--font-ui);
           font-style: italic;
-          color: var(--ac);
+          color: var(--ac-on);
         }
         .op-quote__marks--open { margin-right: 6px; }
         .op-quote__marks--close { margin-left: 4px; }
@@ -248,7 +248,7 @@ export function Operadores() {
         .op-card__marks {
           font-family: var(--font-ui);
           font-style: italic;
-          color: var(--ac);
+          color: var(--ac-on);
           font-size: 18px;
           line-height: 0;
           vertical-align: -0.05em;

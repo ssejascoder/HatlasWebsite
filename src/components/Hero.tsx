@@ -111,7 +111,7 @@ export function Hero() {
           font-family: var(--font-ui);
           font-style: italic;
           font-weight: 500;
-          color: var(--ac);
+          color: var(--ac-on);
         }
         .hero__subhead-swap {
           display: block;
@@ -140,7 +140,7 @@ export function Hero() {
           border-radius: var(--r-pill);
           box-shadow: var(--e1), inset 0 1px 0 var(--glass-hi);
         }
-        .hero__trust svg { color: var(--ac); flex-shrink: 0; }
+        .hero__trust svg { color: var(--ac-on); flex-shrink: 0; }
 
         @media (prefers-reduced-motion: reduce) {
           .hero__subhead-swap { animation: none !important; }

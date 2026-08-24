@@ -131,12 +131,12 @@ export function Footer() {
           outline: none;
           transition: border-color 200ms var(--ease-out);
         }
-        .footer__news input:focus { border-color: var(--ac-deep); }
+        .footer__news input:focus { border-color: var(--ac-on); }
         .footer__news input::placeholder { color: var(--ph); }
         .footer__news button {
           min-height: 44px;
           padding: 12px 18px;
-          color: var(--ac);
+          color: var(--ac-on);
           background: color-mix(in srgb, var(--ac) 10%, transparent);
           border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: 8px;
@@ -165,7 +165,7 @@ export function Footer() {
           font-weight: 500;
           letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: var(--ac);
+          color: var(--ac-on);
         }
         .footer__col ul { margin: 0; padding: 0; list-style: none; }
         .footer__col li { margin-bottom: 10px; }
@@ -194,7 +194,7 @@ export function Footer() {
           font-style: normal;
           font-weight: 600;
           font-size: 13px;
-          color: var(--ac);
+          color: var(--ac-on);
           letter-spacing: -0.01em;
         }
 

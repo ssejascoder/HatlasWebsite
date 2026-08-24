@@ -72,7 +72,7 @@ export function FinalCTA() {
         .final-cta__inner .lede { margin: 0 auto 36px; }
         .final-cta__btn { padding: 14px 28px; font-size: 15px; }
         .final-cta__alt { margin: 16px 0 0; font-size: 13px; color: var(--ink2); }
-        .final-cta__alt a { color: var(--ac); text-decoration: none; }
+        .final-cta__alt a { color: var(--ac-on); text-decoration: none; }
         .final-cta__alt a:hover { text-decoration: underline; }
         .trust-badges {
           list-style: none;
@@ -99,7 +99,7 @@ export function FinalCTA() {
           border-radius: var(--r-pill);
           box-shadow: var(--e1), inset 0 1px 0 var(--glass-hi);
         }
-        .trust-badge svg { color: var(--ac); flex-shrink: 0; }
+        .trust-badge svg { color: var(--ac-on); flex-shrink: 0; }
       `}</style>
     </section>
   )

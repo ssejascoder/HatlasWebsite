@@ -131,7 +131,7 @@ export function AppScreen() {
         .ascreen__dots { display: inline-flex; gap: 6px; }
         .ascreen__dots i { width: 9px; height: 9px; border-radius: 999px; background: color-mix(in srgb, var(--ink) 16%, transparent); }
         .ascreen__tabs { display: inline-flex; gap: 18px; font-size: 12.5px; color: var(--ink2); }
-        .ascreen__tabs .is-active { color: var(--ac-deep); font-weight: 600; }
+        .ascreen__tabs .is-active { color: var(--ac-on); font-weight: 600; }
         .ascreen__search {
           margin-left: auto; display: inline-flex; align-items: center; gap: 6px;
           font-size: 12px; color: var(--ink3);
@@ -154,7 +154,7 @@ export function AppScreen() {
           display: inline-flex; align-items: center; justify-content: center;
           width: 38px; height: 38px; border-radius: 11px; color: var(--ink3);
         }
-        .ascreen__nav.is-on { color: var(--ac); background: color-mix(in srgb, var(--ac) 10%, transparent); border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent); }
+        .ascreen__nav.is-on { color: var(--ac-on); background: color-mix(in srgb, var(--ac) 10%, transparent); border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent); }
         .ascreen__main { flex: 1; min-width: 0; padding: 20px 22px; display: flex; flex-direction: column; gap: 16px; overflow: hidden; }
         .ascreen__greet { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
         .ascreen__greet > span:first-child { font-size: 15px; color: var(--ink2); }
@@ -191,7 +191,7 @@ export function AppScreen() {
         .ascreen__mv-doc { color: var(--ink); font-weight: 500; }
         .ascreen__mv-who { grid-column: 1; font-size: 11px; color: var(--ink3); }
         .ascreen__mv-amt { grid-column: 2; grid-row: 1 / span 2; align-self: center; font-family: var(--font-display); color: var(--ink); }
-        .ascreen__mv-amt.in { color: var(--ac-deep); }
+        .ascreen__mv-amt.in { color: var(--ac-on); }
 
         @media (max-width: 900px) {
           .ascreen__rail { display: none; }

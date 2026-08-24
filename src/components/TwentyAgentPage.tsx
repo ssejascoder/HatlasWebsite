@@ -184,7 +184,7 @@ export function TwentyAgentPage() {
           text-wrap: balance;
           color: var(--ink);
         }
-        .ta-hero__h1 em { font-style: normal; font-weight: 700; color: var(--ac); }
+        .ta-hero__h1 em { font-style: normal; font-weight: 700; color: var(--ac-on); }
         .ta-hero__sub {
           margin: 0 0 32px; max-width: 50ch;
           font-size: 18px; line-height: 1.55; color: var(--ink2);
@@ -224,7 +224,7 @@ export function TwentyAgentPage() {
         .ta-alert__icon {
           display: inline-flex; align-items: center; justify-content: center;
           width: 34px; height: 34px; flex-shrink: 0;
-          color: var(--ac);
+          color: var(--ac-on);
           background: color-mix(in srgb, var(--ac) 10%, transparent);
           border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: 9px;
@@ -262,19 +262,19 @@ export function TwentyAgentPage() {
         .ta-mod__icon {
           display: inline-flex; align-items: center; justify-content: center;
           width: 38px; height: 38px;
-          color: var(--ac);
+          color: var(--ac-on);
           background: color-mix(in srgb, var(--ac) 10%, transparent);
           border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: 9px;
           transition: border-color 300ms var(--ease-out), background 300ms var(--ease-out);
         }
-        .ta-mod:hover .ta-mod__icon { border-color: var(--ac-deep); background: color-mix(in srgb, var(--ac) 10%, transparent); }
+        .ta-mod:hover .ta-mod__icon { border-color: var(--ac-on); background: color-mix(in srgb, var(--ac) 10%, transparent); }
         .ta-mod__name {
           display: flex; align-items: center; justify-content: space-between;
           font-family: var(--font-display); font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink);
         }
         .ta-mod__arrow { color: var(--ink3); transition: transform 300ms var(--ease-out), color 300ms var(--ease-out); }
-        .ta-mod:hover .ta-mod__arrow { transform: translateX(4px); color: var(--ac); }
+        .ta-mod:hover .ta-mod__arrow { transform: translateX(4px); color: var(--ac-on); }
         .ta-mod__text { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink2); }
 
         @media (max-width: 980px) {

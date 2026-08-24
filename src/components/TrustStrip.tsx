@@ -57,7 +57,7 @@ export function TrustStrip() {
           font-style: normal;
           font-weight: 700;
           font-size: clamp(24px, 2.8vw, 36px);
-          color: var(--ac);
+          color: var(--ac-on);
           letter-spacing: -0.03em;
           line-height: 1;
         }

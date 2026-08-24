@@ -220,7 +220,7 @@ export function Analista() {
         .chat__steps li em {
           font-family: var(--font-ui);
           font-style: italic;
-          color: var(--ac);
+          color: var(--ac-on);
           font-weight: 600;
         }
         .chat__step-tag {
@@ -228,7 +228,7 @@ export function Analista() {
           font-size: 9px;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: var(--ac);
+          color: var(--ac-on);
           padding-top: 2px;
         }
 
@@ -249,7 +249,7 @@ export function Analista() {
           font-size: 10px;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: var(--ac);
+          color: var(--ac-on);
         }
         .chat__actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
         .chat__btn {
@@ -309,7 +309,7 @@ export function Analista() {
           justify-content: center;
           width: 40px;
           height: 40px;
-          color: var(--ac);
+          color: var(--ac-on);
           background: color-mix(in srgb, var(--ac) 10%, transparent);
           border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: var(--r-sm);
@@ -328,7 +328,7 @@ export function Analista() {
         .insight-card__title em {
           font-family: var(--font-ui);
           font-style: normal;
-          color: var(--ac);
+          color: var(--ac-on);
           font-weight: 600;
         }
         .insight-card__detail {
@@ -356,7 +356,7 @@ export function Analista() {
           font-size: clamp(24px, 3vw, 40px);
           margin: 72px auto 24px;
         }
-        .analista__cierre em { color: var(--ac); }
+        .analista__cierre em { color: var(--ac-on); }
         .analista__cta { text-align: center; }
 
         @media (max-width: 900px) {

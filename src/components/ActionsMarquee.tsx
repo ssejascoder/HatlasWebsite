@@ -79,7 +79,7 @@ export function ActionsMarquee() {
           font-size: 11px;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: var(--ac);
+          color: var(--ac-on);
         }
         .actions__track-wrap {
           flex: 1;
@@ -113,7 +113,7 @@ export function ActionsMarquee() {
           padding-right: 28px;
         }
         .actions__mark {
-          color: var(--ac);
+          color: var(--ac-on);
           font-size: 11px;
           line-height: 1;
         }
@@ -126,7 +126,7 @@ export function ActionsMarquee() {
           letter-spacing: -0.01em;
         }
         .actions__item:nth-child(odd) .actions__text { color: var(--ink); }
-        .actions__item:nth-child(even) .actions__text { color: var(--ac); }
+        .actions__item:nth-child(even) .actions__text { color: var(--ac-on); }
 
         @keyframes actions-scroll {
           0%   { transform: translateX(0); }

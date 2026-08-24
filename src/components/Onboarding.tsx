@@ -76,7 +76,7 @@ export function Onboarding() {
           font-family: var(--font-display);
           font-size: 12px;
           letter-spacing: 0.2em;
-          color: var(--ac);
+          color: var(--ac-on);
         }
         .onb__step-title {
           margin: 14px 0 8px;

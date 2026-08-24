@@ -219,7 +219,7 @@ export function Pricing() {
           left: 4px;
           width: calc(50% - 4px);
           height: calc(100% - 8px);
-          background: var(--ac);
+          background: var(--ac-deep);
           border-radius: var(--r-pill);
           transform: translateX(0);
           transition: transform 280ms var(--ease-out);
@@ -258,7 +258,7 @@ export function Pricing() {
           padding: 2px 8px;
           border-radius: var(--r-pill);
           background: color-mix(in srgb, var(--ac) 10%, transparent);
-          color: var(--ac-deep);
+          color: var(--ac-on);
         }
         .toggle__btn--active .toggle__save { background: rgba(255, 255, 255, 0.24); color: #fff; }
 
@@ -348,7 +348,7 @@ export function Pricing() {
           font-weight: 600;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          background: var(--ac);
+          background: var(--ac-deep);
           color: #fff;
           border-radius: var(--r-pill);
           box-shadow: 0 8px 20px color-mix(in srgb, var(--ac) 40%, transparent), inset 0 1px 0 rgba(255,255,255,0.3);
@@ -423,11 +423,13 @@ export function Pricing() {
         .tier-cta:active { transform: scale(0.97); }
         .tier-cta--light {
           background: transparent;
-          color: var(--ac-deep);
+          color: var(--ac-on);
           border: 1px solid color-mix(in srgb, var(--ac) 42%, transparent);
         }
-        .tier-cta--light:hover { background: color-mix(in srgb, var(--ac) 10%, transparent); border-color: var(--ac); }
+        .tier-cta--light:hover { background: color-mix(in srgb, var(--ac) 10%, transparent); border-color: var(--ac-on); }
         .tier-cta--dark {
+          /* Fondo BLANCO fijo en los dos temas (va sobre el relleno de acento),
+             así que acá el tono correcto es --ac-deep, no --ac-on. */
           background: #FFFFFF;
           color: var(--ac-deep);
           border: 1px solid rgba(255, 255, 255, 0.6);
@@ -449,7 +451,7 @@ export function Pricing() {
           align-items: center;
           min-height: 44px;
           padding: 6px 8px;
-          color: var(--ac);
+          color: var(--ac-on);
           text-decoration: none;
           font-weight: 500;
           transition: color 200ms var(--ease-out);

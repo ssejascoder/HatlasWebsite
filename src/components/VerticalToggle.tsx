@@ -165,7 +165,7 @@ export function VerticalToggle() {
         /* Active pill: just the text color now — the gold ring/tint rides on
            the sliding .vtoggle__pill-bg underneath. */
         .vtoggle__pill.is-active {
-          color: var(--ac-deep);
+          color: var(--ac-on);
           font-weight: 600;
         }
 

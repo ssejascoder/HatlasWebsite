@@ -136,7 +136,7 @@ export function PhoneMockup() {
           width: 28px; height: 28px; border-radius: 50%;
           display: inline-flex; align-items: center; justify-content: center;
           background: color-mix(in srgb, var(--ac) 10%, transparent); border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
-          font-family: var(--font-display); font-size: 11px; font-weight: 600; color: var(--ac-deep);
+          font-family: var(--font-display); font-size: 11px; font-weight: 600; color: var(--ac-on);
         }
         .phone__greet { font-size: 14px; color: var(--ink2); }
         .phone__greet em { font-style: normal; font-weight: 600; color: var(--ink); }
@@ -174,13 +174,13 @@ export function PhoneMockup() {
           display: inline-flex; align-items: center; justify-content: center;
           width: 30px; height: 30px; flex-shrink: 0;
           background: color-mix(in srgb, var(--ac) 10%, transparent); border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
-          border-radius: 9px; color: var(--ac); align-self: flex-start;
+          border-radius: 9px; color: var(--ac-on); align-self: flex-start;
         }
         .phone__agent-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-        .phone__agent-l { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ac); }
+        .phone__agent-l { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ac-on); }
         .phone__agent-t { font-size: 12.5px; line-height: 1.4; color: var(--ink); }
-        .phone__agent-t em { font-family: var(--font-ui); font-style: italic; font-weight: 600; color: var(--ac); }
-        .phone__agent-cta { display: inline-flex; align-items: center; gap: 4px; margin-top: 2px; font-family: var(--font-display); font-size: 10px; letter-spacing: 0.06em; color: var(--ac-deep); }
+        .phone__agent-t em { font-family: var(--font-ui); font-style: italic; font-weight: 600; color: var(--ac-on); }
+        .phone__agent-cta { display: inline-flex; align-items: center; gap: 4px; margin-top: 2px; font-family: var(--font-display); font-size: 10px; letter-spacing: 0.06em; color: var(--ac-on); }
 
         .phone__tabs {
           margin-top: auto;
@@ -189,7 +189,7 @@ export function PhoneMockup() {
           border-top: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           color: var(--ink3);
         }
-        .phone__tabs .is-on { color: var(--ac); }
+        .phone__tabs .is-on { color: var(--ac-on); }
 
         @media (prefers-reduced-motion: reduce) {
           .phone { opacity: 1 !important; transform: none !important; }

@@ -244,7 +244,7 @@ export function Sistema() {
           background: color-mix(in srgb, var(--ac) 10%, transparent);
           border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: var(--r-sm);
-          color: var(--ac);
+          color: var(--ac-on);
         }
         .module-card { text-decoration: none; color: inherit; }
         .module-card h3 {
@@ -269,7 +269,7 @@ export function Sistema() {
             transform 300ms var(--ease-out),
             color 300ms var(--ease-out);
         }
-        .module-card:hover .module-card__arrow { opacity: 1; transform: translate(0, 0); color: var(--ac); }
+        .module-card:hover .module-card__arrow { opacity: 1; transform: translate(0, 0); color: var(--ac-on); }
         .module-card p {
           margin: 0;
           font-size: 13px;

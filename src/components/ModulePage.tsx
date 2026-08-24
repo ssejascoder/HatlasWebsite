@@ -329,7 +329,7 @@ export function ModulePage() {
           margin-bottom: 20px;
           transition: color 200ms var(--ease-out);
         }
-        .mback:hover { color: var(--ac); }
+        .mback:hover { color: var(--ac-on); }
         .mhero__h1 {
           font-family: var(--font-display);
           font-weight: 600;
@@ -344,7 +344,7 @@ export function ModulePage() {
         .mhero__h1 em {
           font-style: normal;
           font-weight: 700;
-          color: var(--ac);
+          color: var(--ac-on);
         }
         .mhero__sub {
           margin: 0 0 32px;
@@ -362,7 +362,7 @@ export function ModulePage() {
           font-size: 13px;
           color: var(--ink2);
         }
-        .mhero__channels svg { color: var(--ac); flex-shrink: 0; }
+        .mhero__channels svg { color: var(--ac-on); flex-shrink: 0; }
         .mhero__demo { justify-self: end; width: 100%; max-width: 460px; }
 
         /* ---------- Screen frame (reused) ---------- */
@@ -464,12 +464,12 @@ export function ModulePage() {
           background: color-mix(in srgb, var(--ac) 10%, transparent);
           border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: 9px;
-          color: var(--ac);
+          color: var(--ac-on);
           transition: border-color 300ms var(--ease-out),
             background 300ms var(--ease-out);
         }
         .fcard:hover .fcard__icon {
-          border-color: var(--ac-deep);
+          border-color: var(--ac-on);
           background: color-mix(in srgb, var(--ac) 10%, transparent);
         }
         .fcard__body { display: flex; flex-direction: column; gap: 8px; }
@@ -543,7 +543,7 @@ export function ModulePage() {
           font-size: 10px;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: var(--ac);
+          color: var(--ac-on);
           margin-bottom: 8px;
         }
         .magent__text {
@@ -603,7 +603,7 @@ export function ModulePage() {
           background: color-mix(in srgb, var(--ac) 10%, transparent);
           border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: 9px;
-          color: var(--ac);
+          color: var(--ac-on);
         }
         .rcard__text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
         .rcard__name { font-size: 15px; font-weight: 500; color: var(--ink); }
@@ -620,7 +620,7 @@ export function ModulePage() {
           color: var(--ink3);
           transition: transform 300ms var(--ease-out), color 300ms var(--ease-out);
         }
-        .rcard:hover .rcard__arrow { transform: translateX(4px); color: var(--ac); }
+        .rcard:hover .rcard__arrow { transform: translateX(4px); color: var(--ac-on); }
 
         /* ---------- Mini FAQ ---------- */
         .mfaq__inner { max-width: 820px; }
@@ -645,7 +645,7 @@ export function ModulePage() {
           font-size: 17px;
           color: var(--ink);
         }
-        .mfaq__item:hover .mfaq__q { color: var(--ac); }
+        .mfaq__item:hover .mfaq__q { color: var(--ac-on); }
         .mfaq__toggle {
           position: relative;
           display: inline-flex;
@@ -663,8 +663,8 @@ export function ModulePage() {
         }
         .mfaq__item.is-open .mfaq__toggle {
           background: color-mix(in srgb, var(--ac) 10%, transparent);
-          border-color: var(--ac-deep);
-          color: var(--ac);
+          border-color: var(--ac-on);
+          color: var(--ac-on);
         }
         /* transitions-dev · icon-swap (09) on the +/- toggle */
         .mfaq__ico {

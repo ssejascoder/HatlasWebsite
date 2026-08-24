@@ -411,10 +411,11 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           color: var(--ink3);
         }
         .hm__total-v { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 30px; color: var(--ink); }
-        .hm__total-v em { color: var(--ac); font-weight: 500; }
+        .hm__total-v em { color: var(--ac-on); font-weight: 500; }
         .hm__status {
           display: inline-flex; align-items: center; gap: 8px;
           font-size: 12px; color: var(--ok);
+          padding: 3px 9px; border-radius: 999px; background: var(--surface);
         }
         .hm__check {
           display: inline-flex; align-items: center; justify-content: center;
@@ -460,27 +461,18 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           border-radius: 999px;
           color: var(--ink2);
+          background: var(--surface);
         }
         .hm__chip--ok { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 30%, transparent); }
-        .hm__chip--gold { color: var(--ac); border-color: color-mix(in srgb, var(--ac) 40%, transparent); }
+        .hm__chip--gold { color: var(--ac-on); border-color: color-mix(in srgb, var(--ac) 40%, transparent); }
         /* transitions-dev · shimmer-text (15) — "en camino" = in transit */
         .hm__chip--shimmer {
-          background-image: linear-gradient(
-            100deg,
-            var(--ok) 0%, var(--ok) 42%,
-            color-mix(in srgb, var(--ac-light) 45%, #fff) 50%,
-            var(--ok) 58%, var(--ok) 100%
-          );
-          background-size: 300% 100%;
-          -webkit-background-clip: text;
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-          color: transparent;
+          color: var(--ok);
           animation: hm-shimmer 2.6s linear infinite;
         }
         @keyframes hm-shimmer {
-          from { background-position: 200% 0; }
-          to { background-position: -100% 0; }
+          0%, 100% { opacity: 1; }
+          50% { opacity: .62; }
         }
 
         /* transitions-dev · number-pop-in (02) inside the mock — delayed so it
@@ -493,7 +485,6 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
         @media (prefers-reduced-motion: reduce) {
           .hm__chip--shimmer {
             animation: none;
-            -webkit-text-fill-color: var(--ok);
             color: var(--ok);
           }
         }
@@ -522,6 +513,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           font-family: var(--font-display);
           font-size: 9px; padding: 2px 8px; border-radius: 999px;
           border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent); color: var(--ink2);
+          background: var(--surface);
         }
         .hm__pill--ok { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 30%, transparent); }
         .hm__pill--low { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 35%, transparent); }
@@ -533,7 +525,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           font-size: 15px; color: var(--ink);
           padding: 4px 0;
         }
-        .hm__route-arrow { color: var(--ac); font-family: var(--font-display); }
+        .hm__route-arrow { color: var(--ac-on); font-family: var(--font-display); }
         .hm__route-node--to { color: var(--ink); }
         .hm__movs { display: flex; flex-direction: column; gap: 8px; margin-top: 2px; }
         .hm__mov {
@@ -548,11 +540,13 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
 
         /* Finanzas */
         .hm__big { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 38px; line-height: 1; color: var(--ink); }
-        .hm__big em { color: var(--ac); }
+        .hm__big em { color: var(--ac-on); }
         .hm__delta {
           font-family: var(--font-display); font-size: 10px; letter-spacing: 0.1em;
           text-transform: uppercase; color: var(--ok);
           margin-top: -4px;
+          padding: 2px 7px; border-radius: 999px; align-self: flex-start;
+          background: var(--surface);
         }
         .hm__chart { width: 100%; flex: 1; min-height: 80px; }
 
@@ -570,7 +564,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           border-radius: 999px;
           background: color-mix(in srgb, var(--ac) 12%, transparent);
           border: 1px solid color-mix(in srgb, var(--ac) 30%, transparent);
-          color: var(--ac);
+          color: var(--ac-on);
           font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 13px;
         }
         .hm__avatar--sm { width: 26px; height: 26px; font-size: 11px; }
@@ -603,7 +597,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
         }
         .hm__avatars { display: flex; }
         .hm__avatars .hm__avatar { margin-right: -8px; box-shadow: 0 0 0 2px #FFFFFF; }
-        .hm__team-note { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ok); }
+        .hm__team-note { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ok); padding: 3px 9px; border-radius: 999px; background: var(--surface); }
       `}</style>
     </div>
   )

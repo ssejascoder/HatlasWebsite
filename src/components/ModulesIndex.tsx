@@ -138,7 +138,7 @@ export function ModulesIndex() {
           background: color-mix(in srgb, var(--ac) 10%, transparent);
           border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: 11px;
-          color: var(--ac);
+          color: var(--ac-on);
           transition: border-color 300ms var(--ease-out), background 300ms var(--ease-out);
         }
         .micard:hover .micard__icon { border-color: color-mix(in srgb, var(--ac) 50%, transparent); background: color-mix(in srgb, var(--ac) 18%, transparent); }
@@ -165,7 +165,7 @@ export function ModulesIndex() {
           transition: color 300ms var(--ease-out);
         }
         .micard__cta svg { transition: transform 300ms var(--ease-out); }
-        .micard:hover .micard__cta { color: var(--ac); }
+        .micard:hover .micard__cta { color: var(--ac-on); }
         .micard:hover .micard__cta svg { transform: translateX(4px); }
 
         @media (max-width: 900px) {
