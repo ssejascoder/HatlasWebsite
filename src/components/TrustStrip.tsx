@@ -30,11 +30,11 @@ export function TrustStrip() {
         .trust-strip {
           position: relative;
           z-index: 10;
-          background: var(--glass-bg-tint);
+          background: color-mix(in srgb, var(--bg) 55%, transparent);
           backdrop-filter: var(--glass-filter);
           -webkit-backdrop-filter: var(--glass-filter);
-          border-top: 1px solid var(--border);
-          border-bottom: 1px solid var(--border);
+          border-top: 1px solid var(--hairline);
+          border-bottom: 1px solid var(--hairline);
           padding: 34px 0;
         }
         .strip {
@@ -49,7 +49,7 @@ export function TrustStrip() {
           gap: 6px;
           padding: 0 24px;
           text-align: center;
-          border-right: 1px solid var(--border-soft);
+          border-right: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
         }
         .chip:last-child { border-right: none; }
         .chip__value {
@@ -57,16 +57,16 @@ export function TrustStrip() {
           font-style: normal;
           font-weight: 700;
           font-size: clamp(24px, 2.8vw, 36px);
-          color: var(--gold);
+          color: var(--ac);
           letter-spacing: -0.03em;
           line-height: 1;
         }
         .chip__label {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 11px;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
         }
         @media (max-width: 780px) {
           .strip { grid-template-columns: repeat(2, 1fr); gap: 24px 0; }

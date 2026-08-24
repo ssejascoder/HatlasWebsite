@@ -30,25 +30,25 @@ export function WhatsAppFab() {
           align-items: center;
           gap: 9px;
           padding: 13px 18px;
-          color: var(--gold-text);
-          background: var(--grad-gold);
+          color: #fff;
+          background: linear-gradient(135deg, var(--ac), var(--ac-deep));
           border-radius: var(--r-pill);
           text-decoration: none;
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-size: 14px;
           font-weight: 600;
           letter-spacing: 0.01em;
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.35),
-            0 12px 30px -6px color-mix(in srgb, var(--gold) 45%, transparent);
-          animation: wa-in 500ms var(--ease-out-strong) 700ms both;
-          transition: transform 200ms var(--ease-out-strong), box-shadow 200ms var(--ease-out-strong);
+            0 12px 30px -6px color-mix(in srgb, var(--ac) 45%, transparent);
+          animation: wa-in 500ms var(--ease-out) 700ms both;
+          transition: transform 200ms var(--ease-out), box-shadow 200ms var(--ease-out);
         }
         .wa-fab:hover {
           transform: translateY(-2px);
           box-shadow:
             inset 0 1px 0 rgba(255, 255, 255, 0.35),
-            0 16px 38px -6px color-mix(in srgb, var(--gold) 55%, transparent);
+            0 16px 38px -6px color-mix(in srgb, var(--ac) 55%, transparent);
         }
         .wa-fab:active { transform: scale(0.97); }
         .wa-fab svg { flex-shrink: 0; }

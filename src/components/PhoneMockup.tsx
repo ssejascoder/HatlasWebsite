@@ -113,83 +113,83 @@ export function PhoneMockup() {
           display: flex;
           flex-direction: column;
           gap: 11px;
-          font-family: var(--font-sans);
-          color: var(--cream);
+          font-family: var(--font-ui);
+          color: var(--ink);
         }
         .phone__status {
           position: absolute; top: 15px; left: 0; right: 0;
           display: flex; align-items: center; justify-content: space-between;
           padding: 0 22px;
-          font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--cream);
+          font-family: var(--font-display); font-size: 11px; font-weight: 600; color: var(--ink);
         }
         .phone__status-r { display: inline-flex; align-items: center; gap: 4px; }
-        .phone__status-r i { width: 5px; height: 9px; border-radius: 1px; background: var(--cream); display: inline-block; }
+        .phone__status-r i { width: 5px; height: 9px; border-radius: 1px; background: var(--ink); display: inline-block; }
         .phone__status-r i.bat { width: 16px; }
 
         .phone__head { display: flex; align-items: center; justify-content: space-between; }
         .phone__live {
           display: inline-flex; align-items: center; gap: 6px;
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; color: var(--cream-meta);
+          font-family: var(--font-display); font-size: 9px; letter-spacing: 0.12em; color: var(--ink3);
         }
-        .phone__live > span { width: 6px; height: 6px; border-radius: 999px; background: var(--gold); box-shadow: 0 0 0 3px rgba(62,124,91,0.16); }
+        .phone__live > span { width: 6px; height: 6px; border-radius: 999px; background: var(--ac); box-shadow: 0 0 0 3px rgba(62,124,91,0.16); }
         .phone__av {
           width: 28px; height: 28px; border-radius: 50%;
           display: inline-flex; align-items: center; justify-content: center;
-          background: var(--gold-tint-12); border: 1px solid var(--gold-glow);
-          font-family: var(--font-mono); font-size: 11px; font-weight: 600; color: var(--gold-deep);
+          background: color-mix(in srgb, var(--ac) 10%, transparent); border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
+          font-family: var(--font-display); font-size: 11px; font-weight: 600; color: var(--ac-deep);
         }
-        .phone__greet { font-size: 14px; color: var(--cream-dim); }
-        .phone__greet em { font-style: normal; font-weight: 600; color: var(--cream); }
+        .phone__greet { font-size: 14px; color: var(--ink2); }
+        .phone__greet em { font-style: normal; font-weight: 600; color: var(--ink); }
 
         .phone__hero-kpi {
           display: flex; flex-direction: column; gap: 6px;
-          padding: 14px; background: var(--surface); border: 1px solid var(--border);
-          border-radius: 16px; box-shadow: 0 1px 2px rgba(23,22,27,0.05);
+          padding: 14px; background: var(--surface); border: 1px solid var(--hairline);
+          border-radius: 16px; box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent);
         }
-        .phone__k-l { font-size: 12px; color: var(--cream-dim); }
-        .phone__k-v { font-family: var(--font-display); font-weight: 700; font-size: 30px; letter-spacing: -0.03em; line-height: 1; color: var(--cream); }
-        .phone__k-v .bs, .phone__k-v2 .bs { font-family: var(--font-sans); font-size: 14px; font-weight: 600; color: var(--cream-dim); margin-right: 3px; }
-        .phone__k-v2 { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -0.03em; line-height: 1; color: var(--cream); }
-        .phone__delta { align-self: flex-start; font-family: var(--font-mono); font-size: 9.5px; padding: 2px 7px; border-radius: 999px; }
+        .phone__k-l { font-size: 12px; color: var(--ink2); }
+        .phone__k-v { font-family: var(--font-display); font-weight: 700; font-size: 30px; letter-spacing: -0.03em; line-height: 1; color: var(--ink); }
+        .phone__k-v .bs, .phone__k-v2 .bs { font-family: var(--font-ui); font-size: 14px; font-weight: 600; color: var(--ink2); margin-right: 3px; }
+        .phone__k-v2 { font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -0.03em; line-height: 1; color: var(--ink); }
+        .phone__delta { align-self: flex-start; font-family: var(--font-display); font-size: 9.5px; padding: 2px 7px; border-radius: 999px; }
         .phone__delta.up { color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, transparent); }
         .phone__delta.down { color: var(--danger); background: color-mix(in srgb, var(--danger) 10%, transparent); }
 
         .phone__kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
         .phone__kpi {
           display: flex; flex-direction: column; gap: 6px;
-          padding: 12px; background: var(--surface); border: 1px solid var(--border);
-          border-radius: 14px; box-shadow: 0 1px 2px rgba(23,22,27,0.05);
+          padding: 12px; background: var(--surface); border: 1px solid var(--hairline);
+          border-radius: 14px; box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent);
         }
 
         .phone__agent {
           display: flex; gap: 10px;
           padding: 12px 13px;
           background:
-            radial-gradient(120% 140% at 0% 0%, rgba(62,124,91,0.12), transparent 60%),
-            #FFFFFF;
-          border: 1px solid rgba(62,124,91,0.30);
+            radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--ac) 12%, transparent), transparent 60%),
+            var(--surface);
+          border: 1px solid color-mix(in srgb, var(--ac) 30%, transparent);
           border-radius: 16px;
         }
         .phone__agent-ic {
           display: inline-flex; align-items: center; justify-content: center;
           width: 30px; height: 30px; flex-shrink: 0;
-          background: var(--gold-tint-12); border: 1px solid var(--gold-glow);
-          border-radius: 9px; color: var(--gold); align-self: flex-start;
+          background: color-mix(in srgb, var(--ac) 10%, transparent); border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
+          border-radius: 9px; color: var(--ac); align-self: flex-start;
         }
         .phone__agent-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-        .phone__agent-l { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
-        .phone__agent-t { font-size: 12.5px; line-height: 1.4; color: var(--cream); }
-        .phone__agent-t em { font-family: var(--font-sans); font-style: italic; font-weight: 600; color: var(--gold); }
-        .phone__agent-cta { display: inline-flex; align-items: center; gap: 4px; margin-top: 2px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; color: var(--gold-deep); }
+        .phone__agent-l { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ac); }
+        .phone__agent-t { font-size: 12.5px; line-height: 1.4; color: var(--ink); }
+        .phone__agent-t em { font-family: var(--font-ui); font-style: italic; font-weight: 600; color: var(--ac); }
+        .phone__agent-cta { display: inline-flex; align-items: center; gap: 4px; margin-top: 2px; font-family: var(--font-display); font-size: 10px; letter-spacing: 0.06em; color: var(--ac-deep); }
 
         .phone__tabs {
           margin-top: auto;
           display: flex; align-items: center; justify-content: space-around;
           padding: 12px 6px 6px;
-          border-top: 1px solid var(--border-soft);
-          color: var(--cream-meta);
+          border-top: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
+          color: var(--ink3);
         }
-        .phone__tabs .is-on { color: var(--gold); }
+        .phone__tabs .is-on { color: var(--ac); }
 
         @media (prefers-reduced-motion: reduce) {
           .phone { opacity: 1 !important; transform: none !important; }

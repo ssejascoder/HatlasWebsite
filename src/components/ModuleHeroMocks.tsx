@@ -322,60 +322,60 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           gap: 14px;
           height: 100%;
           padding: 18px;
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
         }
         .hm__top { display: flex; align-items: center; justify-content: space-between; }
         .hm__eyebrow {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 9px;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
         }
         .hm__live, .hm__period {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 9px;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
         }
         .hm__period {
           padding: 3px 8px;
-          border: 1px solid var(--border-soft);
+          border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           border-radius: 999px;
         }
         .hm__live span {
           width: 6px; height: 6px; border-radius: 999px;
-          background: var(--success);
+          background: var(--ok);
           box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 14%, transparent);
         }
         .hm__dot {
           display: inline-block;
           width: 6px; height: 6px; border-radius: 999px;
-          background: var(--gold);
+          background: var(--ac);
           margin-right: 9px;
           vertical-align: middle;
         }
-        .hm__dot--muted { background: var(--cream-faint); }
+        .hm__dot--muted { background: var(--ph); }
 
         /* KPI strip */
         .hm__kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
         .hm__kpi {
           padding: 11px 12px;
-          border: 1px solid var(--border-soft);
+          border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           border-radius: 11px;
           background: color-mix(in srgb, var(--ac) 6%, transparent);
         }
-        .hm__kpi--gold { border-color: color-mix(in srgb, var(--ac) 40%, transparent); background: var(--gold-tint-12); }
+        .hm__kpi--gold { border-color: color-mix(in srgb, var(--ac) 40%, transparent); background: color-mix(in srgb, var(--ac) 10%, transparent); }
         .hm__kpi-l {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 8px;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
           margin-bottom: 5px;
         }
         .hm__kpi-v {
@@ -385,9 +385,9 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           letter-spacing: -0.03em;
           font-size: 22px;
           line-height: 1;
-          color: var(--cream);
+          color: var(--ink);
         }
-        .hm__kpi--gold .hm__kpi-v { color: var(--gold-bright); }
+        .hm__kpi--gold .hm__kpi-v { color: var(--ac-hover); }
 
         /* POS ticket */
         .hm__ticket { display: flex; flex-direction: column; gap: 2px; }
@@ -395,26 +395,26 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           display: flex; align-items: center; justify-content: space-between;
           gap: 12px;
           padding: 9px 0;
-          border-bottom: 1px solid var(--border-soft);
+          border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           font-size: 13px;
-          color: var(--cream-dim);
+          color: var(--ink2);
         }
         .hm__line-name { display: inline-flex; align-items: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .hm__line-amt { flex-shrink: 0; font-family: var(--font-mono); color: var(--cream); }
+        .hm__line-amt { flex-shrink: 0; font-family: var(--font-display); color: var(--ink); }
         .hm__total {
           display: flex; align-items: baseline; justify-content: space-between;
           margin-top: 2px;
         }
         .hm__total-l {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
         }
-        .hm__total-v { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 30px; color: var(--cream); }
-        .hm__total-v em { color: var(--gold); font-weight: 500; }
+        .hm__total-v { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 30px; color: var(--ink); }
+        .hm__total-v em { color: var(--ac); font-weight: 500; }
         .hm__status {
           display: inline-flex; align-items: center; gap: 8px;
-          font-size: 12px; color: var(--success);
+          font-size: 12px; color: var(--ok);
         }
         .hm__check {
           display: inline-flex; align-items: center; justify-content: center;
@@ -432,13 +432,13 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           width: 18px; height: 18px;
           border-radius: 999px;
           background: color-mix(in srgb, var(--ok) 16%, transparent);
-          color: var(--success);
+          color: var(--ok);
           animation: hm-sc-pop 460ms cubic-bezier(0.34, 1.35, 0.64, 1) 240ms both;
         }
         .hm__sc path {
           stroke-dasharray: 20;
           stroke-dashoffset: 20;
-          animation: hm-sc-draw 520ms var(--ease-out-strong) 340ms both;
+          animation: hm-sc-draw 520ms var(--ease-out) 340ms both;
         }
         @keyframes hm-sc-pop {
           0% { transform: scale(0.3); opacity: 0; }
@@ -454,22 +454,22 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
         /* chips */
         .hm__chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
         .hm__chip {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 10px;
           padding: 4px 9px;
-          border: 1px solid var(--border-soft);
+          border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           border-radius: 999px;
-          color: var(--cream-dim);
+          color: var(--ink2);
         }
-        .hm__chip--ok { color: var(--success); border-color: color-mix(in srgb, var(--ok) 30%, transparent); }
-        .hm__chip--gold { color: var(--gold); border-color: color-mix(in srgb, var(--ac) 40%, transparent); }
+        .hm__chip--ok { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 30%, transparent); }
+        .hm__chip--gold { color: var(--ac); border-color: color-mix(in srgb, var(--ac) 40%, transparent); }
         /* transitions-dev · shimmer-text (15) — "en camino" = in transit */
         .hm__chip--shimmer {
           background-image: linear-gradient(
             100deg,
-            var(--success) 0%, var(--success) 42%,
+            var(--ok) 0%, var(--ok) 42%,
             color-mix(in srgb, var(--ac-light) 45%, #fff) 50%,
-            var(--success) 58%, var(--success) 100%
+            var(--ok) 58%, var(--ok) 100%
           );
           background-size: 300% 100%;
           -webkit-background-clip: text;
@@ -493,65 +493,65 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
         @media (prefers-reduced-motion: reduce) {
           .hm__chip--shimmer {
             animation: none;
-            -webkit-text-fill-color: var(--success);
-            color: var(--success);
+            -webkit-text-fill-color: var(--ok);
+            color: var(--ok);
           }
         }
 
         /* table (Almacén) */
         .hm__table { width: 100%; border-collapse: collapse; }
         .hm__table th {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
           text-align: left; font-weight: 400;
           padding: 0 0 8px;
-          border-bottom: 1px solid var(--border-soft);
+          border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
         }
         .hm__table td {
-          font-size: 12px; color: var(--cream-dim);
+          font-size: 12px; color: var(--ink2);
           padding: 9px 0;
-          border-bottom: 1px solid var(--border-soft);
+          border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
         }
         .hm__table tr:last-child td { border-bottom: none; }
-        .hm__sku { font-family: var(--font-mono); }
-        .hm__num { font-family: var(--font-mono); color: var(--cream); text-align: right; }
+        .hm__sku { font-family: var(--font-display); }
+        .hm__num { font-family: var(--font-display); color: var(--ink); text-align: right; }
         .hm__num--low { color: var(--danger); }
         .hm__right { text-align: right; }
         .hm__pill {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 9px; padding: 2px 8px; border-radius: 999px;
-          border: 1px solid var(--border-soft); color: var(--cream-dim);
+          border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent); color: var(--ink2);
         }
-        .hm__pill--ok { color: var(--success); border-color: color-mix(in srgb, var(--ok) 30%, transparent); }
+        .hm__pill--ok { color: var(--ok); border-color: color-mix(in srgb, var(--ok) 30%, transparent); }
         .hm__pill--low { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 35%, transparent); }
-        .hm__pill--done { color: var(--cream-meta); }
+        .hm__pill--done { color: var(--ink3); }
 
         /* route (Logística) */
         .hm__route {
           display: flex; align-items: center; gap: 12px;
-          font-size: 15px; color: var(--cream);
+          font-size: 15px; color: var(--ink);
           padding: 4px 0;
         }
-        .hm__route-arrow { color: var(--gold); font-family: var(--font-mono); }
-        .hm__route-node--to { color: var(--cream); }
+        .hm__route-arrow { color: var(--ac); font-family: var(--font-display); }
+        .hm__route-node--to { color: var(--ink); }
         .hm__movs { display: flex; flex-direction: column; gap: 8px; margin-top: 2px; }
         .hm__mov {
           display: flex; align-items: center; justify-content: space-between; gap: 12px;
           padding: 11px 12px;
-          border: 1px solid var(--border-soft);
+          border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           border-radius: 11px;
           background: color-mix(in srgb, var(--ac) 6%, transparent);
-          font-size: 12px; color: var(--cream-dim);
+          font-size: 12px; color: var(--ink2);
         }
         .hm__mov-l { display: inline-flex; align-items: center; }
 
         /* Finanzas */
-        .hm__big { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 38px; line-height: 1; color: var(--cream); }
-        .hm__big em { color: var(--gold); }
+        .hm__big { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 38px; line-height: 1; color: var(--ink); }
+        .hm__big em { color: var(--ac); }
         .hm__delta {
-          font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em;
-          text-transform: uppercase; color: var(--success);
+          font-family: var(--font-display); font-size: 10px; letter-spacing: 0.1em;
+          text-transform: uppercase; color: var(--ok);
           margin-top: -4px;
         }
         .hm__chart { width: 100%; flex: 1; min-height: 80px; }
@@ -561,7 +561,7 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
         .hm__client {
           display: flex; align-items: center; gap: 11px;
           padding: 9px 0;
-          border-bottom: 1px solid var(--border-soft);
+          border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
         }
         .hm__client:last-child { border-bottom: none; }
         .hm__avatar {
@@ -570,40 +570,40 @@ export function HeroMock({ exampleKey }: { exampleKey: ModuleExampleKey }) {
           border-radius: 999px;
           background: color-mix(in srgb, var(--ac) 12%, transparent);
           border: 1px solid color-mix(in srgb, var(--ac) 30%, transparent);
-          color: var(--gold);
+          color: var(--ac);
           font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 13px;
         }
         .hm__avatar--sm { width: 26px; height: 26px; font-size: 11px; }
         .hm__client-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
-        .hm__client-name { font-size: 13px; color: var(--cream); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-        .hm__client-sub { font-family: var(--font-mono); font-size: 10px; color: var(--cream-meta); }
-        .hm__client-amt { flex-shrink: 0; font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 16px; color: var(--cream); }
+        .hm__client-name { font-size: 13px; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .hm__client-sub { font-family: var(--font-display); font-size: 10px; color: var(--ink3); }
+        .hm__client-amt { flex-shrink: 0; font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 16px; color: var(--ink); }
 
         /* Personal */
         .hm__statgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
         .hm__stat {
           padding: 16px 12px;
-          border: 1px solid var(--border-soft);
+          border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           border-radius: 11px;
           background: color-mix(in srgb, var(--ac) 6%, transparent);
           text-align: center;
         }
-        .hm__stat-num { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 30px; line-height: 1; color: var(--cream); }
+        .hm__stat-num { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 30px; line-height: 1; color: var(--ink); }
         .hm__stat-l {
-          font-family: var(--font-mono); font-size: 8px; letter-spacing: 0.14em;
-          text-transform: uppercase; color: var(--cream-meta); margin-top: 6px;
+          font-family: var(--font-display); font-size: 8px; letter-spacing: 0.14em;
+          text-transform: uppercase; color: var(--ink3); margin-top: 6px;
         }
         .hm__team {
           display: flex; align-items: center; justify-content: space-between; gap: 12px;
           margin-top: auto;
           padding: 12px;
-          border: 1px solid var(--border-soft);
+          border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           border-radius: 11px;
           background: color-mix(in srgb, var(--ac) 6%, transparent);
         }
         .hm__avatars { display: flex; }
         .hm__avatars .hm__avatar { margin-right: -8px; box-shadow: 0 0 0 2px #FFFFFF; }
-        .hm__team-note { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--success); }
+        .hm__team-note { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ok); }
       `}</style>
     </div>
   )

@@ -1,20 +1,26 @@
 /**
- * BrandLockup — the official Hatlas logo, straight from the brand files.
+ * BrandLockup — el logo oficial de Hatlas, desde los archivos de marca.
  *
- * The brand ships three lockups (mark + "Hatlas" wordmark); these are the
- * delivered assets, never a recreation:
+ * La marca entrega tres lockups (marca + wordmark "Hatlas"); son los assets
+ * entregados, nunca una recreación:
  *
- *   negro   → all-black, no container. Primary on the paper surfaces.
- *   blanco  → reversed (white). For dark/ink backgrounds.
- *   rounded → mark inside its dark circle + black wordmark. Alternate.
+ *   negro   → todo negro, sin contenedor. Primario sobre las superficies papel.
+ *   blanco  → invertido (blanco). Para fondos oscuros / de acento.
+ *   rounded → marca en su círculo oscuro + wordmark negro. Alternativo.
  *
- * Sized by HEIGHT so each file keeps its own intrinsic aspect ratio.
+ * REGLA DEL DS: se ELIGE la versión por tema; nunca se recolorea con
+ * `filter: invert()` ni `mix-blend-mode`. Por eso el swap va con <picture> +
+ * `prefers-color-scheme`, que es el mismo criterio que usa atlas.css cuando
+ * no hay `data-theme` explícito.
+ *
+ * Alturas de referencia del DS: 26px topbar · 24px footer.
+ * Se dimensiona por ALTO para que cada archivo conserve su relación de aspecto.
  */
 
 const ASSETS = {
-  negro: { src: '/hatlas-logo.png', w: 690, h: 202 },
-  blanco: { src: '/hatlas-logo-white.png', w: 694, h: 209 },
-  rounded: { src: '/hatlas-logo-round.png', w: 738, h: 191 },
+  negro: { src: '/hatlas-logo.png', dark: '/hatlas-logo-white.png', w: 690, h: 202 },
+  blanco: { src: '/hatlas-logo-white.png', dark: '/hatlas-logo-white.png', w: 694, h: 209 },
+  rounded: { src: '/hatlas-logo-round.png', dark: '/hatlas-logo-white.png', w: 738, h: 191 },
 } as const
 
 export function BrandLockup({
@@ -24,15 +30,20 @@ export function BrandLockup({
   height?: number
   variant?: keyof typeof ASSETS
 }) {
-  const { src, w, h } = ASSETS[variant]
+  const { src, dark, w, h } = ASSETS[variant]
+  const width = Math.round((w / h) * height)
   return (
-    <img
-      src={src}
-      alt="Hatlas"
-      width={Math.round((w / h) * height)}
-      height={height}
-      draggable={false}
-      style={{ display: 'block', height, width: 'auto', flexShrink: 0 }}
-    />
+    <picture>
+      {/* El tema explícito manda sobre la preferencia del SO. */}
+      <source srcSet={dark} media="(prefers-color-scheme: dark)" />
+      <img
+        src={src}
+        alt="Hatlas"
+        width={width}
+        height={height}
+        draggable={false}
+        style={{ display: 'block', height, width: 'auto', flexShrink: 0 }}
+      />
+    </picture>
   )
 }

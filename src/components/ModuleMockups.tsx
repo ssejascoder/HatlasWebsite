@@ -46,15 +46,15 @@ export function MkPOS() {
         <div className="mk__total">Bs <em>{m.total}</em></div>
         <style>{`
           .mk--pos { display: flex; flex-direction: column; gap: 9px; padding: 16px; height: 100%; }
-          .mk__title { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.16em; color: var(--cream-meta); text-transform: uppercase; }
+          .mk__title { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.16em; color: var(--ink3); text-transform: uppercase; }
           .mk__rows { display: flex; flex-direction: column; gap: 2px; flex: 1; }
-          .mk__row { display: flex; justify-content: space-between; gap: 12px; font-family: var(--font-sans); font-size: 12px; color: var(--cream-dim); padding: 6px 0; border-bottom: 1px solid var(--border-soft); }
+          .mk__row { display: flex; justify-content: space-between; gap: 12px; font-family: var(--font-ui); font-size: 12px; color: var(--ink2); padding: 6px 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent); }
           .mk__row > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-          .mk__row > span:last-child { flex-shrink: 0; font-family: var(--font-mono); color: var(--cream); }
-          .mk__row--ghost { color: var(--gold-deep); border-bottom: none; font-weight: 500; }
-          .mk__row--ghost > span:last-child { color: var(--gold-deep); }
-          .mk__total { display: flex; align-items: baseline; gap: 5px; font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--cream-dim); margin-top: 2px; }
-          .mk__total em { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 26px; letter-spacing: -0.03em; color: var(--cream); }
+          .mk__row > span:last-child { flex-shrink: 0; font-family: var(--font-display); color: var(--ink); }
+          .mk__row--ghost { color: var(--ac-deep); border-bottom: none; font-weight: 500; }
+          .mk__row--ghost > span:last-child { color: var(--ac-deep); }
+          .mk__total { display: flex; align-items: baseline; gap: 5px; font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: var(--ink2); margin-top: 2px; }
+          .mk__total em { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 26px; letter-spacing: -0.03em; color: var(--ink); }
         `}</style>
       </div>
     </MkFade>
@@ -79,10 +79,10 @@ export function MkAlmacen() {
         <style>{`
           .mk--alm { padding: 16px; display: flex; flex-direction: column; gap: 2px; height: 100%; }
           .mk__items { display: flex; flex-direction: column; }
-          .mk__item { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: var(--font-sans); font-size: 12px; color: var(--cream-dim); padding: 8px 0; border-bottom: 1px solid var(--border-soft); }
+          .mk__item { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: var(--font-ui); font-size: 12px; color: var(--ink2); padding: 8px 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent); }
           .mk__item:last-child { border-bottom: none; }
           .mk__sku { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-          .mk__qty { font-family: var(--font-mono); font-weight: 500; color: var(--cream); flex-shrink: 0; }
+          .mk__qty { font-family: var(--font-display); font-weight: 500; color: var(--ink); flex-shrink: 0; }
           .mk__qty--low { color: var(--danger); }
         `}</style>
       </div>
@@ -114,11 +114,11 @@ export function MkSupply() {
         </div>
         <style>{`
           .mk--sup { padding: 16px; display: flex; flex-direction: column; gap: 14px; height: 100%; }
-          .mk__flow { display: flex; align-items: center; gap: 8px; font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--cream); flex-wrap: wrap; }
-          .mk__flow span:nth-child(2) { color: var(--gold); font-family: var(--font-mono); }
+          .mk__flow { display: flex; align-items: center; gap: 8px; font-family: var(--font-ui); font-size: 14px; font-weight: 500; color: var(--ink); flex-wrap: wrap; }
+          .mk__flow span:nth-child(2) { color: var(--ac); font-family: var(--font-display); }
           .mk__chips { display: flex; gap: 6px; flex-wrap: wrap; }
-          .mk__chip { font-family: var(--font-mono); font-size: 10px; padding: 3px 8px; border: 1px solid var(--border); border-radius: 999px; color: var(--cream-dim); }
-          .mk__chip--ok { color: var(--gold-deep); border-color: color-mix(in srgb, var(--ac) 35%, transparent); background: var(--gold-tint-12); }
+          .mk__chip { font-family: var(--font-display); font-size: 10px; padding: 3px 8px; border: 1px solid var(--hairline); border-radius: 999px; color: var(--ink2); }
+          .mk__chip--ok { color: var(--ac-deep); border-color: color-mix(in srgb, var(--ac) 35%, transparent); background: color-mix(in srgb, var(--ac) 10%, transparent); }
         `}</style>
       </div>
     </MkFade>
@@ -157,10 +157,10 @@ export function MkFinanzas() {
         <style>{`
           .mk--fin { padding: 16px; display: flex; flex-direction: column; gap: 10px; height: 100%; }
           .mk__head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
-          .mk__amount { display: flex; align-items: baseline; gap: 4px; font-family: var(--font-sans); font-size: 13px; font-weight: 500; color: var(--cream-dim); flex-shrink: 0; }
-          .mk__amount em { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 22px; letter-spacing: -0.03em; color: var(--cream); }
+          .mk__amount { display: flex; align-items: baseline; gap: 4px; font-family: var(--font-ui); font-size: 13px; font-weight: 500; color: var(--ink2); flex-shrink: 0; }
+          .mk__amount em { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 22px; letter-spacing: -0.03em; color: var(--ink); }
           .mk__chart { flex: 1; min-height: 56px; width: 100%; }
-          .mk__delta { font-family: var(--font-mono); font-size: 10px; color: var(--gold-deep); letter-spacing: 0.04em; }
+          .mk__delta { font-family: var(--font-display); font-size: 10px; color: var(--ac-deep); letter-spacing: 0.04em; }
         `}</style>
       </div>
     </MkFade>
@@ -185,10 +185,10 @@ export function MkClientes() {
         <style>{`
           .mk--cli { padding: 16px; display: flex; flex-direction: column; gap: 2px; height: 100%; }
           .mk__list { display: flex; flex-direction: column; }
-          .mk__client { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: var(--font-sans); font-size: 12px; color: var(--cream); padding: 8px 0; border-bottom: 1px solid var(--border-soft); }
+          .mk__client { display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: var(--font-ui); font-size: 12px; color: var(--ink); padding: 8px 0; border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent); }
           .mk__client:last-child { border-bottom: none; }
           .mk__client > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; }
-          .mk__visit { font-family: var(--font-mono); color: var(--cream-meta); font-size: 10px; flex-shrink: 0; }
+          .mk__visit { font-family: var(--font-display); color: var(--ink3); font-size: 10px; flex-shrink: 0; }
         `}</style>
       </div>
     </MkFade>
@@ -213,8 +213,8 @@ export function MkRRHH() {
         <style>{`
           .mk--rrhh { padding: 16px; display: flex; flex-direction: column; gap: 14px; height: 100%; justify-content: center; }
           .mk__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-          .mk__num { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 26px; letter-spacing: -0.03em; color: var(--cream); line-height: 1; }
-          .mk__small { font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-meta); margin-top: 4px; }
+          .mk__num { font-family: var(--font-display); font-style: normal; font-weight: 700; font-size: 26px; letter-spacing: -0.03em; color: var(--ink); line-height: 1; }
+          .mk__small { font-family: var(--font-display); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink3); margin-top: 4px; }
         `}</style>
       </div>
     </MkFade>

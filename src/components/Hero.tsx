@@ -105,17 +105,17 @@ export function Hero() {
           max-width: 640px;
           font-size: 16.5px;
           line-height: 1.55;
-          color: var(--cream-dim);
+          color: var(--ink2);
         }
         .hero__subhead em {
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-style: italic;
           font-weight: 500;
-          color: var(--gold);
+          color: var(--ac);
         }
         .hero__subhead-swap {
           display: block;
-          animation: hero-subhead-enter 340ms var(--ease-out-strong) both;
+          animation: hero-subhead-enter 340ms var(--ease-out) both;
           will-change: transform, filter, opacity;
         }
         @keyframes hero-subhead-enter {
@@ -129,18 +129,18 @@ export function Hero() {
           gap: 8px;
           margin-top: 20px;
           padding: 9px 15px;
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 11px;
           letter-spacing: 0.04em;
-          color: var(--cream-dim);
-          background: var(--glass-bg);
+          color: var(--ink2);
+          background: var(--glass);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
           border-radius: var(--r-pill);
-          box-shadow: var(--glass-elev-sm);
+          box-shadow: var(--e1), inset 0 1px 0 var(--glass-hi);
         }
-        .hero__trust svg { color: var(--gold); flex-shrink: 0; }
+        .hero__trust svg { color: var(--ac); flex-shrink: 0; }
 
         @media (prefers-reduced-motion: reduce) {
           .hero__subhead-swap { animation: none !important; }

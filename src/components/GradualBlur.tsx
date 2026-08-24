@@ -269,8 +269,11 @@ const injectStyles = () => {
   .gradual-blur-parent { overflow: hidden; }
   .gradual-blur-inner { pointer-events: none; position: relative; width: 100%; height: 100%; }
   .gradual-blur-inner > div { -webkit-backdrop-filter: inherit; backdrop-filter: inherit; }
+  @media (prefers-reduced-transparency: reduce) { .gradual-blur { display: none; } }
+  [data-perf="lite"] .gradual-blur { display: none; }
+  @media print { .gradual-blur { display: none; } }
   @supports not (backdrop-filter: blur(1px)) {
-    .gradual-blur-inner > div { background: rgba(0, 0, 0, 0.3); opacity: 0.5; }
+    .gradual-blur-inner > div { background: color-mix(in srgb, var(--bg) 55%, transparent); opacity: 0.5; }
   }`
   document.head.appendChild(styleElement)
 }

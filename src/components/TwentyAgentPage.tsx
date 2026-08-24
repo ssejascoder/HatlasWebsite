@@ -182,12 +182,12 @@ export function TwentyAgentPage() {
           margin: 18px 0 22px;
           max-width: 14ch;
           text-wrap: balance;
-          color: var(--cream);
+          color: var(--ink);
         }
-        .ta-hero__h1 em { font-style: normal; font-weight: 700; color: var(--gold); }
+        .ta-hero__h1 em { font-style: normal; font-weight: 700; color: var(--ac); }
         .ta-hero__sub {
           margin: 0 0 32px; max-width: 50ch;
-          font-size: 18px; line-height: 1.55; color: var(--cream-dim);
+          font-size: 18px; line-height: 1.55; color: var(--ink2);
         }
         .ta-hero__ctas { display: flex; flex-wrap: wrap; gap: 14px; }
         .ta-hero__demo { justify-self: end; width: 100%; max-width: 440px; }
@@ -197,51 +197,51 @@ export function TwentyAgentPage() {
           display: flex; flex-direction: column; gap: 10px;
           padding: 16px;
           border: 1px solid var(--glass-border);
-          border-radius: var(--r-card);
-          background: var(--glass-bg-strong);
+          border-radius: var(--r-xl);
+          background: var(--glass-strong);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
-          box-shadow: var(--glass-elev), 0 0 60px color-mix(in srgb, var(--ac) 14%, transparent);
+          box-shadow: var(--e2), var(--e-inner), 0 0 60px color-mix(in srgb, var(--ac) 14%, transparent);
         }
         .ta-alerts__head { padding: 4px 4px 2px; }
         .ta-alerts__live {
           display: inline-flex; align-items: center; gap: 8px;
-          font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
-          text-transform: uppercase; color: var(--cream-meta);
+          font-family: var(--font-display); font-size: 10px; letter-spacing: 0.14em;
+          text-transform: uppercase; color: var(--ink3);
         }
         .ta-alerts__live span {
-          width: 6px; height: 6px; border-radius: 999px; background: var(--success);
+          width: 6px; height: 6px; border-radius: 999px; background: var(--ok);
           box-shadow: 0 0 0 3px color-mix(in srgb, var(--ok) 14%, transparent);
         }
         .ta-alert {
           display: flex; gap: 12px;
           padding: 14px;
-          border: 1px solid var(--border);
+          border: 1px solid var(--hairline);
           border-radius: 12px;
-          background: var(--bg-card);
+          background: var(--surface);
         }
-        .ta-alert--lead { background: var(--gold-tint-12); border-color: color-mix(in srgb, var(--ac) 40%, transparent); }
+        .ta-alert--lead { background: color-mix(in srgb, var(--ac) 10%, transparent); border-color: color-mix(in srgb, var(--ac) 40%, transparent); }
         .ta-alert__icon {
           display: inline-flex; align-items: center; justify-content: center;
           width: 34px; height: 34px; flex-shrink: 0;
-          color: var(--gold);
-          background: var(--gold-tint-12);
-          border: 1px solid var(--gold-glow);
+          color: var(--ac);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: 9px;
         }
         .ta-alert__title {
           margin: 0 0 5px;
-          font-family: var(--font-sans); font-style: italic; font-weight: 500; font-size: 15px;
-          line-height: 1.35; color: var(--cream);
+          font-family: var(--font-ui); font-style: italic; font-weight: 500; font-size: 15px;
+          line-height: 1.35; color: var(--ink);
         }
-        .ta-alert__detail { margin: 0 0 7px; font-size: 12px; line-height: 1.5; color: var(--cream-dim); }
+        .ta-alert__detail { margin: 0 0 7px; font-size: 12px; line-height: 1.5; color: var(--ink2); }
         .ta-alert__meta {
-          font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em;
-          text-transform: uppercase; color: var(--cream-meta);
+          font-family: var(--font-display); font-size: 9px; letter-spacing: 0.12em;
+          text-transform: uppercase; color: var(--ink3);
         }
 
         /* ---------- Per-module ---------- */
-        .ta-mods { position: relative; z-index: 10; background: var(--bg-subtle); }
+        .ta-mods { position: relative; z-index: 10; background: color-mix(in srgb, var(--surface) 12%, var(--bg)); }
         .ta-mods__title { text-align: center; max-width: 18ch; margin: 0 auto 48px; }
         .ta-mods__grid {
           display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
@@ -249,33 +249,33 @@ export function TwentyAgentPage() {
         .ta-mod {
           display: flex; flex-direction: column; gap: 10px;
           padding: 24px;
-          background: var(--glass-bg);
+          background: var(--glass);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
-          border-radius: var(--r-card);
-          box-shadow: var(--glass-elev-sm);
+          border-radius: var(--r-xl);
+          box-shadow: var(--e1), inset 0 1px 0 var(--glass-hi);
           text-decoration: none;
-          transition: border-color 300ms var(--ease-out-strong), box-shadow 300ms var(--ease-out-strong), transform 300ms var(--ease-out-strong);
+          transition: border-color 300ms var(--ease-out), box-shadow 300ms var(--ease-out), transform 300ms var(--ease-out);
         }
         .ta-mod:hover { border-color: color-mix(in srgb, var(--ac) 45%, transparent); transform: translateY(-3px); box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent), 0 22px 50px var(--glass-shadow), inset 0 1px 0 var(--glass-hi); }
         .ta-mod__icon {
           display: inline-flex; align-items: center; justify-content: center;
           width: 38px; height: 38px;
-          color: var(--gold);
-          background: var(--gold-tint-12);
-          border: 1px solid var(--gold-glow);
+          color: var(--ac);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: 9px;
-          transition: border-color 300ms var(--ease-out-strong), background 300ms var(--ease-out-strong);
+          transition: border-color 300ms var(--ease-out), background 300ms var(--ease-out);
         }
-        .ta-mod:hover .ta-mod__icon { border-color: var(--gold-deep); background: var(--gold-tint-12); }
+        .ta-mod:hover .ta-mod__icon { border-color: var(--ac-deep); background: color-mix(in srgb, var(--ac) 10%, transparent); }
         .ta-mod__name {
           display: flex; align-items: center; justify-content: space-between;
-          font-family: var(--font-display); font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: var(--cream);
+          font-family: var(--font-display); font-size: 17px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink);
         }
-        .ta-mod__arrow { color: var(--cream-meta); transition: transform 300ms var(--ease-out-strong), color 300ms var(--ease-out-strong); }
-        .ta-mod:hover .ta-mod__arrow { transform: translateX(4px); color: var(--gold); }
-        .ta-mod__text { margin: 0; font-size: 13px; line-height: 1.5; color: var(--cream-dim); }
+        .ta-mod__arrow { color: var(--ink3); transition: transform 300ms var(--ease-out), color 300ms var(--ease-out); }
+        .ta-mod:hover .ta-mod__arrow { transform: translateX(4px); color: var(--ac); }
+        .ta-mod__text { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink2); }
 
         @media (max-width: 980px) {
           .ta-hero__inner { grid-template-columns: 1fr; gap: 40px; }

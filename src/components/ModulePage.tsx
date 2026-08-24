@@ -320,16 +320,16 @@ export function ModulePage() {
           width: fit-content;
           align-items: center;
           gap: 7px;
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 11px;
           letter-spacing: 0.10em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
           text-decoration: none;
           margin-bottom: 20px;
-          transition: color 200ms var(--ease-out-strong);
+          transition: color 200ms var(--ease-out);
         }
-        .mback:hover { color: var(--gold); }
+        .mback:hover { color: var(--ac); }
         .mhero__h1 {
           font-family: var(--font-display);
           font-weight: 600;
@@ -339,19 +339,19 @@ export function ModulePage() {
           margin: 0 0 22px;
           max-width: 16ch;
           text-wrap: balance;
-          color: var(--cream);
+          color: var(--ink);
         }
         .mhero__h1 em {
           font-style: normal;
           font-weight: 700;
-          color: var(--gold);
+          color: var(--ac);
         }
         .mhero__sub {
           margin: 0 0 32px;
           max-width: 48ch;
           font-size: 18px;
           line-height: 1.55;
-          color: var(--cream-dim);
+          color: var(--ink2);
         }
         .mhero__ctas { display: flex; flex-wrap: wrap; gap: 14px; }
         .mhero__channels {
@@ -360,32 +360,32 @@ export function ModulePage() {
           gap: 9px;
           margin: 18px 0 0;
           font-size: 13px;
-          color: var(--cream-dim);
+          color: var(--ink2);
         }
-        .mhero__channels svg { color: var(--gold); flex-shrink: 0; }
+        .mhero__channels svg { color: var(--ac); flex-shrink: 0; }
         .mhero__demo { justify-self: end; width: 100%; max-width: 460px; }
 
         /* ---------- Screen frame (reused) ---------- */
         .mscreen {
           border: 1px solid var(--glass-border);
-          border-radius: var(--r-card);
-          background: var(--glass-bg-strong);
+          border-radius: var(--r-xl);
+          background: var(--glass-strong);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
-          box-shadow: var(--glass-elev), 0 0 60px color-mix(in srgb, var(--ac) 14%, transparent);
+          box-shadow: var(--e2), var(--e-inner), 0 0 60px color-mix(in srgb, var(--ac) 14%, transparent);
           overflow: hidden;
         }
         .mscreen__bar {
           display: flex;
           gap: 6px;
           padding: 12px 14px;
-          border-bottom: 1px solid var(--border-soft);
+          border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
         }
         .mscreen__bar span {
           width: 9px;
           height: 9px;
           border-radius: 999px;
-          background: var(--border-strong);
+          background: color-mix(in srgb, var(--ink) 16%, transparent);
         }
         .mscreen__body {
           min-height: 360px;
@@ -399,8 +399,8 @@ export function ModulePage() {
         .msolve__list {
           display: grid;
           gap: 1px;
-          background: var(--border-soft);
-          border: 1px solid var(--border-soft);
+          background: color-mix(in srgb, var(--ink) 6%, transparent);
+          border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           border-radius: 14px;
           overflow: hidden;
         }
@@ -409,27 +409,27 @@ export function ModulePage() {
           grid-template-columns: 1fr 1.2fr;
           gap: 32px;
           padding: 28px 28px;
-          background: var(--bg-base);
+          background: var(--bg);
         }
         .msolve__pain {
           margin: 0;
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-style: italic;
           font-weight: 500;
           font-size: 20px;
           line-height: 1.3;
-          color: var(--cream);
+          color: var(--ink);
         }
         .msolve__fix {
           margin: 0;
           font-size: 15px;
           line-height: 1.6;
-          color: var(--cream-dim);
+          color: var(--ink2);
           align-self: center;
         }
 
         /* ---------- Features bento ---------- */
-        .mfeatures { background: var(--bg-subtle); }
+        .mfeatures { background: color-mix(in srgb, var(--surface) 12%, var(--bg)); }
         .mfeatures__title { margin: 0 0 40px; }
         .mfeatures__grid {
           display: grid;
@@ -439,20 +439,20 @@ export function ModulePage() {
         }
         .fcard {
           padding: 24px;
-          background: var(--glass-bg);
+          background: var(--glass);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
-          border-radius: var(--r-card);
-          box-shadow: var(--glass-elev-sm);
+          border-radius: var(--r-xl);
+          box-shadow: var(--e1), inset 0 1px 0 var(--glass-hi);
           min-height: 184px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
           gap: 24px;
-          transition: border-color 300ms var(--ease-out-strong),
-            box-shadow 300ms var(--ease-out-strong),
-            transform 300ms var(--ease-out-strong);
+          transition: border-color 300ms var(--ease-out),
+            box-shadow 300ms var(--ease-out),
+            transform 300ms var(--ease-out);
         }
         .fcard:hover { border-color: color-mix(in srgb, var(--ac) 45%, transparent); transform: translateY(-3px); box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent), 0 22px 50px var(--glass-shadow), inset 0 1px 0 var(--glass-hi); }
         .fcard__icon {
@@ -461,16 +461,16 @@ export function ModulePage() {
           justify-content: center;
           width: 38px;
           height: 38px;
-          background: var(--gold-tint-12);
-          border: 1px solid var(--gold-glow);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: 9px;
-          color: var(--gold);
-          transition: border-color 300ms var(--ease-out-strong),
-            background 300ms var(--ease-out-strong);
+          color: var(--ac);
+          transition: border-color 300ms var(--ease-out),
+            background 300ms var(--ease-out);
         }
         .fcard:hover .fcard__icon {
-          border-color: var(--gold-deep);
-          background: var(--gold-tint-12);
+          border-color: var(--ac-deep);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
         }
         .fcard__body { display: flex; flex-direction: column; gap: 8px; }
         .fcard h3 {
@@ -479,9 +479,9 @@ export function ModulePage() {
           font-size: 18px;
           font-weight: 600;
           letter-spacing: -0.02em;
-          color: var(--cream);
+          color: var(--ink);
         }
-        .fcard p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--cream-dim); }
+        .fcard p { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink2); }
 
         /* ---------- "Y además" depth chips ---------- */
         .mmore {
@@ -492,18 +492,18 @@ export function ModulePage() {
           margin-top: 28px;
         }
         .mmore__label {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 10px;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
         }
         .mmore__chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
         .mmore__chip {
           font-size: 13px;
-          color: var(--cream-dim);
+          color: var(--ink2);
           padding: 7px 13px;
-          background: var(--glass-bg);
+          background: var(--glass);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
@@ -518,12 +518,12 @@ export function ModulePage() {
           padding: 28px 32px;
           background:
             radial-gradient(120% 140% at 0% 0%, color-mix(in srgb, var(--ac) 14%, transparent), transparent 60%),
-            var(--glass-bg-strong);
+            var(--glass-strong);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid color-mix(in srgb, var(--ac) 35%, transparent);
-          border-radius: var(--r-card);
-          box-shadow: var(--glass-elev);
+          border-radius: var(--r-xl);
+          box-shadow: var(--e2), var(--e-inner);
         }
         .magent__icon {
           display: inline-flex;
@@ -532,29 +532,29 @@ export function ModulePage() {
           width: 46px;
           height: 46px;
           flex-shrink: 0;
-          background: var(--gold-tint-12);
-          border: 1px solid var(--gold-deep);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          border: 1px solid var(--ac-deep);
           border-radius: 12px;
-          color: var(--gold-bright);
+          color: var(--ac-hover);
         }
         .magent__eyebrow {
           display: block;
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 10px;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: var(--gold);
+          color: var(--ac);
           margin-bottom: 8px;
         }
         .magent__text {
           margin: 0;
           max-width: 64ch;
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-style: italic;
           font-weight: 500;
           font-size: clamp(18px, 2vw, 23px);
           line-height: 1.4;
-          color: var(--cream);
+          color: var(--ink);
         }
 
         /* ---------- Rubro example ---------- */
@@ -569,7 +569,7 @@ export function ModulePage() {
         .mexample__copy .lede { margin: 0 0 26px; }
 
         /* ---------- Related ---------- */
-        .mrelated { background: var(--bg-subtle); }
+        .mrelated { background: color-mix(in srgb, var(--surface) 12%, var(--bg)); }
         .mrelated__title { margin: 0 0 14px; }
         .mrelated__lede { margin: 0 0 36px; max-width: 52ch; }
         .mrelated__grid {
@@ -582,15 +582,15 @@ export function ModulePage() {
           align-items: center;
           gap: 14px;
           padding: 20px;
-          background: var(--glass-bg);
+          background: var(--glass);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
-          border-radius: var(--r-card);
-          box-shadow: var(--glass-elev-sm);
+          border-radius: var(--r-xl);
+          box-shadow: var(--e1), inset 0 1px 0 var(--glass-hi);
           text-decoration: none;
-          transition: border-color 300ms var(--ease-out-strong),
-            transform 300ms var(--ease-out-strong);
+          transition: border-color 300ms var(--ease-out),
+            transform 300ms var(--ease-out);
         }
         .rcard:hover { border-color: color-mix(in srgb, var(--ac) 45%, transparent); transform: translateY(-2px); }
         .rcard__icon {
@@ -600,16 +600,16 @@ export function ModulePage() {
           width: 38px;
           height: 38px;
           flex-shrink: 0;
-          background: var(--gold-tint-12);
-          border: 1px solid var(--gold-glow);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: 9px;
-          color: var(--gold);
+          color: var(--ac);
         }
         .rcard__text { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-        .rcard__name { font-size: 15px; font-weight: 500; color: var(--cream); }
+        .rcard__name { font-size: 15px; font-weight: 500; color: var(--ink); }
         .rcard__tag {
           font-size: 12px;
-          color: var(--cream-dim);
+          color: var(--ink2);
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -617,21 +617,21 @@ export function ModulePage() {
         .rcard__arrow {
           margin-left: auto;
           flex-shrink: 0;
-          color: var(--cream-meta);
-          transition: transform 300ms var(--ease-out-strong), color 300ms var(--ease-out-strong);
+          color: var(--ink3);
+          transition: transform 300ms var(--ease-out), color 300ms var(--ease-out);
         }
-        .rcard:hover .rcard__arrow { transform: translateX(4px); color: var(--gold); }
+        .rcard:hover .rcard__arrow { transform: translateX(4px); color: var(--ac); }
 
         /* ---------- Mini FAQ ---------- */
         .mfaq__inner { max-width: 820px; }
         .mfaq__title { margin: 0 0 28px; }
-        .mfaq__list { display: flex; flex-direction: column; border-top: 1px solid var(--border-soft); }
+        .mfaq__list { display: flex; flex-direction: column; border-top: 1px solid color-mix(in srgb, var(--ink) 6%, transparent); }
         .mfaq__item {
           width: 100%;
           padding: 22px 0;
           background: transparent;
           border: none;
-          border-bottom: 1px solid var(--border-soft);
+          border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           text-align: left;
           cursor: pointer;
           display: flex;
@@ -643,9 +643,9 @@ export function ModulePage() {
           align-items: center;
           gap: 16px;
           font-size: 17px;
-          color: var(--cream);
+          color: var(--ink);
         }
-        .mfaq__item:hover .mfaq__q { color: var(--gold); }
+        .mfaq__item:hover .mfaq__q { color: var(--ac); }
         .mfaq__toggle {
           position: relative;
           display: inline-flex;
@@ -654,17 +654,17 @@ export function ModulePage() {
           width: 30px;
           height: 30px;
           flex-shrink: 0;
-          border: 1px solid var(--border);
-          background: var(--bg-card);
-          color: var(--cream-dim);
+          border: 1px solid var(--hairline);
+          background: var(--surface);
+          color: var(--ink2);
           border-radius: 9px;
-          transition: background 200ms var(--ease-out-strong),
-            border-color 200ms var(--ease-out-strong), color 200ms var(--ease-out-strong);
+          transition: background 200ms var(--ease-out),
+            border-color 200ms var(--ease-out), color 200ms var(--ease-out);
         }
         .mfaq__item.is-open .mfaq__toggle {
-          background: var(--gold-tint-12);
-          border-color: var(--gold-deep);
-          color: var(--gold);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          border-color: var(--ac-deep);
+          color: var(--ac);
         }
         /* transitions-dev · icon-swap (09) on the +/- toggle */
         .mfaq__ico {
@@ -699,7 +699,7 @@ export function ModulePage() {
           max-width: 64ch;
           font-size: 15px;
           line-height: 1.6;
-          color: var(--cream-dim);
+          color: var(--ink2);
         }
 
         /* Entrance + on-scroll reveal handled by the global .t-reveal class

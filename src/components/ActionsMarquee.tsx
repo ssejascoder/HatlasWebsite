@@ -60,10 +60,10 @@ export function ActionsMarquee() {
         .actions {
           position: relative;
           z-index: 10;
-          background: var(--bg-base);
+          background: var(--bg);
           padding: 28px 0;
-          border-top: 1px solid var(--border-soft);
-          border-bottom: 1px solid var(--border-soft);
+          border-top: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
+          border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
         }
         .actions__inner {
           display: flex;
@@ -75,11 +75,11 @@ export function ActionsMarquee() {
         }
         .actions__label {
           flex-shrink: 0;
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 11px;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: var(--gold);
+          color: var(--ac);
         }
         .actions__track-wrap {
           flex: 1;
@@ -113,20 +113,20 @@ export function ActionsMarquee() {
           padding-right: 28px;
         }
         .actions__mark {
-          color: var(--gold);
+          color: var(--ac);
           font-size: 11px;
           line-height: 1;
         }
         .actions__text {
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-style: italic;
           font-weight: 500;
           font-size: 19px;
-          color: var(--cream);
+          color: var(--ink);
           letter-spacing: -0.01em;
         }
-        .actions__item:nth-child(odd) .actions__text { color: var(--cream); }
-        .actions__item:nth-child(even) .actions__text { color: var(--gold); }
+        .actions__item:nth-child(odd) .actions__text { color: var(--ink); }
+        .actions__item:nth-child(even) .actions__text { color: var(--ac); }
 
         @keyframes actions-scroll {
           0%   { transform: translateX(0); }

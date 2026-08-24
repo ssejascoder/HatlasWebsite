@@ -162,7 +162,7 @@ export function Nav() {
           inset: 0 0 auto 0;
           z-index: 100;
           border-bottom: 1px solid transparent;
-          transition: background 300ms var(--ease-out-strong), border-color 300ms var(--ease-out-strong), backdrop-filter 300ms var(--ease-out-strong);
+          transition: background 300ms var(--ease-out), border-color 300ms var(--ease-out), backdrop-filter 300ms var(--ease-out);
         }
         .nav--scrolled {
           background: var(--glass);
@@ -181,12 +181,12 @@ export function Nav() {
         }
         .nav__links { display: flex; align-items: center; gap: 32px; }
         .nav__links > a {
-          color: var(--cream-dim);
+          color: var(--ink2);
           font-size: 14px;
           text-decoration: none;
-          transition: color 200ms var(--ease-out-strong);
+          transition: color 200ms var(--ease-out);
         }
-        .nav__links > a:hover { color: var(--cream); }
+        .nav__links > a:hover { color: var(--ink); }
         .nav__actions { display: flex; align-items: center; gap: 12px; }
 
         /* ---------- Producto dropdown (transitions-dev menu-dropdown 05) ---------- */
@@ -199,15 +199,15 @@ export function Nav() {
           border: none;
           background: transparent;
           padding: 0;
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-size: 14px;
-          color: var(--cream-dim);
+          color: var(--ink2);
           cursor: pointer;
-          transition: color 200ms var(--ease-out-strong);
+          transition: color 200ms var(--ease-out);
         }
         .nav__prod-trigger:hover,
-        .nav__prod-trigger.is-open { color: var(--cream); }
-        .nav__prod-chev { transition: transform 200ms var(--ease-out-strong); }
+        .nav__prod-trigger.is-open { color: var(--ink); }
+        .nav__prod-chev { transition: transform 200ms var(--ease-out); }
         .nav__prod-trigger.is-open .nav__prod-chev { transform: rotate(180deg); }
 
         /* Plano SÓLIDO: un menú se LEE y tiene que ocluir lo de atrás
@@ -229,7 +229,7 @@ export function Nav() {
           opacity: 0;
           transform: scale(0.97) translateY(-6px);
           pointer-events: none;
-          transition: opacity 150ms var(--ease-out-strong), transform 150ms var(--ease-out-strong);
+          transition: opacity 150ms var(--ease-out), transform 150ms var(--ease-out);
           z-index: 10;
         }
         .pmenu.is-open {
@@ -245,7 +245,7 @@ export function Nav() {
           padding: 10px 12px;
           border-radius: var(--r-sm);
           text-decoration: none;
-          transition: background 160ms var(--ease-out-strong);
+          transition: background 160ms var(--ease-out);
         }
         .pmenu__item:hover { background: color-mix(in srgb, var(--ink) 5%, transparent); }
         .pmenu__icon {
@@ -255,10 +255,10 @@ export function Nav() {
           width: 34px;
           height: 34px;
           flex-shrink: 0;
-          background: var(--gold-tint-12);
-          border: 1px solid var(--gold-glow);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: var(--r-sm);
-          color: var(--gold);
+          color: var(--ac);
         }
         .pmenu__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
         .pmenu__all {
@@ -267,21 +267,21 @@ export function Nav() {
           justify-content: space-between;
           margin-top: 4px;
           padding: 11px 12px;
-          border-top: 1px solid var(--border-soft);
+          border-top: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           border-radius: 0 0 10px 10px;
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 10px;
           letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
           text-decoration: none;
-          transition: color 160ms var(--ease-out-strong), background 160ms var(--ease-out-strong);
+          transition: color 160ms var(--ease-out), background 160ms var(--ease-out);
         }
-        .pmenu__all:hover { color: var(--gold); background: color-mix(in srgb, var(--ink) 4%, transparent); }
-        .pmenu__name { font-size: 14px; font-weight: 600; color: var(--cream); }
+        .pmenu__all:hover { color: var(--ac); background: color-mix(in srgb, var(--ink) 4%, transparent); }
+        .pmenu__name { font-size: 14px; font-weight: 600; color: var(--ink); }
         .pmenu__tag {
           font-size: 12px;
-          color: var(--cream-dim);
+          color: var(--ink2);
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -290,25 +290,25 @@ export function Nav() {
         .nav__hamburger {
           display: none;
           width: 44px; height: 44px;
-          background: var(--glass-bg);
+          background: var(--glass);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
           border-radius: var(--r-md);
-          color: var(--cream);
+          color: var(--ink);
           cursor: pointer;
           align-items: center; justify-content: center;
-          box-shadow: var(--glass-elev-sm);
-          transition: background 200ms var(--ease-out-strong);
+          box-shadow: var(--e1), inset 0 1px 0 var(--glass-hi);
+          transition: background 200ms var(--ease-out);
         }
-        .nav__hamburger:hover { background: var(--glass-bg-strong); }
+        .nav__hamburger:hover { background: var(--glass-strong); }
         .nav__hamburger:active { transform: scale(0.97); }
 
         .logo {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          color: var(--cream);
+          color: var(--ink);
           text-decoration: none;
         }
         .logo:active { transform: scale(0.98); }
@@ -321,7 +321,7 @@ export function Nav() {
           backdrop-filter: var(--backdrop-filter);
           opacity: 0;
           pointer-events: none;
-          transition: opacity 300ms var(--ease-out-strong);
+          transition: opacity 300ms var(--ease-out);
         }
         .drawer--open {
           opacity: 1;
@@ -332,7 +332,7 @@ export function Nav() {
           top: 0; bottom: 0; right: 0;
           width: min(360px, 80vw);
           padding: 96px 32px 32px;
-          background: var(--glass-bg-strong);
+          background: var(--glass-strong);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border-left: 1px solid var(--glass-border);
@@ -346,30 +346,30 @@ export function Nav() {
         }
         .drawer--open .drawer__inner { transform: translateX(0); }
         .drawer__label {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 10px;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
           padding: 6px 0;
         }
         .drawer__sub {
           padding: 11px 0 11px 14px;
           font-size: 17px;
-          color: var(--cream-dim);
-          border-bottom: 1px solid var(--border-soft);
+          color: var(--ink2);
+          border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           text-decoration: none;
         }
-        .drawer__sub:hover { color: var(--gold); }
+        .drawer__sub:hover { color: var(--ac); }
         .drawer__inner > a:not(.drawer__sub) {
           padding: 14px 0;
           font-size: 22px;
-          color: var(--cream);
-          border-bottom: 1px solid var(--border-soft);
+          color: var(--ink);
+          border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           text-decoration: none;
           letter-spacing: -0.01em;
         }
-        .drawer__inner > a:not(.drawer__sub):hover { color: var(--gold); }
+        .drawer__inner > a:not(.drawer__sub):hover { color: var(--ac); }
         .drawer__close {
           position: absolute;
           top: 18px; right: 24px;
@@ -378,14 +378,14 @@ export function Nav() {
           align-items: center;
           justify-content: center;
           background: transparent;
-          border: 1px solid var(--border-soft);
+          border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           border-radius: var(--r-sm);
-          color: var(--cream);
+          color: var(--ink);
           cursor: pointer;
           z-index: 1;
-          transition: background 200ms var(--ease-out-strong), transform 160ms var(--ease-out-strong);
+          transition: background 200ms var(--ease-out), transform 160ms var(--ease-out);
         }
-        .drawer__close:hover { background: var(--bg-elevated); }
+        .drawer__close:hover { background: var(--surface); }
         .drawer__close:active { transform: scale(0.97); }
 
         @media (max-width: 980px) {

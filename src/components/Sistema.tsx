@@ -9,7 +9,6 @@ import {
   IdCard,
   ArrowUpRight,
 } from 'lucide-react'
-import { useGsap, gsap, ScrollTrigger } from '../lib/useGsap'
 import {
   MkPOS,
   MkAlmacen,
@@ -93,23 +92,6 @@ const MODULES: Module[] = [
 ]
 
 export function Sistema() {
-  const ref = useGsap<HTMLElement>((scope) => {
-    ScrollTrigger.batch(scope.querySelectorAll('.module-card'), {
-      onEnter: (els) => {
-        gsap.to(els, {
-          opacity: 1,
-          y: 0,
-          duration: 0.7,
-          ease: 'power3.out',
-          stagger: 0.06,
-          overwrite: true,
-        })
-      },
-      start: 'top 85%',
-      once: true,
-    })
-  })
-
   /** Spotlight hover halo follows the cursor (Sprint 3.4 polish). */
   const gridRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {
@@ -133,7 +115,6 @@ export function Sistema() {
     <section
       className="section-pad sistema"
       id="sistema"
-      ref={ref as React.RefObject<HTMLElement>}
       aria-labelledby="sistema-title"
     >
       <div className="container-lg">
@@ -150,7 +131,7 @@ export function Sistema() {
           </p>
         </header>
 
-        <div className="bento" ref={gridRef}>
+        <div className="bento" ref={gridRef} data-anim="fade-up" data-stagger="0.06">
           {MODULES.map(({ icon: Icon, name, slug, desc, Mockup, span }) => (
             <Link
               key={name}
@@ -180,7 +161,7 @@ export function Sistema() {
         .sistema {
           position: relative;
           z-index: 10;
-          background: var(--bg-subtle);
+          background: color-mix(in srgb, var(--surface) 12%, var(--bg));
         }
         .sistema__header {
           text-align: center;
@@ -207,19 +188,17 @@ export function Sistema() {
           flex-direction: column;
           gap: 14px;
           padding: 20px;
-          background: var(--glass-bg);
+          background: var(--glass);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
-          border-radius: var(--r-card);
-          box-shadow: var(--glass-elev-sm);
+          border-radius: var(--r-xl);
+          box-shadow: var(--e1), inset 0 1px 0 var(--glass-hi);
           overflow: hidden;
-          opacity: 0;
-          transform: translateY(40px);
           transition:
-            border-color 300ms var(--ease-out-strong),
-            box-shadow 300ms var(--ease-out-strong),
-            transform 300ms var(--ease-out-strong);
+            border-color 300ms var(--ease-out),
+            box-shadow 300ms var(--ease-out),
+            transform 300ms var(--ease-out);
         }
         .module-card:hover {
           border-color: color-mix(in srgb, var(--ac) 45%, transparent);
@@ -234,7 +213,7 @@ export function Sistema() {
           background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--ac) 10%, transparent), transparent 40%);
           opacity: 0;
           pointer-events: none;
-          transition: opacity 300ms var(--ease-out-strong);
+          transition: opacity 300ms var(--ease-out);
           z-index: 0;
         }
         .module-card:hover::before { opacity: 1; }
@@ -247,8 +226,8 @@ export function Sistema() {
           flex: 1;
           min-height: 130px;
           border-radius: var(--r-lg);
-          border: 1px solid var(--border);
-          background: #FFFFFF;
+          border: 1px solid var(--hairline);
+          background: var(--surface);
           box-shadow: 0 1px 2px color-mix(in srgb, var(--ink) 5%, transparent);
           overflow: hidden;
         }
@@ -262,10 +241,10 @@ export function Sistema() {
           width: 34px;
           height: 34px;
           margin-bottom: 4px;
-          background: var(--gold-tint-12);
-          border: 1px solid var(--gold-glow);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: var(--r-sm);
-          color: var(--gold);
+          color: var(--ac);
         }
         .module-card { text-decoration: none; color: inherit; }
         .module-card h3 {
@@ -278,24 +257,24 @@ export function Sistema() {
           font-size: 18px;
           font-weight: 600;
           letter-spacing: -0.02em;
-          color: var(--cream);
+          color: var(--ink);
         }
         .module-card__arrow {
           flex-shrink: 0;
-          color: var(--cream-meta);
+          color: var(--ink3);
           opacity: 0;
           transform: translate(-4px, 4px);
           transition:
-            opacity 300ms var(--ease-out-strong),
-            transform 300ms var(--ease-out-strong),
-            color 300ms var(--ease-out-strong);
+            opacity 300ms var(--ease-out),
+            transform 300ms var(--ease-out),
+            color 300ms var(--ease-out);
         }
-        .module-card:hover .module-card__arrow { opacity: 1; transform: translate(0, 0); color: var(--gold); }
+        .module-card:hover .module-card__arrow { opacity: 1; transform: translate(0, 0); color: var(--ac); }
         .module-card p {
           margin: 0;
           font-size: 13px;
           line-height: 1.45;
-          color: var(--cream-dim);
+          color: var(--ink2);
         }
 
         @media (max-width: 980px) {
@@ -305,11 +284,7 @@ export function Sistema() {
         @media (max-width: 560px) {
           .bento { grid-template-columns: 1fr; grid-auto-rows: minmax(260px, auto); }
         }
-        /* Cards are hidden via CSS and revealed by GSAP. Under reduced motion the
-           GSAP setup is skipped, so show them at rest here. */
-        @media (prefers-reduced-motion: reduce) {
-          .module-card { opacity: 1; transform: none; }
-        }
+
       `}</style>
     </section>
   )

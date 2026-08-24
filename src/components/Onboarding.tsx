@@ -73,10 +73,10 @@ export function Onboarding() {
           box-shadow: var(--e2);
         }
         .onb__num {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 12px;
           letter-spacing: 0.2em;
-          color: var(--gold);
+          color: var(--ac);
         }
         .onb__step-title {
           margin: 14px 0 8px;
@@ -85,9 +85,9 @@ export function Onboarding() {
           font-weight: 600;
           letter-spacing: -0.02em;
           font-size: 21px;
-          color: var(--cream);
+          color: var(--ink);
         }
-        .onb__step-desc { margin: 0; font-size: 14px; line-height: 1.55; color: var(--cream-dim); }
+        .onb__step-desc { margin: 0; font-size: 14px; line-height: 1.55; color: var(--ink2); }
 
         @media (max-width: 860px) {
           .onb__steps { grid-template-columns: 1fr; }

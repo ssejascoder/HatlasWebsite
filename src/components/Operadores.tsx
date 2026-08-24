@@ -57,7 +57,7 @@ const OPERATORS: Operator[] = [
 
 export function Operadores() {
   const ref = useGsap<HTMLElement>((scope) => {
-    const quote = scope.querySelector<HTMLElement>('[data-anim="quote"]')
+    const quote = scope.querySelector<HTMLElement>('[data-hook="quote"]')
     const cards = scope.querySelectorAll<HTMLElement>('.op-card')
 
     if (quote) {
@@ -95,7 +95,7 @@ export function Operadores() {
           </h2>
         </header>
 
-        <figure className="op-quote" data-anim="quote">
+        <figure className="op-quote" data-hook="quote">
           <blockquote className="op-quote__text">
             <span aria-hidden="true" className="op-quote__marks op-quote__marks--open">“</span>
             {HERO_QUOTE.text}
@@ -131,7 +131,7 @@ export function Operadores() {
         .operadores {
           position: relative;
           z-index: 10;
-          background: var(--bg-subtle);
+          background: color-mix(in srgb, var(--surface) 12%, var(--bg));
         }
         .operadores__header {
           text-align: center;
@@ -151,36 +151,36 @@ export function Operadores() {
           text-align: left;
         }
         .op-quote__text {
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-style: italic;
           font-weight: 400;
           font-size: clamp(26px, 4vw, 50px);
           line-height: 1.22;
-          color: var(--cream);
+          color: var(--ink);
           letter-spacing: -0.02em;
           margin: 0 0 28px;
           text-wrap: balance;
         }
         .op-quote__marks {
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-style: italic;
-          color: var(--gold);
+          color: var(--ac);
         }
         .op-quote__marks--open { margin-right: 6px; }
         .op-quote__marks--close { margin-left: 4px; }
         .op-quote__byline { display: flex; flex-direction: column; gap: 4px; }
         .op-quote__name {
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-size: 16px;
-          color: var(--cream);
+          color: var(--ink);
           font-weight: 500;
         }
         .op-quote__ctx {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 12px;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
         }
 
         /* ─── Three operator cards ─── */
@@ -197,16 +197,16 @@ export function Operadores() {
           flex-direction: column;
           gap: 18px;
           padding: 28px 24px;
-          background: var(--glass-bg);
+          background: var(--glass);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
-          border-radius: var(--r-card);
-          box-shadow: var(--glass-elev-sm);
+          border-radius: var(--r-xl);
+          box-shadow: var(--e1), inset 0 1px 0 var(--glass-hi);
           transition:
-            border-color 300ms var(--ease-out-strong),
-            box-shadow 300ms var(--ease-out-strong),
-            transform 300ms var(--ease-out-strong);
+            border-color 300ms var(--ease-out),
+            box-shadow 300ms var(--ease-out),
+            transform 300ms var(--ease-out);
         }
         .op-card:hover {
           border-color: color-mix(in srgb, var(--ac) 45%, transparent);
@@ -237,18 +237,18 @@ export function Operadores() {
         }
         .op-card__quote {
           margin: 0;
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-size: 14px;
           line-height: 1.55;
-          color: var(--cream);
+          color: var(--ink);
           letter-spacing: -0.005em;
           text-wrap: pretty;
           flex: 1;
         }
         .op-card__marks {
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-style: italic;
-          color: var(--gold);
+          color: var(--ac);
           font-size: 18px;
           line-height: 0;
           vertical-align: -0.05em;
@@ -257,17 +257,17 @@ export function Operadores() {
         .op-card__marks--close { margin-left: 3px; }
         .op-card__byline { display: flex; flex-direction: column; gap: 4px; }
         .op-card__name {
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-size: 13px;
-          color: var(--cream);
+          color: var(--ink);
           font-weight: 500;
         }
         .op-card__biz {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 11px;
           letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
         }
 
         @media (max-width: 900px) {

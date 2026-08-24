@@ -27,7 +27,7 @@ export function ConnectsWith() {
       </div>
 
       <style>{`
-        .cw { position: relative; z-index: 10; background: var(--bg-base); padding: 28px 0; border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border-soft); }
+        .cw { position: relative; z-index: 10; background: var(--bg); padding: 28px 0; border-top: 1px solid color-mix(in srgb, var(--ink) 6%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent); }
         .cw__inner {
           display: flex;
           align-items: center;
@@ -36,11 +36,11 @@ export function ConnectsWith() {
           gap: 16px 32px;
         }
         .cw__label {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 10px;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
         }
         .cw__items { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 26px; }
         .cw__item {
@@ -48,9 +48,9 @@ export function ConnectsWith() {
           align-items: center;
           gap: 9px;
           font-size: 14px;
-          color: var(--cream-dim);
+          color: var(--ink2);
         }
-        .cw__item svg { color: var(--gold); flex-shrink: 0; }
+        .cw__item svg { color: var(--ac); flex-shrink: 0; }
         @media (max-width: 600px) {
           .cw__inner { flex-direction: column; gap: 16px; }
         }

@@ -141,7 +141,7 @@ export function CursorGlow() {
           mix-blend-mode: multiply;
           background: radial-gradient(circle, color-mix(in srgb, var(--ac) 16%, transparent) 0%, color-mix(in srgb, var(--ac) 5%, transparent) 34%, transparent 68%);
           border-radius: 50%;
-          transition: opacity 400ms var(--ease-out-strong);
+          transition: opacity 400ms var(--ease-out);
           will-change: transform;
         }
         .cursor-glow--active { opacity: 0.55; }

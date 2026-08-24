@@ -6,6 +6,7 @@ import { VerticalProvider } from './lib/VerticalContext'
 import { WhatsAppFab } from './components/WhatsAppFab'
 import { GlassDefs } from './components/GlassDefs'
 import { AtlasBlobs } from './components/AtlasBlobs'
+import { AtlasAnimHost } from './components/AtlasAnimHost'
 // Orden obligatorio: atlas.css (fuente de verdad del design system) → tokens.css
 // (shim legacy→atlas, se retira en la Fase 5) → global.css (recetas del sitio).
 import './styles/atlas.css'
@@ -37,6 +38,7 @@ createRoot(document.getElementById('root')!).render(
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Suspense>
+        <AtlasAnimHost />
         <AtlasBlobs />
         <WhatsAppFab />
         <GlassDefs />

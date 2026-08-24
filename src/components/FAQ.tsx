@@ -85,7 +85,7 @@ export function FAQ() {
         .faq {
           position: relative;
           z-index: 10;
-          background: var(--bg-subtle);
+          background: color-mix(in srgb, var(--surface) 12%, var(--bg));
         }
         .faq__header {
           text-align: center;
@@ -97,16 +97,16 @@ export function FAQ() {
           flex-direction: column;
           max-width: 840px;
           margin: 0 auto;
-          border-top: 1px solid var(--border-soft);
+          border-top: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
         }
         .faq__item {
           width: 100%;
           padding: 24px 0;
           background: transparent;
           border: none;
-          border-bottom: 1px solid var(--border-soft);
+          border-bottom: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           text-align: left;
-          color: var(--cream);
+          color: var(--ink);
           cursor: pointer;
           display: flex;
           flex-direction: column;
@@ -116,13 +116,13 @@ export function FAQ() {
           justify-content: space-between;
           align-items: center;
           gap: 16px;
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-size: 18px;
           font-weight: 400;
           letter-spacing: -0.005em;
-          color: var(--cream);
+          color: var(--ink);
         }
-        .faq__item:hover .faq__q { color: var(--gold); }
+        .faq__item:hover .faq__q { color: var(--ac); }
         .faq__toggle {
           position: relative;
           display: inline-flex;
@@ -130,20 +130,20 @@ export function FAQ() {
           justify-content: center;
           width: 32px;
           height: 32px;
-          border: 1px solid var(--border);
-          background: var(--bg-card);
-          color: var(--cream-dim);
+          border: 1px solid var(--hairline);
+          background: var(--surface);
+          color: var(--ink2);
           border-radius: var(--r-sm);
           flex-shrink: 0;
           transition:
-            background 200ms var(--ease-out-strong),
-            border-color 200ms var(--ease-out-strong),
-            color 200ms var(--ease-out-strong);
+            background 200ms var(--ease-out),
+            border-color 200ms var(--ease-out),
+            color 200ms var(--ease-out);
         }
         .faq__item.is-open .faq__toggle {
-          background: var(--gold-tint-12);
-          border-color: var(--gold-deep);
-          color: var(--gold);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          border-color: var(--ac-deep);
+          color: var(--ac);
         }
         /* transitions-dev · icon-swap (09) on the +/- toggle */
         .faq__ico {
@@ -177,7 +177,7 @@ export function FAQ() {
           max-width: 680px;
           font-size: 15px;
           line-height: 1.6;
-          color: var(--cream-dim);
+          color: var(--ink2);
         }
       `}</style>
     </section>

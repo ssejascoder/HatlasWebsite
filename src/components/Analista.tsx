@@ -29,9 +29,9 @@ export function Analista() {
   const { data } = useVertical()
   const { chat, insights } = data
   const ref = useGsap<HTMLElement>((scope) => {
-    const chat = scope.querySelector<HTMLElement>('[data-anim="chat"]')
+    const chat = scope.querySelector<HTMLElement>('[data-hook="chat"]')
     const cards = scope.querySelectorAll<HTMLElement>('.insight-card')
-    const cierre = scope.querySelector<HTMLElement>('[data-anim="cierre"]')
+    const cierre = scope.querySelector<HTMLElement>('[data-hook="cierre"]')
 
     if (chat) {
       gsap.set(chat, { opacity: 0, y: 24 })
@@ -82,7 +82,7 @@ export function Analista() {
           </p>
         </header>
 
-        <div className="chat" data-anim="chat">
+        <div className="chat" data-hook="chat">
           <div className="chat__bubble chat__bubble--user">
             <div className="chat__who">TÚ</div>
             <p>{chat.question}</p>
@@ -112,7 +112,7 @@ export function Analista() {
 
         <div className="insights">
           <div className="insights__head">
-            <span className="eyebrow" style={{ color: 'var(--cream-meta)' }}>
+            <span className="eyebrow" style={{ color: 'var(--ink3)' }}>
               Lo que Hatlas Agent detectó esta semana
             </span>
           </div>
@@ -135,7 +135,7 @@ export function Analista() {
           </div>
         </div>
 
-        <p className="analista__cierre" data-anim="cierre">
+        <p className="analista__cierre" data-hook="cierre">
           Te dice qué hacer, <em>no solo qué pasó.</em>
         </p>
         <div className="analista__cta">
@@ -147,7 +147,7 @@ export function Analista() {
         .analista {
           position: relative;
           z-index: 10;
-          background: var(--bg-base);
+          background: var(--bg);
         }
         .analista__header {
           text-align: center;
@@ -167,14 +167,14 @@ export function Analista() {
         .chat__bubble {
           padding: 18px 22px;
           border-radius: var(--r-lg);
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
         }
         .chat__bubble--user {
           align-self: flex-end;
           max-width: 480px;
           background: var(--surface);
           border: 1px solid var(--hairline);
-          color: var(--cream);
+          color: var(--ink);
         }
         /* Carbon tier (§4.9) — was a warm amber wash, now matches every
            other content card. The "who is speaking" distinction from the
@@ -190,13 +190,13 @@ export function Analista() {
           box-shadow: var(--e2);
         }
         .chat__who {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 11px;
           letter-spacing: 0.16em;
-          color: var(--cream-meta);
+          color: var(--ink3);
           margin-bottom: 8px;
         }
-        .chat__bubble p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--cream); }
+        .chat__bubble p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--ink); }
         .chat__lead { font-weight: 400; }
 
         .chat__steps {
@@ -215,20 +215,20 @@ export function Analista() {
           align-items: baseline;
           font-size: 14px;
           line-height: 1.5;
-          color: var(--cream-dim);
+          color: var(--ink2);
         }
         .chat__steps li em {
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-style: italic;
-          color: var(--gold);
+          color: var(--ac);
           font-weight: 600;
         }
         .chat__step-tag {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 9px;
           letter-spacing: 0.18em;
           text-transform: uppercase;
-          color: var(--gold);
+          color: var(--ac);
           padding-top: 2px;
         }
 
@@ -237,23 +237,23 @@ export function Analista() {
           grid-template-columns: 110px 1fr;
           gap: 12px;
           padding: 12px 14px;
-          background: var(--gold-tint-12);
-          border: 1px solid var(--gold-glow);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: var(--r-md);
           font-size: 13px;
           line-height: 1.5;
-          color: var(--cream);
+          color: var(--ink);
         }
         .chat__sugg-label {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 10px;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          color: var(--gold);
+          color: var(--ac);
         }
         .chat__actions { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
         .chat__btn {
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-size: 13px;
           font-weight: 500;
           min-height: 44px;
@@ -262,20 +262,20 @@ export function Analista() {
           cursor: pointer;
           display: inline-flex;
           align-items: center;
-          transition: transform 160ms var(--ease-out-strong), background 200ms var(--ease-out-strong), border-color 200ms var(--ease-out-strong);
+          transition: transform 160ms var(--ease-out), background 200ms var(--ease-out), border-color 200ms var(--ease-out);
         }
         .chat__btn:active { transform: scale(0.97); }
         .chat__btn--primary {
-          background: var(--grad-gold);
-          color: var(--gold-text);
+          background: linear-gradient(135deg, var(--ac), var(--ac-deep));
+          color: #fff;
           border: none;
         }
         .chat__btn--ghost {
           background: transparent;
-          color: var(--cream-dim);
-          border: 1px solid var(--border-strong);
+          color: var(--ink2);
+          border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
         }
-        .chat__btn--ghost:hover { color: var(--cream); }
+        .chat__btn--ghost:hover { color: var(--ink); }
 
         .insights {
           max-width: 1100px;
@@ -309,9 +309,9 @@ export function Analista() {
           justify-content: center;
           width: 40px;
           height: 40px;
-          color: var(--gold);
-          background: var(--gold-tint-12);
-          border: 1px solid var(--gold-glow);
+          color: var(--ac);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: var(--r-sm);
           flex-shrink: 0;
         }
@@ -320,29 +320,29 @@ export function Analista() {
           margin: 0 0 6px;
           font-size: 14px;
           line-height: 1.45;
-          color: var(--cream);
+          color: var(--ink);
         }
         /* Title in cream Fraunces italic — gold was the whole sentence, too
            much. Gold now lives only on the icon (the accent), per §4.9
            "el oro es el escenario, no el actor". */
         .insight-card__title em {
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-style: normal;
-          color: var(--gold);
+          color: var(--ac);
           font-weight: 600;
         }
         .insight-card__detail {
           margin: 0 0 8px;
           font-size: 13px;
           line-height: 1.5;
-          color: var(--cream-dim);
+          color: var(--ink2);
         }
         .insight-card__meta {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 11px;
           letter-spacing: 0.12em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
         }
 
         .analista__cierre {
@@ -351,12 +351,12 @@ export function Analista() {
           font-style: normal;
           font-weight: 600;
           letter-spacing: -0.03em;
-          color: var(--cream);
+          color: var(--ink);
           line-height: 1.1;
           font-size: clamp(24px, 3vw, 40px);
           margin: 72px auto 24px;
         }
-        .analista__cierre em { color: var(--gold); }
+        .analista__cierre em { color: var(--ac); }
         .analista__cta { text-align: center; }
 
         @media (max-width: 900px) {

@@ -112,17 +112,17 @@ export function ModulesIndex() {
           gap: 10px;
           padding: 28px;
           min-height: 200px;
-          background: var(--glass-bg);
+          background: var(--glass);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
-          border-radius: var(--r-card);
-          box-shadow: var(--glass-elev-sm);
+          border-radius: var(--r-xl);
+          box-shadow: var(--e1), inset 0 1px 0 var(--glass-hi);
           text-decoration: none;
           transition:
-            border-color 300ms var(--ease-out-strong),
-            transform 300ms var(--ease-out-strong),
-            box-shadow 300ms var(--ease-out-strong);
+            border-color 300ms var(--ease-out),
+            transform 300ms var(--ease-out),
+            box-shadow 300ms var(--ease-out);
         }
         .micard:hover {
           border-color: color-mix(in srgb, var(--ac) 45%, transparent);
@@ -135,13 +135,13 @@ export function ModulesIndex() {
           justify-content: center;
           width: 44px;
           height: 44px;
-          background: var(--gold-tint-12);
-          border: 1px solid var(--gold-glow);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          border: 1px solid color-mix(in srgb, var(--ac) 28%, transparent);
           border-radius: 11px;
-          color: var(--gold);
-          transition: border-color 300ms var(--ease-out-strong), background 300ms var(--ease-out-strong);
+          color: var(--ac);
+          transition: border-color 300ms var(--ease-out), background 300ms var(--ease-out);
         }
-        .micard:hover .micard__icon { border-color: color-mix(in srgb, var(--ac) 50%, transparent); background: var(--gold-tint-22); }
+        .micard:hover .micard__icon { border-color: color-mix(in srgb, var(--ac) 50%, transparent); background: color-mix(in srgb, var(--ac) 18%, transparent); }
         .micard__name {
           margin: 6px 0 0;
           font-family: var(--font-display);
@@ -149,23 +149,23 @@ export function ModulesIndex() {
           font-weight: 600;
           letter-spacing: -0.02em;
           font-size: 23px;
-          color: var(--cream);
+          color: var(--ink);
         }
-        .micard__tag { margin: 0; font-size: 14px; line-height: 1.5; color: var(--cream-dim); }
+        .micard__tag { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink2); }
         .micard__cta {
           margin-top: auto;
           display: inline-flex;
           align-items: center;
           gap: 7px;
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 11px;
           letter-spacing: 0.1em;
           text-transform: uppercase;
-          color: var(--cream-meta);
-          transition: color 300ms var(--ease-out-strong);
+          color: var(--ink3);
+          transition: color 300ms var(--ease-out);
         }
-        .micard__cta svg { transition: transform 300ms var(--ease-out-strong); }
-        .micard:hover .micard__cta { color: var(--gold); }
+        .micard__cta svg { transition: transform 300ms var(--ease-out); }
+        .micard:hover .micard__cta { color: var(--ac); }
         .micard:hover .micard__cta svg { transform: translateX(4px); }
 
         @media (max-width: 900px) {

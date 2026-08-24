@@ -101,23 +101,23 @@ export function VerticalToggle() {
           margin-bottom: 22px;
         }
         .vtoggle__label {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 10px;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: var(--cream-meta);
+          color: var(--ink3);
         }
         .vtoggle__pills {
           position: relative;
           display: inline-flex;
           gap: 6px;
           padding: 4px;
-          background: var(--glass-bg-tint);
+          background: color-mix(in srgb, var(--bg) 55%, transparent);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
           border-radius: var(--r-pill);
-          box-shadow: var(--glass-elev-sm);
+          box-shadow: var(--e1), inset 0 1px 0 var(--glass-hi);
         }
         /* The sliding highlight. transform + width are written inline by JS so
            the transition tweens between the previous and next measured pill. */
@@ -128,9 +128,9 @@ export function VerticalToggle() {
           height: 36px;
           width: 0;
           border-radius: var(--r-pill);
-          background: var(--glass-bg-strong);
+          background: var(--glass-strong);
           border: 1px solid color-mix(in srgb, var(--ac) 45%, transparent);
-          box-shadow: 0 6px 16px color-mix(in srgb, var(--gold) 22%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+          box-shadow: 0 6px 16px color-mix(in srgb, var(--ac) 22%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.6);
           transform: translateX(0);
           transition:
             transform var(--tabs-dur) var(--tabs-ease),
@@ -145,8 +145,8 @@ export function VerticalToggle() {
           appearance: none;
           border: 1px solid transparent;
           background: transparent;
-          color: var(--cream-dim);
-          font-family: var(--font-sans);
+          color: var(--ink2);
+          font-family: var(--font-ui);
           font-size: 13px;
           font-weight: 500;
           letter-spacing: -0.005em;
@@ -155,17 +155,17 @@ export function VerticalToggle() {
           border-radius: var(--r-pill);
           cursor: pointer;
           white-space: nowrap;
-          transition: color 200ms var(--ease-out-strong);
+          transition: color 200ms var(--ease-out);
         }
-        .vtoggle__pill:hover { color: var(--cream); }
+        .vtoggle__pill:hover { color: var(--ink); }
         .vtoggle__pill:focus-visible {
-          outline: 2px solid var(--gold);
+          outline: 2px solid var(--ac);
           outline-offset: 2px;
         }
         /* Active pill: just the text color now — the gold ring/tint rides on
            the sliding .vtoggle__pill-bg underneath. */
         .vtoggle__pill.is-active {
-          color: var(--gold-deep);
+          color: var(--ac-deep);
           font-weight: 600;
         }
 

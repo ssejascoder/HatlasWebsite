@@ -78,7 +78,7 @@ export function ContainerScroll({
           border-radius: 30px;
           transform-origin: center top;
           transform-style: preserve-3d;
-          background: var(--glass-bg-strong);
+          background: var(--glass-strong);
           -webkit-backdrop-filter: blur(24px) saturate(1.8) brightness(1.06);
           backdrop-filter: url(#lg-refract) blur(24px) saturate(1.8) brightness(1.06);
           border: 1px solid var(--glass-border);
@@ -94,7 +94,7 @@ export function ContainerScroll({
           border-radius: 22px;
           overflow: hidden;
           background: #FFFFFF;
-          border: 1px solid var(--border);
+          border: 1px solid var(--hairline);
         }
         .cscroll__screen > * { height: 100%; }
 

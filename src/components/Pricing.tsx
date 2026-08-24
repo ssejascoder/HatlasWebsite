@@ -190,7 +190,7 @@ export function Pricing() {
         .pricing {
           position: relative;
           z-index: 10;
-          background: var(--bg-base);
+          background: var(--bg);
         }
         .pricing__header {
           text-align: center;
@@ -207,8 +207,8 @@ export function Pricing() {
           padding: 4px;
           width: 320px;
           max-width: 90vw;
-          background: var(--bg-card);
-          border: 1px solid var(--border-soft);
+          background: var(--surface);
+          border: 1px solid color-mix(in srgb, var(--ink) 6%, transparent);
           border-radius: var(--r-pill);
           margin: 0 auto 40px;
         }
@@ -219,10 +219,10 @@ export function Pricing() {
           left: 4px;
           width: calc(50% - 4px);
           height: calc(100% - 8px);
-          background: var(--gold);
+          background: var(--ac);
           border-radius: var(--r-pill);
           transform: translateX(0);
-          transition: transform 280ms var(--ease-out-strong);
+          transition: transform 280ms var(--ease-out);
           z-index: 0;
         }
         .toggle__pill[data-annual="true"] { transform: translateX(100%); }
@@ -235,32 +235,32 @@ export function Pricing() {
           gap: 8px;
           min-height: 44px;
           padding: 12px 18px;
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-size: 14px;
           font-weight: 500;
           letter-spacing: 0.02em;
-          color: var(--cream-dim);
+          color: var(--ink2);
           background: transparent;
           border: none;
           border-radius: var(--r-pill);
           cursor: pointer;
-          transition: color 200ms var(--ease-out-strong);
+          transition: color 200ms var(--ease-out);
         }
-        .toggle__btn:hover { color: var(--cream); }
-        .toggle__btn--active { color: var(--gold-text); }
+        .toggle__btn:hover { color: var(--ink); }
+        .toggle__btn--active { color: #fff; }
         @media (prefers-reduced-motion: reduce) {
           .toggle__pill { transition: none; }
         }
         .toggle__save {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 10px;
           letter-spacing: 0.06em;
           padding: 2px 8px;
           border-radius: var(--r-pill);
-          background: var(--gold-tint-12);
-          color: var(--gold-deep);
+          background: color-mix(in srgb, var(--ac) 10%, transparent);
+          color: var(--ac-deep);
         }
-        .toggle__btn--active .toggle__save { background: rgba(255, 255, 255, 0.24); color: var(--gold-text); }
+        .toggle__btn--active .toggle__save { background: rgba(255, 255, 255, 0.24); color: #fff; }
 
         .grid {
           display: grid;
@@ -343,18 +343,18 @@ export function Pricing() {
           top: -12px;
           right: 24px;
           padding: 6px 12px;
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 10px;
           font-weight: 600;
           letter-spacing: 0.14em;
           text-transform: uppercase;
-          background: var(--gold);
-          color: var(--gold-text);
+          background: var(--ac);
+          color: #fff;
           border-radius: var(--r-pill);
-          box-shadow: 0 8px 20px color-mix(in srgb, var(--gold) 40%, transparent), inset 0 1px 0 rgba(255,255,255,0.3);
+          box-shadow: 0 8px 20px color-mix(in srgb, var(--ac) 40%, transparent), inset 0 1px 0 rgba(255,255,255,0.3);
         }
         .tier-card__label {
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 11px;
           letter-spacing: 0.14em;
           text-transform: uppercase;
@@ -411,25 +411,25 @@ export function Pricing() {
         .tier-cta {
           width: 100%;
           padding: 12px 16px;
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-size: 14px;
           font-weight: 500;
           text-align: center;
           text-decoration: none;
           border-radius: var(--r-sm);
           cursor: pointer;
-          transition: background 200ms var(--ease-out-strong), transform 160ms var(--ease-out-strong);
+          transition: background 200ms var(--ease-out), transform 160ms var(--ease-out);
         }
         .tier-cta:active { transform: scale(0.97); }
         .tier-cta--light {
           background: transparent;
-          color: var(--gold-deep);
+          color: var(--ac-deep);
           border: 1px solid color-mix(in srgb, var(--ac) 42%, transparent);
         }
-        .tier-cta--light:hover { background: var(--gold-tint-12); border-color: var(--gold); }
+        .tier-cta--light:hover { background: color-mix(in srgb, var(--ac) 10%, transparent); border-color: var(--ac); }
         .tier-cta--dark {
           background: #FFFFFF;
-          color: var(--gold-deep);
+          color: var(--ac-deep);
           border: 1px solid rgba(255, 255, 255, 0.6);
           box-shadow: 0 8px 20px color-mix(in srgb, var(--ink) 18%, transparent);
         }
@@ -439,9 +439,9 @@ export function Pricing() {
           margin: 48px auto 0;
           max-width: 720px;
           text-align: center;
-          font-family: var(--font-sans);
+          font-family: var(--font-ui);
           font-size: 14px;
-          color: var(--cream-dim);
+          color: var(--ink2);
         }
         .enterprise__lead { display: inline; }
         .enterprise__link {
@@ -449,21 +449,21 @@ export function Pricing() {
           align-items: center;
           min-height: 44px;
           padding: 6px 8px;
-          color: var(--gold);
+          color: var(--ac);
           text-decoration: none;
           font-weight: 500;
-          transition: color 200ms var(--ease-out-strong);
+          transition: color 200ms var(--ease-out);
         }
-        .enterprise__link:hover { color: var(--gold-bright); }
+        .enterprise__link:hover { color: var(--ac-hover); }
 
         .pricing__fine {
           margin-top: 24px;
           text-align: center;
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 12px;
           line-height: 1.55;
           letter-spacing: 0.04em;
-          color: var(--cream-meta);
+          color: var(--ink3);
           max-width: 640px;
           margin-inline: auto;
         }

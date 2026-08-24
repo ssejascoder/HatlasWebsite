@@ -1,93 +1,24 @@
 /* ============================================================================
-   SHIM DE COMPATIBILIDAD — nombres legacy → tokens de Atlas
+   TOKENS PROPIOS DEL SITIO
    ============================================================================
-   La fuente de verdad es `atlas.css` (vendored, NO se edita). Este archivo
-   solo traduce el vocabulario viejo del sitio (--gold / --cream / --glass-bg…)
-   a los tokens reales del design system, para que los ~30 componentes con
-   <style> inline corran sobre Atlas sin reescribirlos todos de golpe.
+   El design system vive en `atlas.css` (vendored, NO se edita): color, tinta,
+   vidrio, elevación, radios, densidad, motion y tipografía salen de ahí.
 
-   REGLA DE ORO: acá NO puede declararse ningún nombre que atlas.css §1 ya
-   posea (--ac, --ac-light, --ac-deep, --glass, --glass-strong, --glass-border,
-   --glass-hi, --glass-edge, --glass-shadow, --hairline, --ink*, --surface,
-   --bg, --ok, --warn, --info, --danger, --ph, --focus, --font-display,
-   --r-*, --e*, --d-*, --ease-out, --ease-spring, --t-*).
-   Los dos archivos apuntan a :root, así que una redefinición ganaría por orden
-   y corrompería el material del DS en silencio.
-   Chequeo: comm -12 de los nombres de ambos archivos debe dar vacío.
-
-   Este archivo se RETIRA en la Fase 5, cuando cada componente cite tokens
-   Atlas directamente.
+   Acá quedan SOLO cosas que el DS no declara porque son del layout de esta
+   landing o tunables de micro-interacción propios. El shim de nombres legacy
+   (--gold / --cream / --glass-bg…) se retiró en la Fase 5: cada componente
+   cita tokens Atlas directamente.
    ============================================================================ */
 
 :root {
-  /* ---- Superficies ---- */
-  --bg-base: var(--bg);
-  --bg-subtle: #F7F3EC;              /* banda alterna; Atlas no tiene token propio */
-  --bg-card: var(--surface);
-  --bg-elevated: var(--surface);
-
-  /* ---- Bordes ---- */
-  --border: var(--hairline);
-  --border-soft: color-mix(in srgb, var(--ink) 6%, transparent);
-  --border-strong: color-mix(in srgb, var(--ink) 16%, transparent);
-
-  /* ---- Tinta (el viejo "cream" era texto oscuro) ---- */
-  --cream: var(--ink);
-  --cream-dim: var(--ink2);
-  --cream-meta: var(--ink3);
-  --cream-faint: var(--ph);
-
-  /* ---- Acento (el viejo "gold" ya era el verde Salvia) ---- */
-  --gold: var(--ac);
-  --gold-bright: var(--ac-hover);
-  --gold-deep: var(--ac-deep);
-  /* TRAMPA: --gold-text es texto SOBRE relleno de acento. NO es --ac-on
-     (que es el acento COMO texto sobre el fondo de página). Mapearlo a
-     --ac-on daría botones verde-sobre-verde. */
-  --gold-text: #FFFFFF;
-  --gold-glow: color-mix(in srgb, var(--ac) 28%, transparent);
-  --gold-tint-12: color-mix(in srgb, var(--ac) 10%, transparent);
-  --gold-tint-22: color-mix(in srgb, var(--ac) 18%, transparent);
-
-  /* ---- Gradiente de acento (solo lo usa la tarjeta destacada) ---- */
-  --grad-gold: linear-gradient(135deg, var(--ac-deep) 0%, var(--ac) 55%,
-               color-mix(in srgb, var(--ac-light) 45%, var(--ac)) 100%);
-
-  /* ---- Material de vidrio ---- */
-  --glass-bg: var(--glass);
-  --glass-bg-strong: var(--glass-strong);
-  --glass-bg-tint: color-mix(in srgb, var(--bg) 55%, transparent);
-  --glass-blur: var(--blur);
-  /* Elevación: pasa a la escala declarada del DS (--e1/--e2 + luz interior) */
-  --glass-elev: var(--e2), var(--e-inner);
-  --glass-elev-sm: var(--e1), inset 0 1px 0 var(--glass-hi);
-
-  /* ---- Estados: ahora semánticos FIJOS, nunca el acento ---- */
-  --success: var(--ok);
-  --warning: var(--warn);
-  /* --danger lo declara atlas.css con el mismo valor (#9B453C) */
-
-  /* ---- Tipografía ---- */
-  /* --font-display lo declara atlas.css (Sora). Acá solo los alias del sitio. */
-  --font-sans: var(--font-ui);
-  /* Fase 2: Roboto Mono se retiró del sistema (el DS tiene exactamente dos
-     familias). Los ~70 usos de --font-mono heredan Sora; los rótulos que eran
-     mono son ahora la receta eyebrow. */
-  --font-mono: var(--font-display);
-
-  /* ---- Motion ---- */
-  --ease-out-strong: var(--ease-out);
-  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
-
-  /* ---- Layout ---- */
-  --container-max: 1180px;           /* .atlas-container del DS */
+  /* Layout de la landing (el DS usa 1180/32 en .atlas-container) */
+  --container-max: 1180px;
   --container-pad: 32px;
 
-  /* ---- Radios legacy → escala del DS ---- */
-  --r-card: var(--r-xl);
-  --r-control: var(--r-md);
+  /* Easing del drawer móvil (curva de panel, no de entrada) */
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 
-  /* ---- transitions-dev · tunables propios del sitio (no son deuda) ---- */
+  /* transitions-dev — tunables de micro-interacción del sitio */
   --digit-dur: 500ms;
   --digit-distance: 8px;
   --digit-stagger: 70ms;

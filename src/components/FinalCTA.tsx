@@ -11,7 +11,7 @@ const TRUST = [
 
 export function FinalCTA() {
   const ref = useGsap<HTMLElement>((scope) => {
-    const headline = scope.querySelector<HTMLElement>('[data-anim="headline"]')
+    const headline = scope.querySelector<HTMLElement>('[data-hook="headline"]')
     if (!headline) return
     gsap.set(headline, { opacity: 0, y: 20 })
     gsap.to(headline, {
@@ -30,7 +30,7 @@ export function FinalCTA() {
       <div className="container-lg">
         <div className="final-cta__inner">
           <span className="eyebrow">Empezá hoy</span>
-          <h2 id="cta-final-title" className="h-section" data-anim="headline">
+          <h2 id="cta-final-title" className="h-section" data-hook="headline">
             Probá Hatlas <em>con tu negocio.</em>
           </h2>
           <p className="lede" style={{ marginInline: 'auto' }}>
@@ -63,7 +63,7 @@ export function FinalCTA() {
         .final-cta {
           position: relative;
           z-index: 10;
-          background: var(--bg-subtle);
+          background: color-mix(in srgb, var(--surface) 12%, var(--bg));
           text-align: center;
         }
         .final-cta__inner { max-width: 720px; margin: 0 auto; }
@@ -71,8 +71,8 @@ export function FinalCTA() {
         .final-cta__inner h2 { margin-bottom: 20px; }
         .final-cta__inner .lede { margin: 0 auto 36px; }
         .final-cta__btn { padding: 14px 28px; font-size: 15px; }
-        .final-cta__alt { margin: 16px 0 0; font-size: 13px; color: var(--cream-dim); }
-        .final-cta__alt a { color: var(--gold); text-decoration: none; }
+        .final-cta__alt { margin: 16px 0 0; font-size: 13px; color: var(--ink2); }
+        .final-cta__alt a { color: var(--ac); text-decoration: none; }
         .final-cta__alt a:hover { text-decoration: underline; }
         .trust-badges {
           list-style: none;
@@ -88,18 +88,18 @@ export function FinalCTA() {
           align-items: center;
           gap: 8px;
           padding: 9px 15px;
-          font-family: var(--font-mono);
+          font-family: var(--font-display);
           font-size: 11px;
           letter-spacing: 0.04em;
-          color: var(--cream-dim);
-          background: var(--glass-bg);
+          color: var(--ink2);
+          background: var(--glass);
           -webkit-backdrop-filter: var(--glass-filter);
           backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
           border-radius: var(--r-pill);
-          box-shadow: var(--glass-elev-sm);
+          box-shadow: var(--e1), inset 0 1px 0 var(--glass-hi);
         }
-        .trust-badge svg { color: var(--gold); flex-shrink: 0; }
+        .trust-badge svg { color: var(--ac); flex-shrink: 0; }
       `}</style>
     </section>
   )
