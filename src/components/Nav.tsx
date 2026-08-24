@@ -50,7 +50,7 @@ export function Nav() {
       <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`} aria-label="Navegación principal">
         <div className="nav__inner">
           <Link to="/" className="logo" aria-label="Hatlas, ir al inicio">
-            <BrandLockup height={30} variant="rounded" />
+            <BrandLockup height={26} variant="rounded" />
           </Link>
           <div className="nav__links">
             <div className="nav__prod" ref={prodRef}>
@@ -165,11 +165,11 @@ export function Nav() {
           transition: background 300ms var(--ease-out-strong), border-color 300ms var(--ease-out-strong), backdrop-filter 300ms var(--ease-out-strong);
         }
         .nav--scrolled {
-          background: rgba(247, 243, 236, 0.62);
-          backdrop-filter: blur(22px) saturate(1.8) brightness(1.04);
-          -webkit-backdrop-filter: blur(22px) saturate(1.8) brightness(1.04);
-          border-bottom-color: var(--border);
-          box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 10px 30px -18px rgba(23, 22, 27, 0.18);
+          background: var(--glass);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
+          border-bottom-color: var(--hairline);
+          box-shadow: inset 0 1px 0 var(--glass-hi), var(--e1);
         }
         .nav__inner {
           display: flex;
@@ -210,18 +210,18 @@ export function Nav() {
         .nav__prod-chev { transition: transform 200ms var(--ease-out-strong); }
         .nav__prod-trigger.is-open .nav__prod-chev { transform: rotate(180deg); }
 
+        /* Plano SÓLIDO: un menú se LEE y tiene que ocluir lo de atrás
+           (regla de dos planos del DS). Elevación --e3, sin backdrop-filter. */
         .pmenu {
           position: absolute;
           top: calc(100% + 14px);
           left: -16px;
           width: 300px;
           padding: 8px;
-          background: rgba(250, 248, 243, 0.98);
-          backdrop-filter: blur(16px) saturate(1.4);
-          -webkit-backdrop-filter: blur(16px) saturate(1.4);
-          border: 1px solid var(--border);
-          border-radius: 16px;
-          box-shadow: 0 1px 2px rgba(23,22,27,.05), 0 20px 48px -12px rgba(23, 22, 27, 0.22), inset 0 1px 0 rgba(255,255,255,0.9);
+          background: var(--surface);
+          border: 1px solid var(--hairline);
+          border-radius: var(--r-lg);
+          box-shadow: var(--e3);
           display: flex;
           flex-direction: column;
           gap: 2px;
@@ -247,7 +247,7 @@ export function Nav() {
           text-decoration: none;
           transition: background 160ms var(--ease-out-strong);
         }
-        .pmenu__item:hover { background: rgba(23, 22, 27, 0.05); }
+        .pmenu__item:hover { background: color-mix(in srgb, var(--ink) 5%, transparent); }
         .pmenu__icon {
           display: inline-flex;
           align-items: center;
@@ -291,8 +291,8 @@ export function Nav() {
           display: none;
           width: 44px; height: 44px;
           background: var(--glass-bg);
-          -webkit-backdrop-filter: blur(14px) saturate(1.6);
-          backdrop-filter: blur(14px) saturate(1.6);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
           border: 1px solid var(--glass-border);
           border-radius: 12px;
           color: var(--cream);
@@ -316,9 +316,9 @@ export function Nav() {
         .drawer {
           position: fixed; inset: 0;
           z-index: 200;
-          background: rgba(23, 22, 27, 0.34);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
+          background: color-mix(in srgb, var(--ink) 34%, transparent);
+          -webkit-backdrop-filter: var(--backdrop-filter);
+          backdrop-filter: var(--backdrop-filter);
           opacity: 0;
           pointer-events: none;
           transition: opacity 300ms var(--ease-out-strong);
@@ -333,8 +333,8 @@ export function Nav() {
           width: min(360px, 80vw);
           padding: 96px 32px 32px;
           background: var(--glass-bg-strong);
-          backdrop-filter: url(#lg-refract) blur(24px) saturate(1.8) brightness(1.06);
-          -webkit-backdrop-filter: blur(24px) saturate(1.8) brightness(1.06);
+          -webkit-backdrop-filter: var(--glass-filter);
+          backdrop-filter: var(--glass-filter);
           border-left: 1px solid var(--glass-border);
           box-shadow: -30px 0 80px rgba(23, 22, 27, 0.2);
           display: flex;

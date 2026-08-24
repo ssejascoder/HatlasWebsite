@@ -47,7 +47,7 @@ export function ScrollProgress() {
           inset: 0 0 auto 0;
           z-index: 200;
           height: 2px;
-          background: linear-gradient(90deg, #5AA07C 0%, #3E7C5B 50%, #2F5E45 100%);
+          background: linear-gradient(90deg, var(--ac-light) 0%, var(--ac) 50%, var(--ac-deep) 100%);
           transform: scaleX(0);
           transform-origin: 0 50%;
           pointer-events: none;
@@ -139,7 +139,7 @@ export function CursorGlow() {
           opacity: 0;
           pointer-events: none;
           mix-blend-mode: multiply;
-          background: radial-gradient(circle, rgba(90,160,124,0.16) 0%, rgba(90,160,124,0.05) 34%, transparent 68%);
+          background: radial-gradient(circle, color-mix(in srgb, var(--ac) 16%, transparent) 0%, color-mix(in srgb, var(--ac) 5%, transparent) 34%, transparent 68%);
           border-radius: 50%;
           transition: opacity 400ms var(--ease-out-strong);
           will-change: transform;

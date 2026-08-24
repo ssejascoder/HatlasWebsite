@@ -38,7 +38,7 @@ export function Footer() {
         <div className="footer__grid">
           <div className="footer__brand">
             <span className="footer__logo">
-              <BrandLockup height={28} variant="negro" />
+              <BrandLockup height={24} variant="negro" />
             </span>
             <p>El software de gestión para PYMEs bolivianas.</p>
             <p className="footer__news-hint">Una novedad por mes. Cosas que pasaron en Hatlas.</p>

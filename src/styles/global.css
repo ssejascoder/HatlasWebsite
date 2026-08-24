@@ -18,11 +18,9 @@ html {
 
 body {
   /* background/color/tipografía base salen de atlas.css §2 (tokens de tema).
-     Acá solo el ambiente del sitio y el clip horizontal. */
-  background-image:
-    radial-gradient(120% 80% at 8% -10%, color-mix(in srgb, var(--ac-light) 35%, transparent), transparent 60%),
-    radial-gradient(90% 70% at 100% 0%, color-mix(in srgb, var(--ac) 12%, transparent), transparent 55%);
-  background-attachment: fixed;
+     El ambiente lo pone <AtlasBlobs/> (receta .atlas-blobs), no un
+     background-image del body: así responde al acento y las degradaciones
+     del DS lo alcanzan. */
   overflow-x: hidden;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -66,13 +64,16 @@ body {
 /* Type primitives (h-mega, h-section, eyebrow, lede)             */
 /* ============================================================ */
 
+/* Receta .atlas-eyebrow del DS: un solo tamaño, el tono es lo único que varía.
+   Sora 11.5/600/.14em uppercase. Reemplaza el eyebrow monoespaciado. */
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--gold);
-  font-size: 11px;
-  font-weight: 500;
+  letter-spacing: 0.14em;
+  color: var(--ac-on);
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 /* Module / product-section eyebrow: icon chip + caps label. line-height:1
@@ -82,12 +83,13 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-family: var(--font-display);
+  font-size: 11.5px;
+  font-weight: 600;
   line-height: 1;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--ac-on);
   margin-bottom: 18px;
 }
 .meyebrow__icon {
@@ -103,38 +105,43 @@ body {
 }
 .meyebrow__icon svg { display: block; }
 
-/* Atlas display — Sora, geometric, tight. Weight carries hierarchy. */
+/* Escala del DS, adopción literal.
+   .h-mega = .atlas-h1 (clamp 40→84, w700) · .h-section = .atlas-h2 (clamp 26→36).
+   El énfasis va en <em>: color de acento, font-style normal y SIN subir el peso
+   (el titular ya es 700, así que el peso no puede enfatizar — el color sí). */
 .h-mega {
   font-family: var(--font-display);
   letter-spacing: -0.035em;
   margin: 0;
-  font-size: clamp(38px, 5vw, 66px);
-  font-weight: 600;
-  line-height: 1.0;
+  font-size: clamp(40px, 7vw, 84px);
+  font-weight: 700;
+  line-height: 0.98;
+  text-wrap: balance;
 }
 
 .h-section {
   font-family: var(--font-display);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   margin: 0;
-  font-size: clamp(32px, 4.2vw, 52px);
+  font-size: clamp(26px, 3.2vw, 36px);
   font-weight: 600;
-  line-height: 1.05;
+  line-height: 1.15;
+  text-wrap: balance;
 }
 
 .h-mega em,
 .h-section em {
   font-family: var(--font-display);
-  color: var(--gold);
+  color: var(--ac-on);
   font-style: normal;
-  font-weight: 700;
+  font-weight: inherit;
 }
 
 .lede {
-  color: var(--cream-dim);
+  color: var(--ink2);
   text-wrap: pretty;
   max-width: 560px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.6;
 }
 
@@ -143,74 +150,60 @@ body {
 /* Sprint 3.4 — :active scale(0.97) on all interactive surfaces    */
 /* ============================================================ */
 
-/* Primary — green pill with a glassy inner rim. */
+/* Primario — receta .atlas-btn--primary: relleno SÓLIDO --ac-deep (no gradiente;
+   el gradiente de acento vive solo en la tarjeta destacada), r13, hover
+   brightness(1.08), active scale(.96). Texto blanco sobre acento profundo pasa
+   AA en los tres acentos. */
 .btn-gold {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 26px;
-  font-family: var(--font-sans);
+  padding: 12px 22px;
+  font-family: var(--font-ui);
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.005em;
-  color: var(--gold-text);
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
-  background: var(--grad-gold);
+  background: var(--ac-deep);
   border: none;
-  border-radius: var(--r-control);
+  border-radius: var(--r-md);
   box-shadow:
-    0 10px 30px color-mix(in srgb, var(--gold) 42%, transparent),
+    0 5px 16px color-mix(in srgb, var(--ac) 38%, transparent),
     inset 0 1px 0 rgba(255, 255, 255, 0.35);
   transition:
-    transform 200ms var(--ease-out-strong),
-    box-shadow 200ms var(--ease-out-strong);
+    transform var(--t-fast) var(--ease-out),
+    filter var(--t-base) var(--ease-out);
 }
 
-.btn-gold:hover {
-  transform: translateY(-2px);
-  box-shadow:
-    0 14px 40px color-mix(in srgb, var(--gold) 52%, transparent),
-    inset 0 1px 0 rgba(255, 255, 255, 0.40);
-}
+.btn-gold:hover { filter: brightness(1.08); }
+.btn-gold:active { transform: scale(0.96); }
 
-.btn-gold:active {
-  transform: scale(0.97);
-}
-
-/* Secondary — clear glass with an ink label. */
+/* Secundario — receta .atlas-btn--secondary: vidrio, etiqueta en tinta. */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 26px;
-  font-family: var(--font-sans);
+  padding: 12px 22px;
+  font-family: var(--font-ui);
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.005em;
-  color: var(--cream);
+  color: var(--ink);
   text-decoration: none;
   cursor: pointer;
-  background: var(--glass-bg);
-  -webkit-backdrop-filter: blur(14px) saturate(1.6);
-  backdrop-filter: blur(14px) saturate(1.6);
+  background: var(--glass-strong);
+  -webkit-backdrop-filter: var(--glass-filter);
+  backdrop-filter: var(--glass-filter);
   border: 1px solid var(--glass-border);
-  border-radius: var(--r-control);
-  box-shadow: var(--glass-elev-sm);
+  border-radius: var(--r-md);
+  box-shadow: inset 0 1px 0 var(--glass-hi);
   transition:
-    background 200ms var(--ease-out-strong),
-    transform 160ms var(--ease-out-strong),
-    box-shadow 200ms var(--ease-out-strong);
+    background var(--t-base) var(--ease-out),
+    transform var(--t-fast) var(--ease-out);
 }
 
-.btn-ghost:hover {
-  background: var(--glass-bg-strong);
-  transform: translateY(-1px);
-}
-
-.btn-ghost:active {
-  transform: scale(0.97);
-}
+.btn-ghost:hover { background: var(--glass-hi); }
+.btn-ghost:active { transform: scale(0.96); }
 
 .btn-link {
   display: inline-flex;

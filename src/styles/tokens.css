@@ -70,14 +70,17 @@
   /* ---- Tipografía ---- */
   /* --font-display lo declara atlas.css (Sora). Acá solo los alias del sitio. */
   --font-sans: var(--font-ui);
-  --font-mono: 'Roboto Mono', ui-monospace, 'SF Mono', Menlo, monospace; /* se retira en Fase 2 */
+  /* Fase 2: Roboto Mono se retiró del sistema (el DS tiene exactamente dos
+     familias). Los ~70 usos de --font-mono heredan Sora; los rótulos que eran
+     mono son ahora la receta eyebrow. */
+  --font-mono: var(--font-display);
 
   /* ---- Motion ---- */
   --ease-out-strong: var(--ease-out);
   --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 
   /* ---- Layout ---- */
-  --container-max: 1240px;           /* pasa a 1180 (.atlas-container) en Fase 2 */
+  --container-max: 1180px;           /* .atlas-container del DS */
   --container-pad: 32px;
 
   /* ---- Radios legacy → escala del DS ---- */
