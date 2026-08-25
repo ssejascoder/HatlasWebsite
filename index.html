@@ -24,6 +24,28 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" />
+    <script>
+      /* Red de seguridad contra HTML cacheado.
+         GitHub Pages sirve index.html con max-age=600: durante esos 10 minutos
+         un visitante puede pedir un bundle que el deploy nuevo ya reemplazó.
+         Si un <script> falla al cargar, recargamos UNA vez saltando la caché en
+         lugar de dejar la página en blanco. El flag en sessionStorage impide
+         cualquier bucle de recarga. */
+      window.addEventListener(
+        'error',
+        function (e) {
+          var t = e.target
+          if (!t || t.tagName !== 'SCRIPT') return
+          if (sessionStorage.getItem('hatlas-stale-reload')) return
+          sessionStorage.setItem('hatlas-stale-reload', '1')
+          location.replace(location.pathname + '?r=' + Date.now())
+        },
+        true,
+      )
+      window.addEventListener('load', function () {
+        sessionStorage.removeItem('hatlas-stale-reload')
+      })
+    </script>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
