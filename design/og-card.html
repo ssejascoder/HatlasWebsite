@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- Fuente de public/og-image.png (tarjeta para WhatsApp, LinkedIn, X…).
+     Re-render: bash design/render-og.sh -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Instrument+Sans:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#F2EFE8; --ink:#17161B; --ink2:#55534E; --ac:#3E7C5B; --ac-deep:#2F5E45; --ac-light:#8FBCA4; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { width:1200px; height:630px; overflow:hidden; }
+  body {
+    position:relative; background:var(--bg); color:var(--ink);
+    font-family:'Instrument Sans',sans-serif; -webkit-font-smoothing:antialiased;
+  }
+  /* ambiente: blobs del acento, como el hero del sitio */
+  .blob { position:absolute; border-radius:50%; filter:blur(70px); }
+  .b1 { width:520px; height:520px; left:-160px; top:-200px; background:var(--ac-light); opacity:.45; }
+  .b2 { width:620px; height:620px; right:-120px; bottom:-300px; background:var(--ac); opacity:.30; }
+
+  .copy { position:absolute; left:72px; top:60px; width:540px; }
+  .logo { height:38px; display:block; margin-bottom:44px; }
+  h1 {
+    font-family:'Sora',sans-serif; font-weight:700; font-size:50px;
+    line-height:1.02; letter-spacing:-.035em;
+  }
+  h1 em { font-style:normal; color:var(--ac-deep); }
+  .sub { margin-top:22px; font-size:21px; line-height:1.45; color:var(--ink2); max-width:500px; }
+  .chips { position:absolute; left:72px; bottom:62px; display:flex; gap:10px; }
+  .chip {
+    font-family:'Sora',sans-serif; font-weight:600; font-size:15px;
+    padding:9px 16px; border-radius:999px; color:var(--ac-deep);
+    background:rgba(255,255,255,.72); border:1px solid rgba(23,22,27,.08);
+  }
+  .chip--fill { background:var(--ac-deep); color:#fff; border-color:transparent; }
+
+  /* el producto: ventana real, sangrando por la derecha */
+  .shot {
+    position:absolute; left:668px; top:96px; width:720px; height:450px;
+    border-radius:20px; overflow:hidden; background:#0E0D11;
+    box-shadow:0 2px 6px rgba(23,22,27,.10), 0 40px 80px -20px rgba(23,22,27,.40);
+    border:6px solid rgba(255,255,255,.8);
+  }
+  .shot img { width:100%; height:100%; object-fit:cover; object-position:top left; display:block; }
+</style>
+</head>
+<body>
+  <i class="blob b1"></i><i class="blob b2"></i>
+  <div class="copy">
+    <img class="logo" src="hatlas-logo.png" alt="Hatlas">
+    <h1>El sistema operativo de tu negocio. <em>Con un agente que trabaja por vos.</em></h1>
+    <p class="sub">Ventas, facturas, stock y finanzas en un solo lugar.</p>
+  </div>
+  <div class="chips">
+    <span class="chip chip--fill">Hecho para PYMEs bolivianas</span>
+    <span class="chip">hatlas.io</span>
+  </div>
+  <div class="shot"><img src="hatlas-dashboard.jpg" alt=""></div>
+</body>
+</html>
