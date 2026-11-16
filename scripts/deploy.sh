@@ -36,7 +36,9 @@ else
 fi
 
 echo "→ Copiando el build encima (sin borrar assets previos)…"
-cp -R "$ROOT/dist/." "$WORK/site/"
+# rsync sin .git: si dist/ trae un .git suelto (Vite no lo borra al vaciar
+# dist/), copiarlo pisaría el clon y el push saldría desde un repo viejo.
+rsync -a --exclude '.git' "$ROOT/dist/" "$WORK/site/"
 
 # Poda: deja los 3 builds más recientes de cada familia de asset. Alcanza para
 # cubrir la ventana de caché sin que la rama crezca sin control.
